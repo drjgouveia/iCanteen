@@ -4,9 +4,9 @@ using System.Windows.Forms;
 
 namespace iCantina.views
 {
-  public partial class ExtrasForms : Form
+  public partial class ExtraDetails : Form
   {
-    public ExtrasForms()
+    public ExtraDetails()
     {
       InitializeComponent();
     }
@@ -17,7 +17,7 @@ namespace iCantina.views
       double price = Convert.ToDouble(textBoxPriceExtras.Text);
       bool isActive = checkBoxActiveExtras.Checked;
 
-      ExtrasController extrasController = new ExtrasController();
+      ExtraDetailsController extrasController = new ExtraDetailsController();
       extrasController.ExtrasVerification(description, price, isActive);
     }
   }

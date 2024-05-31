@@ -8,18 +8,18 @@ using System.Windows.Forms;
 
 namespace iCantina.views
 {
-  public partial class CanteenMenu : Form
+  public partial class CanteenMenuDetails : Form
   {
-    private CanteenMenuController controller;
+    private CanteenMenuDetailsController controller;
     private models.Menu menu = null;
 
-    public CanteenMenu()
+    public CanteenMenuDetails()
     {
       InitializeComponent();
-      controller = new CanteenMenuController();
+      controller = new CanteenMenuDetailsController();
     }
 
-    public CanteenMenu(models.Menu menu) : this()
+    public CanteenMenuDetails(models.Menu menu) : this()
     {
       this.menu = menu;
     }

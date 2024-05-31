@@ -21,5 +21,10 @@ namespace iCantina.models
             Invoices = new List<Invoice>();
             Balance = balance;
         }
+
+        public override string ToString()
+        {
+			return "Name: " + Name + " - NIF: " + NIF + " - Balance: " + Balance;
+		}
     }
 }

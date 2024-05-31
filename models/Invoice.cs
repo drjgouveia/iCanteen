@@ -27,5 +27,11 @@ namespace iCantina.models
             Total = total;
             InvoiceLines = new List<InvoiceLine>();
         }
+
+
+        public override string ToString()
+        {
+			return "Invoice: " + Id + " - " + Date + " - " + Total;
+		}
     }
 }

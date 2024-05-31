@@ -1,6 +1,6 @@
 namespace iCantina.views
 {
-    partial class CanteenMenu
+    partial class CanteenMenuDetails
     {
         /// <summary>
         /// Required designer variable.

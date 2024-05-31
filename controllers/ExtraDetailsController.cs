@@ -8,9 +8,9 @@ using System.Windows.Forms;
 
 namespace iCantina.controllers
 {
-    public class ExtrasController : Controller
+    public class ExtraDetailsController : Controller
     {
-        public ExtrasController() : base() { }
+        public ExtraDetailsController() : base() { }
 
         public void ExtrasVerification(string description, double price, bool isActive) 
         {

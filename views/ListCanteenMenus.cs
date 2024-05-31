@@ -35,7 +35,7 @@ namespace iCantina.views
 
     private void btnCreate_Click(object sender, EventArgs e)
     {
-      CanteenMenu canteenMenu = new CanteenMenu();
+      CanteenMenuDetails canteenMenu = new CanteenMenuDetails();
       canteenMenu.ShowDialog();
     }
   }

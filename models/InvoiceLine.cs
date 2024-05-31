@@ -21,5 +21,10 @@ namespace iCantina.models
             Price = price;
             Description = description;
         }
+
+        public override string ToString()
+        {
+			return Description + " - " + Price + "€";
+		}
     }
 }

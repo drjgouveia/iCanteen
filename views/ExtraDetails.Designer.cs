@@ -1,6 +1,6 @@
 ﻿namespace iCantina.views
 {
-    partial class ExtrasForms
+    partial class ExtraDetails
     {
         /// <summary>
         /// Required designer variable.

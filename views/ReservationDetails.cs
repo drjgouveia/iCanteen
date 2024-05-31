@@ -11,9 +11,9 @@ using System.Windows.Forms;
 
 namespace iCantina.views
 {
-    public partial class ReservationForm : Form
+    public partial class ReservationDetails : Form
     {
-        public ReservationForm()
+        public ReservationDetails()
         {
             InitializeComponent();
         }
@@ -27,5 +27,15 @@ namespace iCantina.views
         {
             
         }
-    }
+
+        private void reloadClients()
+        { }
+
+		private void btnAddClient_Click(object sender, EventArgs e)
+		{
+            ClientDetails clientDetails = new ClientDetails(MessageBox.Show("Do you want to create a student?", "If you select yes, you'll be prompted to enter data for a student, if you select no you'll be prompted to enter data for a professor", MessageBoxButtons.YesNo) == DialogResult.Yes);
+            clientDetails.ShowDialog();
+
+		}
+	}
 }

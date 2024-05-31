@@ -7,9 +7,9 @@ using System.Windows.Forms;
 
 namespace iCantina.controllers
 {
-  public class CanteenMenuController : Controller
+  public class CanteenMenuDetailsController : Controller
   {
-    public CanteenMenuController() : base()
+    public CanteenMenuDetailsController() : base()
     {
       Console.WriteLine("Canteen Menu controller initialized.");
     }
@@ -94,7 +94,7 @@ namespace iCantina.controllers
 
     public List<Extra> GetExtras()
     {
-      return context.Extras.ToList();
+      return context.Extras.Where(extra => extra.Active).ToList();
     }
   }
 }
