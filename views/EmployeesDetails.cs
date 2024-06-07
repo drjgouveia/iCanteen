@@ -63,7 +63,7 @@ namespace iCanteen.views
                     btnCreateEmployee.Enabled = false;
                 }
             } else {
-                btnCreateEmployee.Enabled = false;
+                btnCreateEmployee.Enabled = true;
                 if (Regex.IsMatch(txtBoxUserNameEmployee.Text, @"^[a-zA-Z ]+$") && Regex.IsMatch(txtBoxNameEmployee.Text, @"^[a-zA-Z ]+$") && Regex.IsMatch(txtBoxNifEmployee.Text, @"^\d{9}$"))
                 {
                     btnEditEmployee.Enabled = true;
@@ -115,7 +115,7 @@ namespace iCanteen.views
 
         private void txtBoxNifEmployee_TextChanged(object sender, EventArgs e)
         {
-            if(Regex.IsMatch(txtBoxNameEmployee.Text, @"^[a-zA-Z ]+$"))
+            if(Regex.IsMatch(txtBoxNifEmployee.Text, @"^\d{9}$"))
             {
                 txtBoxNifEmployee.BackColor = Color.White; 
                 if(this.employee != null) 
