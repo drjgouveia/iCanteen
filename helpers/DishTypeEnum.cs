@@ -8,8 +8,8 @@ namespace iCantina.helpers
 {
     public enum DishTypeEnum
     {
-        Meat,
-        Fish,
-        Vegetarian
+        Meat = 0,
+        Fish = 1,
+        Vegetarian = 2,
     }
 }

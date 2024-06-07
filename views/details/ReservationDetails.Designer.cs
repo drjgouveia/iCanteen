@@ -59,7 +59,7 @@
 			// label7
 			// 
 			this.label7.AutoSize = true;
-			this.label7.Location = new System.Drawing.Point(216, 202);
+			this.label7.Location = new System.Drawing.Point(204, 208);
 			this.label7.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
 			this.label7.Name = "label7";
 			this.label7.Size = new System.Drawing.Size(39, 13);
@@ -84,6 +84,7 @@
 			this.checkedListBoxExtrasReservation.Name = "checkedListBoxExtrasReservation";
 			this.checkedListBoxExtrasReservation.Size = new System.Drawing.Size(137, 94);
 			this.checkedListBoxExtrasReservation.TabIndex = 25;
+			this.checkedListBoxExtrasReservation.ItemCheck += new System.Windows.Forms.ItemCheckEventHandler(this.checkedListBoxExtrasReservation_ItemCheck);
 			// 
 			// comboBoxClientCreate
 			// 
@@ -225,6 +226,7 @@
 			this.Margin = new System.Windows.Forms.Padding(2);
 			this.Name = "ReservationDetails";
 			this.Text = "Reservation";
+			this.Load += new System.EventHandler(this.ReservationDetails_Load);
 			this.ResumeLayout(false);
 			this.PerformLayout();
 

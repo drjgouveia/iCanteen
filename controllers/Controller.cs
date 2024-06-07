@@ -9,11 +9,11 @@ namespace iCantina.controllers
 {
     public class Controller
     {
-        protected iCantinaContext context;
+        protected iCanteenContext context;
 
         public Controller()
         {
-            context = new iCantinaContext();
+            context = new iCanteenContext();
         }
 
         public void SaveChanges()

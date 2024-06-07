@@ -30,14 +30,34 @@ namespace iCantina.views
 			controller = new ClientDetailsController();
 		}
 
-		public ClientDetails(bool isStudent, Professor prof) : this(isStudent)
-		{
-			this.professor = prof;
-		}
-
 		public ClientDetails(bool isStudent, Student stud) : this(isStudent)
 		{
+			this.isStudent = isStudent;
+			if (isStudent)
+			{
+				this.title = "Student";
+			}
+			else
+			{
+				this.title = "Professor";
+			}
+			controller = new ClientDetailsController();
 			this.student = stud;
+		}
+
+		public ClientDetails(bool isStudent, Professor prof) : this(isStudent)
+		{
+			this.isStudent = isStudent;
+			if (isStudent)
+			{
+				this.title = "Student";
+			}
+			else
+			{
+				this.title = "Professor";
+			}
+			controller = new ClientDetailsController();
+			this.professor = prof;
 		}
 
 		private void btnCreate_Click(object sender, EventArgs e)
@@ -59,7 +79,7 @@ namespace iCantina.views
 			}
 			else
 			{
-				MessageBox.Show("Error creating client!");
+				MessageBox.Show("Error creating client! There can be already exists a client with that NIF.");
 			}
 		}
 
@@ -127,7 +147,7 @@ namespace iCantina.views
 			{
 				btnEdit.Enabled = false;
 				btnDelete.Enabled = false;
-				if (Regex.IsMatch(txtBoxName.Text, @"^[a-zA-Z ]+$") && Regex.IsMatch(txtBoxNIF.Text, @"^\d{9}$") && Regex.IsMatch(txtBoxBalance.Text, @"^\d+(\.\d{1,2})?$") && (this.isStudent && Regex.IsMatch(txtBoxVariable.Text, @"^\d+$") || !this.isStudent && Regex.IsMatch(txtBoxVariable.Text, @"^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$")))
+				if (Regex.IsMatch(txtBoxName.Text, @"^[a-zA-Z ]+$") && Regex.IsMatch(txtBoxNIF.Text, @"^\d{9}$") && Regex.IsMatch(txtBoxBalance.Text, @"^\d+(\.\d{1,2})?$") && ((this.isStudent && Regex.IsMatch(txtBoxVariable.Text, @"^\d+$")) || (!this.isStudent && Regex.IsMatch(txtBoxVariable.Text, @"^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$"))))
 				{
 					btnCreate.Enabled = true;
 				}
@@ -138,7 +158,7 @@ namespace iCantina.views
 			} else
 			{
 				btnCreate.Enabled = false;
-				if (Regex.IsMatch(txtBoxName.Text, @"^[a-zA-Z ]+$") && Regex.IsMatch(txtBoxNIF.Text, @"^\d{9}$") && Regex.IsMatch(txtBoxBalance.Text, @"^\d+(\.\d{1,2})?$") && (this.isStudent && Regex.IsMatch(txtBoxVariable.Text, @"^\d+$") || !this.isStudent && Regex.IsMatch(txtBoxVariable.Text, @"^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$")))
+				if (Regex.IsMatch(txtBoxName.Text, @"^[a-zA-Z ]+$") && Regex.IsMatch(txtBoxNIF.Text, @"^\d{9}$") && Regex.IsMatch(txtBoxBalance.Text, @"^\d+(\.\d{1,2})?$") && ((this.isStudent && Regex.IsMatch(txtBoxVariable.Text, @"^\d+$")) || (!this.isStudent && Regex.IsMatch(txtBoxVariable.Text, @"^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$"))))
 				{
 					btnEdit.Enabled = true;
 					btnDelete.Enabled = true;
@@ -206,7 +226,7 @@ namespace iCantina.views
 
 		private void txtBoxVariable_TextChanged(object sender, EventArgs e)
 		{
-			if (Regex.IsMatch(txtBoxVariable.Text, @"^\d+$"))
+			if ((Regex.IsMatch(txtBoxVariable.Text, @"^\d+$") && this.isStudent) || (!this.isStudent && Regex.IsMatch(txtBoxVariable.Text, @"^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$")))
 			{
 				txtBoxVariable.BackColor = Color.White;
 				if (this.professor != null || this.student != null)

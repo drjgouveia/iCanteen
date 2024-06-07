@@ -12,7 +12,7 @@ namespace iCantina.models
     [Key]
     public int Id { get; set; }
     public DateTime Date { get; set; }
-    public ICollection<Dish> Dishes { get; set; }
+    public Dish Dish { get; set; }
     public ICollection<Extra> Extras { get; set; }
     public int QuantityAvailable { get; set; }
     public double PriceStudent { get; set; }
@@ -20,7 +20,6 @@ namespace iCantina.models
 
     public Menu()
     {
-      Dishes = new List<Dish>();
       Extras = new List<Extra>();
     }
 

@@ -29,17 +29,10 @@ namespace iCantina.views
         private void InitializeComponent()
         {
 			this.lblExtras = new System.Windows.Forms.Label();
-			this.chBoxVegetarianNotAvailable = new System.Windows.Forms.CheckBox();
-			this.chBoxFishNotAvailable = new System.Windows.Forms.CheckBox();
-			this.chBoxMeatNotAvailable = new System.Windows.Forms.CheckBox();
-			this.cmbBoxVegetarianDish = new System.Windows.Forms.ComboBox();
-			this.cmbBoxFishDish = new System.Windows.Forms.ComboBox();
 			this.chListBoxExtras = new System.Windows.Forms.CheckedListBox();
 			this.monthCalendar = new System.Windows.Forms.MonthCalendar();
-			this.cmbBoxMeatDish = new System.Windows.Forms.ComboBox();
-			this.lblVegetarianDish = new System.Windows.Forms.Label();
-			this.lblFishDish = new System.Windows.Forms.Label();
-			this.lblMeatDish = new System.Windows.Forms.Label();
+			this.cmbBoxDish = new System.Windows.Forms.ComboBox();
+			this.lblDish = new System.Windows.Forms.Label();
 			this.lblMenu = new System.Windows.Forms.Label();
 			this.rdoBtnLunch = new System.Windows.Forms.RadioButton();
 			this.rdoBtnDinner = new System.Windows.Forms.RadioButton();
@@ -61,77 +54,12 @@ namespace iCantina.views
 			// 
 			this.lblExtras.AutoSize = true;
 			this.lblExtras.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.lblExtras.Location = new System.Drawing.Point(355, 213);
+			this.lblExtras.Location = new System.Drawing.Point(13, 211);
 			this.lblExtras.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
 			this.lblExtras.Name = "lblExtras";
 			this.lblExtras.Size = new System.Drawing.Size(53, 17);
 			this.lblExtras.TabIndex = 25;
 			this.lblExtras.Text = "Extras";
-			// 
-			// chBoxVegetarianNotAvailable
-			// 
-			this.chBoxVegetarianNotAvailable.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-			this.chBoxVegetarianNotAvailable.AutoSize = true;
-			this.chBoxVegetarianNotAvailable.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.chBoxVegetarianNotAvailable.Location = new System.Drawing.Point(46, 289);
-			this.chBoxVegetarianNotAvailable.Margin = new System.Windows.Forms.Padding(2);
-			this.chBoxVegetarianNotAvailable.Name = "chBoxVegetarianNotAvailable";
-			this.chBoxVegetarianNotAvailable.Size = new System.Drawing.Size(110, 21);
-			this.chBoxVegetarianNotAvailable.TabIndex = 24;
-			this.chBoxVegetarianNotAvailable.Text = "Not Available";
-			this.chBoxVegetarianNotAvailable.UseVisualStyleBackColor = true;
-			this.chBoxVegetarianNotAvailable.CheckedChanged += new System.EventHandler(this.chBoxVegetarianNotAvailable_CheckedChanged);
-			// 
-			// chBoxFishNotAvailable
-			// 
-			this.chBoxFishNotAvailable.Anchor = System.Windows.Forms.AnchorStyles.Left;
-			this.chBoxFishNotAvailable.AutoSize = true;
-			this.chBoxFishNotAvailable.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.chBoxFishNotAvailable.Location = new System.Drawing.Point(46, 213);
-			this.chBoxFishNotAvailable.Margin = new System.Windows.Forms.Padding(2);
-			this.chBoxFishNotAvailable.Name = "chBoxFishNotAvailable";
-			this.chBoxFishNotAvailable.Size = new System.Drawing.Size(110, 21);
-			this.chBoxFishNotAvailable.TabIndex = 23;
-			this.chBoxFishNotAvailable.Text = "Not Available";
-			this.chBoxFishNotAvailable.UseVisualStyleBackColor = true;
-			this.chBoxFishNotAvailable.CheckedChanged += new System.EventHandler(this.chBoxFishNotAvailable_CheckedChanged);
-			// 
-			// chBoxMeatNotAvailable
-			// 
-			this.chBoxMeatNotAvailable.AutoSize = true;
-			this.chBoxMeatNotAvailable.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.chBoxMeatNotAvailable.Location = new System.Drawing.Point(46, 143);
-			this.chBoxMeatNotAvailable.Margin = new System.Windows.Forms.Padding(2);
-			this.chBoxMeatNotAvailable.Name = "chBoxMeatNotAvailable";
-			this.chBoxMeatNotAvailable.Size = new System.Drawing.Size(110, 21);
-			this.chBoxMeatNotAvailable.TabIndex = 22;
-			this.chBoxMeatNotAvailable.Text = "Not Available";
-			this.chBoxMeatNotAvailable.UseVisualStyleBackColor = true;
-			this.chBoxMeatNotAvailable.CheckedChanged += new System.EventHandler(this.chBoxMeatNotAvailable_CheckedChanged);
-			// 
-			// cmbBoxVegetarianDish
-			// 
-			this.cmbBoxVegetarianDish.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-			this.cmbBoxVegetarianDish.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-			this.cmbBoxVegetarianDish.FormattingEnabled = true;
-			this.cmbBoxVegetarianDish.Location = new System.Drawing.Point(46, 265);
-			this.cmbBoxVegetarianDish.Margin = new System.Windows.Forms.Padding(2);
-			this.cmbBoxVegetarianDish.Name = "cmbBoxVegetarianDish";
-			this.cmbBoxVegetarianDish.Size = new System.Drawing.Size(249, 21);
-			this.cmbBoxVegetarianDish.TabIndex = 21;
-			this.cmbBoxVegetarianDish.SelectedIndexChanged += new System.EventHandler(this.cmbBoxVegetarianDish_SelectedIndexChanged);
-			// 
-			// cmbBoxFishDish
-			// 
-			this.cmbBoxFishDish.Anchor = System.Windows.Forms.AnchorStyles.Left;
-			this.cmbBoxFishDish.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-			this.cmbBoxFishDish.FormattingEnabled = true;
-			this.cmbBoxFishDish.Location = new System.Drawing.Point(46, 188);
-			this.cmbBoxFishDish.Margin = new System.Windows.Forms.Padding(2);
-			this.cmbBoxFishDish.Name = "cmbBoxFishDish";
-			this.cmbBoxFishDish.Size = new System.Drawing.Size(249, 21);
-			this.cmbBoxFishDish.TabIndex = 20;
-			this.cmbBoxFishDish.SelectedIndexChanged += new System.EventHandler(this.cmbBoxFishDish_SelectedIndexChanged);
 			// 
 			// chListBoxExtras
 			// 
@@ -141,72 +69,49 @@ namespace iCantina.views
             "Extra 1",
             "Extra 2",
             "Extra 3"});
-			this.chListBoxExtras.Location = new System.Drawing.Point(358, 230);
+			this.chListBoxExtras.Location = new System.Drawing.Point(16, 230);
 			this.chListBoxExtras.Margin = new System.Windows.Forms.Padding(2);
 			this.chListBoxExtras.Name = "chListBoxExtras";
-			this.chListBoxExtras.Size = new System.Drawing.Size(227, 154);
+			this.chListBoxExtras.Size = new System.Drawing.Size(540, 154);
 			this.chListBoxExtras.TabIndex = 19;
+			this.chListBoxExtras.SelectedIndexChanged += new System.EventHandler(this.chListBoxExtras_SelectedIndexChanged);
 			// 
 			// monthCalendar
 			// 
 			this.monthCalendar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-			this.monthCalendar.Location = new System.Drawing.Point(358, 22);
+			this.monthCalendar.Location = new System.Drawing.Point(329, 36);
 			this.monthCalendar.Margin = new System.Windows.Forms.Padding(7);
 			this.monthCalendar.MaxSelectionCount = 1;
 			this.monthCalendar.Name = "monthCalendar";
 			this.monthCalendar.TabIndex = 18;
 			// 
-			// cmbBoxMeatDish
+			// cmbBoxDish
 			// 
-			this.cmbBoxMeatDish.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-			this.cmbBoxMeatDish.FormattingEnabled = true;
-			this.cmbBoxMeatDish.Location = new System.Drawing.Point(46, 119);
-			this.cmbBoxMeatDish.Margin = new System.Windows.Forms.Padding(2);
-			this.cmbBoxMeatDish.Name = "cmbBoxMeatDish";
-			this.cmbBoxMeatDish.Size = new System.Drawing.Size(249, 21);
-			this.cmbBoxMeatDish.TabIndex = 17;
-			this.cmbBoxMeatDish.SelectedIndexChanged += new System.EventHandler(this.cmbBoxMeatDish_SelectedIndexChanged);
+			this.cmbBoxDish.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+			this.cmbBoxDish.FormattingEnabled = true;
+			this.cmbBoxDish.Location = new System.Drawing.Point(17, 126);
+			this.cmbBoxDish.Margin = new System.Windows.Forms.Padding(2);
+			this.cmbBoxDish.Name = "cmbBoxDish";
+			this.cmbBoxDish.Size = new System.Drawing.Size(279, 21);
+			this.cmbBoxDish.TabIndex = 17;
+			this.cmbBoxDish.SelectedIndexChanged += new System.EventHandler(this.cmbBoxDish_SelectedIndexChanged);
 			// 
-			// lblVegetarianDish
+			// lblDish
 			// 
-			this.lblVegetarianDish.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-			this.lblVegetarianDish.AutoSize = true;
-			this.lblVegetarianDish.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.lblVegetarianDish.Location = new System.Drawing.Point(43, 247);
-			this.lblVegetarianDish.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-			this.lblVegetarianDish.Name = "lblVegetarianDish";
-			this.lblVegetarianDish.Size = new System.Drawing.Size(124, 17);
-			this.lblVegetarianDish.TabIndex = 16;
-			this.lblVegetarianDish.Text = "Vegetarian Dish";
-			// 
-			// lblFishDish
-			// 
-			this.lblFishDish.Anchor = System.Windows.Forms.AnchorStyles.Left;
-			this.lblFishDish.AutoSize = true;
-			this.lblFishDish.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.lblFishDish.Location = new System.Drawing.Point(43, 170);
-			this.lblFishDish.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-			this.lblFishDish.Name = "lblFishDish";
-			this.lblFishDish.Size = new System.Drawing.Size(75, 17);
-			this.lblFishDish.TabIndex = 15;
-			this.lblFishDish.Text = "Fish Dish";
-			// 
-			// lblMeatDish
-			// 
-			this.lblMeatDish.AutoSize = true;
-			this.lblMeatDish.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.lblMeatDish.Location = new System.Drawing.Point(43, 100);
-			this.lblMeatDish.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-			this.lblMeatDish.Name = "lblMeatDish";
-			this.lblMeatDish.Size = new System.Drawing.Size(80, 17);
-			this.lblMeatDish.TabIndex = 14;
-			this.lblMeatDish.Text = "Meat Dish";
+			this.lblDish.AutoSize = true;
+			this.lblDish.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.lblDish.Location = new System.Drawing.Point(14, 107);
+			this.lblDish.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+			this.lblDish.Name = "lblDish";
+			this.lblDish.Size = new System.Drawing.Size(40, 17);
+			this.lblDish.TabIndex = 14;
+			this.lblDish.Text = "Dish";
 			// 
 			// lblMenu
 			// 
 			this.lblMenu.AutoSize = true;
 			this.lblMenu.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.lblMenu.Location = new System.Drawing.Point(41, 22);
+			this.lblMenu.Location = new System.Drawing.Point(10, 22);
 			this.lblMenu.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
 			this.lblMenu.Name = "lblMenu";
 			this.lblMenu.Size = new System.Drawing.Size(70, 26);
@@ -249,7 +154,7 @@ namespace iCantina.views
 			this.tableLayoutPanel1.Name = "tableLayoutPanel1";
 			this.tableLayoutPanel1.RowCount = 1;
 			this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-			this.tableLayoutPanel1.Size = new System.Drawing.Size(600, 30);
+			this.tableLayoutPanel1.Size = new System.Drawing.Size(572, 30);
 			this.tableLayoutPanel1.TabIndex = 41;
 			// 
 			// btnDelete
@@ -257,9 +162,9 @@ namespace iCantina.views
 			this.btnDelete.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-			this.btnDelete.Location = new System.Drawing.Point(401, 3);
+			this.btnDelete.Location = new System.Drawing.Point(383, 3);
 			this.btnDelete.Name = "btnDelete";
-			this.btnDelete.Size = new System.Drawing.Size(196, 24);
+			this.btnDelete.Size = new System.Drawing.Size(186, 24);
 			this.btnDelete.TabIndex = 2;
 			this.btnDelete.Text = "Delete";
 			this.btnDelete.UseVisualStyleBackColor = true;
@@ -270,9 +175,9 @@ namespace iCantina.views
 			this.btnEdit.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-			this.btnEdit.Location = new System.Drawing.Point(202, 3);
+			this.btnEdit.Location = new System.Drawing.Point(193, 3);
 			this.btnEdit.Name = "btnEdit";
-			this.btnEdit.Size = new System.Drawing.Size(193, 24);
+			this.btnEdit.Size = new System.Drawing.Size(184, 24);
 			this.btnEdit.TabIndex = 1;
 			this.btnEdit.Text = "Edit";
 			this.btnEdit.UseVisualStyleBackColor = true;
@@ -285,7 +190,7 @@ namespace iCantina.views
             | System.Windows.Forms.AnchorStyles.Right)));
 			this.btnCreate.Location = new System.Drawing.Point(3, 3);
 			this.btnCreate.Name = "btnCreate";
-			this.btnCreate.Size = new System.Drawing.Size(193, 24);
+			this.btnCreate.Size = new System.Drawing.Size(184, 24);
 			this.btnCreate.TabIndex = 0;
 			this.btnCreate.Text = "Create";
 			this.btnCreate.UseVisualStyleBackColor = true;
@@ -295,7 +200,7 @@ namespace iCantina.views
 			// 
 			this.label1.AutoSize = true;
 			this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.label1.Location = new System.Drawing.Point(43, 65);
+			this.label1.Location = new System.Drawing.Point(14, 65);
 			this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
 			this.label1.Name = "label1";
 			this.label1.Size = new System.Drawing.Size(69, 17);
@@ -304,7 +209,7 @@ namespace iCantina.views
 			// 
 			// numQuantity
 			// 
-			this.numQuantity.Location = new System.Drawing.Point(118, 65);
+			this.numQuantity.Location = new System.Drawing.Point(88, 66);
 			this.numQuantity.Name = "numQuantity";
 			this.numQuantity.Size = new System.Drawing.Size(49, 20);
 			this.numQuantity.TabIndex = 43;
@@ -318,7 +223,7 @@ namespace iCantina.views
 			// 
 			this.lblPriceStudent.AutoSize = true;
 			this.lblPriceStudent.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.lblPriceStudent.Location = new System.Drawing.Point(43, 316);
+			this.lblPriceStudent.Location = new System.Drawing.Point(13, 152);
 			this.lblPriceStudent.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
 			this.lblPriceStudent.Name = "lblPriceStudent";
 			this.lblPriceStudent.Size = new System.Drawing.Size(106, 17);
@@ -329,7 +234,7 @@ namespace iCantina.views
 			// 
 			this.lblPriceProfessor.AutoSize = true;
 			this.lblPriceProfessor.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.lblPriceProfessor.Location = new System.Drawing.Point(42, 342);
+			this.lblPriceProfessor.Location = new System.Drawing.Point(12, 178);
 			this.lblPriceProfessor.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
 			this.lblPriceProfessor.Name = "lblPriceProfessor";
 			this.lblPriceProfessor.Size = new System.Drawing.Size(120, 17);
@@ -338,25 +243,25 @@ namespace iCantina.views
 			// 
 			// txtBoxPriceStudent
 			// 
-			this.txtBoxPriceStudent.Location = new System.Drawing.Point(165, 316);
+			this.txtBoxPriceStudent.Location = new System.Drawing.Point(135, 152);
 			this.txtBoxPriceStudent.Name = "txtBoxPriceStudent";
-			this.txtBoxPriceStudent.Size = new System.Drawing.Size(131, 20);
+			this.txtBoxPriceStudent.Size = new System.Drawing.Size(161, 20);
 			this.txtBoxPriceStudent.TabIndex = 46;
 			this.txtBoxPriceStudent.TextChanged += new System.EventHandler(this.txtBoxPriceStudent_TextChanged);
 			// 
 			// txtBoxPriceProfessor
 			// 
-			this.txtBoxPriceProfessor.Location = new System.Drawing.Point(164, 342);
+			this.txtBoxPriceProfessor.Location = new System.Drawing.Point(134, 178);
 			this.txtBoxPriceProfessor.Name = "txtBoxPriceProfessor";
-			this.txtBoxPriceProfessor.Size = new System.Drawing.Size(131, 20);
+			this.txtBoxPriceProfessor.Size = new System.Drawing.Size(162, 20);
 			this.txtBoxPriceProfessor.TabIndex = 47;
 			this.txtBoxPriceProfessor.TextChanged += new System.EventHandler(this.txtBoxProfessor_TextChanged);
 			// 
-			// CanteenMenu
+			// CanteenMenuDetails
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(600, 423);
+			this.ClientSize = new System.Drawing.Size(572, 423);
 			this.Controls.Add(this.txtBoxPriceProfessor);
 			this.Controls.Add(this.txtBoxPriceStudent);
 			this.Controls.Add(this.lblPriceProfessor);
@@ -367,21 +272,14 @@ namespace iCantina.views
 			this.Controls.Add(this.rdoBtnDinner);
 			this.Controls.Add(this.rdoBtnLunch);
 			this.Controls.Add(this.lblExtras);
-			this.Controls.Add(this.chBoxVegetarianNotAvailable);
-			this.Controls.Add(this.chBoxFishNotAvailable);
-			this.Controls.Add(this.chBoxMeatNotAvailable);
-			this.Controls.Add(this.cmbBoxVegetarianDish);
-			this.Controls.Add(this.cmbBoxFishDish);
 			this.Controls.Add(this.chListBoxExtras);
 			this.Controls.Add(this.monthCalendar);
-			this.Controls.Add(this.cmbBoxMeatDish);
-			this.Controls.Add(this.lblVegetarianDish);
-			this.Controls.Add(this.lblFishDish);
-			this.Controls.Add(this.lblMeatDish);
+			this.Controls.Add(this.cmbBoxDish);
+			this.Controls.Add(this.lblDish);
 			this.Controls.Add(this.lblMenu);
 			this.Margin = new System.Windows.Forms.Padding(2);
-			this.Name = "CanteenMenu";
-			this.Text = "Canteen Menu";
+			this.Name = "CanteenMenuDetails";
+			this.Text = "s";
 			this.Load += new System.EventHandler(this.CanteenMenu_Load);
 			this.tableLayoutPanel1.ResumeLayout(false);
 			((System.ComponentModel.ISupportInitialize)(this.numQuantity)).EndInit();
@@ -393,17 +291,10 @@ namespace iCantina.views
         #endregion
 
         private System.Windows.Forms.Label lblExtras;
-        private System.Windows.Forms.CheckBox chBoxVegetarianNotAvailable;
-        private System.Windows.Forms.CheckBox chBoxFishNotAvailable;
-        private System.Windows.Forms.CheckBox chBoxMeatNotAvailable;
-        private System.Windows.Forms.ComboBox cmbBoxVegetarianDish;
-        private System.Windows.Forms.ComboBox cmbBoxFishDish;
         private System.Windows.Forms.CheckedListBox chListBoxExtras;
         private System.Windows.Forms.MonthCalendar monthCalendar;
-        private System.Windows.Forms.ComboBox cmbBoxMeatDish;
-        private System.Windows.Forms.Label lblVegetarianDish;
-        private System.Windows.Forms.Label lblFishDish;
-        private System.Windows.Forms.Label lblMeatDish;
+        private System.Windows.Forms.ComboBox cmbBoxDish;
+        private System.Windows.Forms.Label lblDish;
         private System.Windows.Forms.Label lblMenu;
     private System.Windows.Forms.RadioButton rdoBtnLunch;
     private System.Windows.Forms.RadioButton rdoBtnDinner;

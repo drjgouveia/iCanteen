@@ -164,6 +164,7 @@
 			this.btnExtras.TabIndex = 1;
 			this.btnExtras.Text = "Extras";
 			this.btnExtras.UseVisualStyleBackColor = true;
+			this.btnExtras.Click += new System.EventHandler(this.btnExtras_Click);
 			// 
 			// btnMenu
 			// 

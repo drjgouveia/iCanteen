@@ -1,3 +1,4 @@
+using iCantina.controllers;
 using System;
 using System.Windows.Forms;
 
@@ -5,25 +6,26 @@ namespace iCantina.views
 {
 	public partial class ListClients : Form
 	{
-		private controllers.ListClientsController controller = null;
+		private ListClientsController controller = null;
 		private bool isStudent;
 
 		public ListClients()
 		{
 			InitializeComponent();
-			controller = new controllers.ListClientsController();
+			controller = new ListClientsController();
 		}
 
 		public ListClients(bool isStudent) : this()
 		{
 			InitializeComponent();
 			this.isStudent = isStudent;
+			//lstBoxClients.DataSource = null;
 		}
 
 		private void txtBoxSearch_TextChanged(object sender, EventArgs e)
 		{
 			lstBoxClients.DataSource = null;
-			if (isStudent)
+			if (this.isStudent)
 			{
 				lstBoxClients.DataSource = controller.GetStudents(txtBoxSearch.Text);
 			}
@@ -35,18 +37,18 @@ namespace iCantina.views
 
 		private void ListClients_Load(object sender, EventArgs e)
 		{
-			lstBoxClients.DataSource = null;
-			if (isStudent)
+			this.lstBoxClients.DataSource = null;
+			if (this.isStudent)
 			{
+				this.lstBoxClients.DataSource = controller.GetStudents();
 				this.Text = "List Students";
 				lblClients.Text = "List of Students";
-				lstBoxClients.DataSource = controller.GetStudents();
 			}
 			else
 			{
+				this.lstBoxClients.DataSource = controller.GetProfessors();
 				this.Text = "List Professors";
 				lblClients.Text = "List of Professors";
-				lstBoxClients.DataSource = controller.GetProfessors();
 			}
 		}
 
@@ -54,7 +56,15 @@ namespace iCantina.views
 		{
 			ClientDetails clientDetails = new ClientDetails(this.isStudent);
 			clientDetails.Show();
-
+			lstBoxClients.DataSource = null;
+			if (this.isStudent)
+			{
+				lstBoxClients.DataSource = controller.GetStudents(txtBoxSearch.Text);
+			}
+			else
+			{
+				lstBoxClients.DataSource = controller.GetProfessors(txtBoxSearch.Text);
+			}
 		}
 	}
 }

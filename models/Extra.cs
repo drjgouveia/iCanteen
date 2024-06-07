@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 
 namespace iCantina.models
@@ -9,6 +10,10 @@ namespace iCantina.models
 		public string Description { get; set; }
 		public double Price { get; set; }
 		public bool Active { get; set; }
+		public ICollection<Menu> Menus { get; set; }
+		public ICollection<Reservation> Reservations { get; set; }
+
+
 		public Extra()
 		{
 		}
