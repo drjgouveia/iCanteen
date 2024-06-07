@@ -34,7 +34,7 @@
             this.lblNIF = new System.Windows.Forms.Label();
             this.txtBoxNameEmployee = new System.Windows.Forms.TextBox();
             this.lblName = new System.Windows.Forms.Label();
-            this.txtBoxNif = new System.Windows.Forms.TextBox();
+            this.txtBoxNifEmployee = new System.Windows.Forms.TextBox();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.btnDeleteEmployee = new System.Windows.Forms.Button();
             this.btnEditEmployee = new System.Windows.Forms.Button();
@@ -95,6 +95,7 @@
             this.txtBoxNameEmployee.Name = "txtBoxNameEmployee";
             this.txtBoxNameEmployee.Size = new System.Drawing.Size(590, 22);
             this.txtBoxNameEmployee.TabIndex = 35;
+            this.txtBoxNameEmployee.TextChanged += new System.EventHandler(this.txtBoxNameEmployee_TextChanged);
             // 
             // lblName
             // 
@@ -107,15 +108,16 @@
             this.lblName.TabIndex = 34;
             this.lblName.Text = "Name";
             // 
-            // txtBoxNif
+            // txtBoxNifEmployee
             // 
-            this.txtBoxNif.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.txtBoxNifEmployee.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtBoxNif.Location = new System.Drawing.Point(119, 139);
-            this.txtBoxNif.Margin = new System.Windows.Forms.Padding(4);
-            this.txtBoxNif.Name = "txtBoxNif";
-            this.txtBoxNif.Size = new System.Drawing.Size(614, 22);
-            this.txtBoxNif.TabIndex = 36;
+            this.txtBoxNifEmployee.Location = new System.Drawing.Point(119, 139);
+            this.txtBoxNifEmployee.Margin = new System.Windows.Forms.Padding(4);
+            this.txtBoxNifEmployee.Name = "txtBoxNifEmployee";
+            this.txtBoxNifEmployee.Size = new System.Drawing.Size(614, 22);
+            this.txtBoxNifEmployee.TabIndex = 36;
+            this.txtBoxNifEmployee.TextChanged += new System.EventHandler(this.txtBoxNifEmployee_TextChanged);
             // 
             // tableLayoutPanel1
             // 
@@ -148,6 +150,7 @@
             this.btnDeleteEmployee.TabIndex = 2;
             this.btnDeleteEmployee.Text = "Delete";
             this.btnDeleteEmployee.UseVisualStyleBackColor = true;
+            this.btnDeleteEmployee.Click += new System.EventHandler(this.btnDeleteEmployee_Click);
             // 
             // btnEditEmployee
             // 
@@ -161,6 +164,7 @@
             this.btnEditEmployee.TabIndex = 1;
             this.btnEditEmployee.Text = "Edit";
             this.btnEditEmployee.UseVisualStyleBackColor = true;
+            this.btnEditEmployee.Click += new System.EventHandler(this.btnEditEmployee_Click);
             // 
             // btnCreateEmployee
             // 
@@ -182,7 +186,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 228);
             this.Controls.Add(this.tableLayoutPanel1);
-            this.Controls.Add(this.txtBoxNif);
+            this.Controls.Add(this.txtBoxNifEmployee);
             this.Controls.Add(this.txtBoxNameEmployee);
             this.Controls.Add(this.lblName);
             this.Controls.Add(this.lblNIF);
@@ -205,7 +209,7 @@
         private System.Windows.Forms.Label lblNIF;
         private System.Windows.Forms.TextBox txtBoxNameEmployee;
         private System.Windows.Forms.Label lblName;
-        private System.Windows.Forms.TextBox txtBoxNif;
+        private System.Windows.Forms.TextBox txtBoxNifEmployee;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.Button btnDeleteEmployee;
         private System.Windows.Forms.Button btnEditEmployee;
