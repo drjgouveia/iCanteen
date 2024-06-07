@@ -24,7 +24,7 @@ namespace iCantina.models
 
         public override string ToString()
         {
-			return "Name: " + Name + " - NIF: " + NIF + " - Balance: " + Balance;
+			return NIF + " - " + Name + " - " + Balance;
 		}
     }
 }

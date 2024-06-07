@@ -177,6 +177,18 @@
             // btnMenu
             // 
             this.btnMenu.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+			this.btnExtras.Font = new System.Drawing.Font("Microsoft Sans Serif", 18.25F);
+			this.btnExtras.Location = new System.Drawing.Point(261, 3);
+			this.btnExtras.Name = "btnExtras";
+			this.btnExtras.Size = new System.Drawing.Size(252, 133);
+			this.btnExtras.TabIndex = 1;
+			this.btnExtras.Text = "Extras";
+			this.btnExtras.UseVisualStyleBackColor = true;
+			this.btnExtras.Click += new System.EventHandler(this.btnExtras_Click);
+			// 
+			// btnMenu
+			// 
+			this.btnMenu.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.btnMenu.Font = new System.Drawing.Font("Microsoft Sans Serif", 18.25F);

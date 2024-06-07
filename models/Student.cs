@@ -13,7 +13,7 @@ namespace iCantina.models
 
     public override string ToString()
     {
-      return Name + " - " + NIF + " - " + StudentNumber;
+      return NIF + " - " + Name + " - " + StudentNumber;
     }
   }
 }

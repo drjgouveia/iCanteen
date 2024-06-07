@@ -56,19 +56,31 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="controllers\CanteenMenuDetailsController.cs" />
-    <Compile Include="controllers\ClientDetailsController.cs" />
+    <Compile Include="controllers\details\CanteenMenuDetailsController.cs" />
+    <Compile Include="controllers\details\DishDetailsController.cs" />
+    <Compile Include="controllers\details\ClientDetailsController.cs" />
     <Compile Include="controllers\Controller.cs" />
+    <Compile Include="controllers\details\ExtraDetailsController.cs" />
+    <Compile Include="controllers\lists\ListCanteenMenuController.cs" />
+    <Compile Include="controllers\lists\ListExtrasController.cs" />
+    <Compile Include="controllers\lists\ListClientsController.cs" />
+    <Compile Include="controllers\lists\ListDishesController.cs" />
     <Compile Include="controllers\EmployeesDetailsController.cs" />
-    <Compile Include="controllers\ExtraDetailsController.cs" />
-    <Compile Include="controllers\ListCanteenMenuController.cs" />
-    <Compile Include="controllers\ListClientsController.cs" />
-    <Compile Include="controllers\ListDishesController.cs" />
     <Compile Include="controllers\ListEmployeesController.cs" />
     <Compile Include="controllers\LoginController.cs" />
-    <Compile Include="controllers\ReservationDetailsController.cs" />
+    <Compile Include="controllers\lists\ListReservationsController.cs" />
+    <Compile Include="controllers\details\ReservationDetailsController.cs" />
     <Compile Include="helpers\DishTypeEnum.cs" />
-    <Compile Include="iCantinaContext.cs" />
+    <Compile Include="iCanteenContext.cs" />
+    <Compile Include="Migrations\202406041752383_Initial.cs" />
+    <Compile Include="Migrations\202406041752383_Initial.Designer.cs">
+      <DependentUpon>202406041752383_Initial.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202406071735013_MinorChanges.cs" />
+    <Compile Include="Migrations\202406071735013_MinorChanges.Designer.cs">
+      <DependentUpon>202406071735013_MinorChanges.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="models\Client.cs" />
     <Compile Include="models\Dish.cs" />
     <Compile Include="models\Employee.cs" />
@@ -83,16 +95,16 @@
     <Compile Include="models\User.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="views\CanteenMenuDetails.cs">
+    <Compile Include="views\details\CanteenMenuDetails.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="views\CanteenMenuDetails.Designer.cs">
+    <Compile Include="views\details\CanteenMenuDetails.Designer.cs">
       <DependentUpon>CanteenMenuDetails.cs</DependentUpon>
     </Compile>
-    <Compile Include="views\ClientDetails.cs">
+    <Compile Include="views\details\ClientDetails.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="views\ClientDetails.Designer.cs">
+    <Compile Include="views\details\ClientDetails.Designer.cs">
       <DependentUpon>ClientDetails.cs</DependentUpon>
     </Compile>
     <Compile Include="views\EmployeesDetails.cs">
@@ -101,23 +113,38 @@
     <Compile Include="views\EmployeesDetails.Designer.cs">
       <DependentUpon>EmployeesDetails.cs</DependentUpon>
     </Compile>
-    <Compile Include="views\ExtraDetails.cs">
+    <Compile Include="views\details\DishDetails.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="views\ExtraDetails.Designer.cs">
+    <Compile Include="views\details\DishDetails.Designer.cs">
+      <DependentUpon>DishDetails.cs</DependentUpon>
+    </Compile>
+    <Compile Include="views\details\ExtraDetails.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="views\details\ExtraDetails.Designer.cs">
       <DependentUpon>ExtraDetails.cs</DependentUpon>
     </Compile>
-    <Compile Include="views\ListClients.cs">
+    <Compile Include="views\lists\ListCanteenMenus.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="views\ListClients.Designer.cs">
+    <Compile Include="views\lists\ListCanteenMenus.Designer.cs">
+      <DependentUpon>ListCanteenMenus.cs</DependentUpon>
+    </Compile>
+    <Compile Include="views\lists\ListClients.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="views\lists\ListClients.Designer.cs">
       <DependentUpon>ListClients.cs</DependentUpon>
     </Compile>
-    <Compile Include="views\ListCanteenMenus.cs">
+    <Compile Include="views\lists\ListDishes.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="views\ListCanteenMenus.Designer.cs">
-      <DependentUpon>ListCanteenMenus.cs</DependentUpon>
+    <Compile Include="views\lists\ListDishes.Designer.cs">
+      <DependentUpon>ListDishes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="views\lists\ListExtras.cs">
+      <SubType>Form</SubType>
     </Compile>
     <Compile Include="views\ListEmployees.cs">
       <SubType>Form</SubType>
@@ -125,10 +152,13 @@
     <Compile Include="views\ListEmployees.Designer.cs">
       <DependentUpon>ListEmployees.cs</DependentUpon>
     </Compile>
-    <Compile Include="views\ListReservations.cs">
+    <Compile Include="views\lists\ListExtras.Designer.cs">
+      <DependentUpon>ListExtras.cs</DependentUpon>
+    </Compile>
+    <Compile Include="views\lists\ListReservations.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="views\ListReservations.Designer.cs">
+    <Compile Include="views\lists\ListReservations.Designer.cs">
       <DependentUpon>ListReservations.cs</DependentUpon>
     </Compile>
     <Compile Include="views\Login.cs">
@@ -143,12 +173,18 @@
     <Compile Include="views\MainPage.Designer.cs">
       <DependentUpon>MainPage.cs</DependentUpon>
     </Compile>
-    <Compile Include="views\ReservationDetails.cs">
+    <Compile Include="views\details\ReservationDetails.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="views\ReservationDetails.Designer.cs">
+    <Compile Include="views\details\ReservationDetails.Designer.cs">
       <DependentUpon>ReservationDetails.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Migrations\202406041752383_Initial.resx">
+      <DependentUpon>202406041752383_Initial.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202406071735013_MinorChanges.resx">
+      <DependentUpon>202406071735013_MinorChanges.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -158,28 +194,34 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="views\CanteenMenuDetails.resx">
+    <EmbeddedResource Include="views\details\CanteenMenuDetails.resx">
       <DependentUpon>CanteenMenuDetails.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="views\ClientDetails.resx">
+    <EmbeddedResource Include="views\details\ClientDetails.resx">
       <DependentUpon>ClientDetails.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="views\details\DishDetails.resx">
+      <DependentUpon>DishDetails.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="views\EmployeesDetails.resx">
       <DependentUpon>EmployeesDetails.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="views\ExtraDetails.resx">
-      <DependentUpon>ExtraDetails.cs</DependentUpon>
+    <EmbeddedResource Include="views\lists\ListCanteenMenus.resx">
+      <DependentUpon>ListCanteenMenus.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="views\ListClients.resx">
+    <EmbeddedResource Include="views\lists\ListClients.resx">
       <DependentUpon>ListClients.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="views\ListCanteenMenus.resx">
-      <DependentUpon>ListCanteenMenus.cs</DependentUpon>
+    <EmbeddedResource Include="views\lists\ListDishes.resx">
+      <DependentUpon>ListDishes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="views\lists\ListExtras.resx">
+      <DependentUpon>ListExtras.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="views\ListEmployees.resx">
       <DependentUpon>ListEmployees.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="views\ListReservations.resx">
+    <EmbeddedResource Include="views\lists\ListReservations.resx">
       <DependentUpon>ListReservations.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="views\Login.resx">
@@ -188,7 +230,7 @@
     <EmbeddedResource Include="views\MainPage.resx">
       <DependentUpon>MainPage.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="views\ReservationDetails.resx">
+    <EmbeddedResource Include="views\details\ReservationDetails.resx">
       <DependentUpon>ReservationDetails.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="controllers\.gitkeep" />

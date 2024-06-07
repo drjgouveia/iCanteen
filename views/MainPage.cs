@@ -1,4 +1,6 @@
 using iCanteen.views;
+using iCanteen.views.details;
+using iCanteen.views.lists;
 using iCantina.models;
 using System;
 using System.Windows.Forms;
@@ -23,8 +25,8 @@ namespace iCantina.views
 
 		private void btnDishes_Click(object sender, EventArgs e)
 		{
-			//DishesType dishesType = new DishesType();
-			//dishesType.Show();
+			ListDishes listDishes = new ListDishes();
+			listDishes.Show();
 		}
 
 		private void btnMenu_Click(object sender, EventArgs e)
@@ -64,4 +66,11 @@ namespace iCantina.views
 			listEmployees.Show();
         }
     }
+
+		private void btnExtras_Click(object sender, EventArgs e)
+		{
+			ListExtras listExtras = new ListExtras();
+			listExtras.Show();
+		}
+	}
 }
