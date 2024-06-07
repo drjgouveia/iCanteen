@@ -65,6 +65,12 @@
     <Compile Include="controllers\lists\ListExtrasController.cs" />
     <Compile Include="controllers\lists\ListClientsController.cs" />
     <Compile Include="controllers\lists\ListDishesController.cs" />
+    <Compile Include="controllers\EmployeesDetailsController.cs" />
+    <Compile Include="controllers\ExtraDetailsController.cs" />
+    <Compile Include="controllers\ListCanteenMenuController.cs" />
+    <Compile Include="controllers\ListClientsController.cs" />
+    <Compile Include="controllers\ListDishesController.cs" />
+    <Compile Include="controllers\ListEmployeesController.cs" />
     <Compile Include="controllers\LoginController.cs" />
     <Compile Include="controllers\lists\ListReservationsController.cs" />
     <Compile Include="controllers\details\ReservationDetailsController.cs" />
@@ -105,6 +111,13 @@
     <Compile Include="views\details\ClientDetails.Designer.cs">
       <DependentUpon>ClientDetails.cs</DependentUpon>
     </Compile>
+    <Compile Include="views\EmployeesDetails.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="views\EmployeesDetails.Designer.cs">
+      <DependentUpon>EmployeesDetails.cs</DependentUpon>
+    </Compile>
+    <Compile Include="views\ExtraDetails.cs">
     <Compile Include="views\details\DishDetails.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -136,6 +149,13 @@
       <DependentUpon>ListDishes.cs</DependentUpon>
     </Compile>
     <Compile Include="views\lists\ListExtras.cs">
+    <Compile Include="views\ListEmployees.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="views\ListEmployees.Designer.cs">
+      <DependentUpon>ListEmployees.cs</DependentUpon>
+    </Compile>
+    <Compile Include="views\ListReservations.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="views\lists\ListExtras.Designer.cs">
@@ -190,6 +210,10 @@
       <DependentUpon>DishDetails.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="views\details\ExtraDetails.resx">
+    <EmbeddedResource Include="views\EmployeesDetails.resx">
+      <DependentUpon>EmployeesDetails.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="views\ExtraDetails.resx">
       <DependentUpon>ExtraDetails.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="views\lists\ListCanteenMenus.resx">
@@ -204,6 +228,10 @@
     <EmbeddedResource Include="views\lists\ListExtras.resx">
       <DependentUpon>ListExtras.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="views\ListEmployees.resx">
+      <DependentUpon>ListEmployees.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="views\ListReservations.resx">
     <EmbeddedResource Include="views\lists\ListReservations.resx">
       <DependentUpon>ListReservations.cs</DependentUpon>
     </EmbeddedResource>
