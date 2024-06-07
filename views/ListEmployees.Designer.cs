@@ -43,6 +43,7 @@
             this.btnCreateEmployee.TabIndex = 31;
             this.btnCreateEmployee.Text = "Create";
             this.btnCreateEmployee.UseVisualStyleBackColor = true;
+            this.btnCreateEmployee.Click += new System.EventHandler(this.btnCreateEmployee_Click);
             // 
             // txtBoxSearchEmployees
             // 
@@ -54,6 +55,7 @@
             this.txtBoxSearchEmployees.Name = "txtBoxSearchEmployees";
             this.txtBoxSearchEmployees.Size = new System.Drawing.Size(417, 22);
             this.txtBoxSearchEmployees.TabIndex = 30;
+            this.txtBoxSearchEmployees.TextChanged += new System.EventHandler(this.txtBoxSearchEmployees_TextChanged);
             // 
             // lstBoxEmployees
             // 
@@ -90,6 +92,7 @@
             this.Controls.Add(this.lblEmployees);
             this.Name = "ListEmployees";
             this.Text = "ListEmployees";
+            this.Load += new System.EventHandler(this.ListEmployees_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
