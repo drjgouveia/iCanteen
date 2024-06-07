@@ -65,7 +65,7 @@ namespace iCantina.views
 			ListEmployees listEmployees = new ListEmployees();
 			listEmployees.Show();
         }
-    }
+    
 
 		private void btnExtras_Click(object sender, EventArgs e)
 		{

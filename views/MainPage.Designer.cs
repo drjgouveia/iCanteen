@@ -176,7 +176,7 @@
             // 
             // btnMenu
             // 
-            this.btnMenu.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.btnMenu.Anchor = ((System.Windows.Forms.AnchorStyles)(System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom));
 			this.btnExtras.Font = new System.Drawing.Font("Microsoft Sans Serif", 18.25F);
 			this.btnExtras.Location = new System.Drawing.Point(261, 3);
 			this.btnExtras.Name = "btnExtras";
