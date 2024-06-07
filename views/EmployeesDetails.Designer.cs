@@ -28,11 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.txtBoxNameEmployee = new System.Windows.Forms.TextBox();
+            this.txtBoxUserNameEmployee = new System.Windows.Forms.TextBox();
             this.lblUsernameEmployee = new System.Windows.Forms.Label();
             this.lblEmployee = new System.Windows.Forms.Label();
             this.lblNIF = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtBoxNameEmployee = new System.Windows.Forms.TextBox();
             this.lblName = new System.Windows.Forms.Label();
             this.txtBoxNif = new System.Windows.Forms.TextBox();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
@@ -42,15 +42,16 @@
             this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // txtBoxNameEmployee
+            // txtBoxUserNameEmployee
             // 
-            this.txtBoxNameEmployee.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.txtBoxUserNameEmployee.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtBoxNameEmployee.Location = new System.Drawing.Point(180, 66);
-            this.txtBoxNameEmployee.Margin = new System.Windows.Forms.Padding(4);
-            this.txtBoxNameEmployee.Name = "txtBoxNameEmployee";
-            this.txtBoxNameEmployee.Size = new System.Drawing.Size(553, 22);
-            this.txtBoxNameEmployee.TabIndex = 32;
+            this.txtBoxUserNameEmployee.Location = new System.Drawing.Point(180, 66);
+            this.txtBoxUserNameEmployee.Margin = new System.Windows.Forms.Padding(4);
+            this.txtBoxUserNameEmployee.Name = "txtBoxUserNameEmployee";
+            this.txtBoxUserNameEmployee.Size = new System.Drawing.Size(553, 22);
+            this.txtBoxUserNameEmployee.TabIndex = 32;
+            this.txtBoxUserNameEmployee.TextChanged += new System.EventHandler(this.txtBoxUserNameEmployee_TextChanged);
             // 
             // lblUsernameEmployee
             // 
@@ -85,15 +86,15 @@
             this.lblNIF.TabIndex = 33;
             this.lblNIF.Text = "NIF";
             // 
-            // textBox1
+            // txtBoxNameEmployee
             // 
-            this.textBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.txtBoxNameEmployee.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox1.Location = new System.Drawing.Point(143, 105);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(4);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(590, 22);
-            this.textBox1.TabIndex = 35;
+            this.txtBoxNameEmployee.Location = new System.Drawing.Point(143, 105);
+            this.txtBoxNameEmployee.Margin = new System.Windows.Forms.Padding(4);
+            this.txtBoxNameEmployee.Name = "txtBoxNameEmployee";
+            this.txtBoxNameEmployee.Size = new System.Drawing.Size(590, 22);
+            this.txtBoxNameEmployee.TabIndex = 35;
             // 
             // lblName
             // 
@@ -173,6 +174,7 @@
             this.btnCreateEmployee.TabIndex = 0;
             this.btnCreateEmployee.Text = "Create";
             this.btnCreateEmployee.UseVisualStyleBackColor = true;
+            this.btnCreateEmployee.Click += new System.EventHandler(this.btnCreateEmployee_Click);
             // 
             // EmployeesDetails
             // 
@@ -181,10 +183,10 @@
             this.ClientSize = new System.Drawing.Size(800, 228);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Controls.Add(this.txtBoxNif);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.txtBoxNameEmployee);
             this.Controls.Add(this.lblName);
             this.Controls.Add(this.lblNIF);
-            this.Controls.Add(this.txtBoxNameEmployee);
+            this.Controls.Add(this.txtBoxUserNameEmployee);
             this.Controls.Add(this.lblUsernameEmployee);
             this.Controls.Add(this.lblEmployee);
             this.Name = "EmployeesDetails";
@@ -197,11 +199,11 @@
 
         #endregion
 
-        private System.Windows.Forms.TextBox txtBoxNameEmployee;
+        private System.Windows.Forms.TextBox txtBoxUserNameEmployee;
         private System.Windows.Forms.Label lblUsernameEmployee;
         private System.Windows.Forms.Label lblEmployee;
         private System.Windows.Forms.Label lblNIF;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtBoxNameEmployee;
         private System.Windows.Forms.Label lblName;
         private System.Windows.Forms.TextBox txtBoxNif;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;

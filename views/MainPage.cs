@@ -57,5 +57,11 @@ namespace iCantina.views
 			ListReservations listReservations = new ListReservations();
 			listReservations.Show();
 		}
-	}
+
+		private void btnEmployees_Click(object sender, EventArgs e)
+        {
+			ListEmployees listEmployees = new ListEmployees();
+			listEmployees.Show();
+        }
+    }
 }
