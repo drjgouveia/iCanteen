@@ -69,6 +69,7 @@
             this.lstBoxEmployees.Name = "lstBoxEmployees";
             this.lstBoxEmployees.Size = new System.Drawing.Size(417, 244);
             this.lstBoxEmployees.TabIndex = 29;
+            this.lstBoxEmployees.DoubleClick += new System.EventHandler(this.lstBoxEmployees_DoubleClick);
             // 
             // lblEmployees
             // 
@@ -76,7 +77,7 @@
             this.lblEmployees.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblEmployees.Location = new System.Drawing.Point(52, 26);
             this.lblEmployees.Name = "lblEmployees";
-            this.lblEmployees.Size = new System.Drawing.Size(255, 32);
+            this.lblEmployees.Size = new System.Drawing.Size(202, 26);
             this.lblEmployees.TabIndex = 28;
             this.lblEmployees.Text = "List of Employees";
             this.lblEmployees.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;

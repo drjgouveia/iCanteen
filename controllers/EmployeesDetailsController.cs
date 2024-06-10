@@ -7,6 +7,7 @@ using System.Linq;
 using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace iCanteen.controllers
 {
@@ -17,14 +18,14 @@ namespace iCanteen.controllers
             Console.WriteLine("Employee Details controller initialized.");
         }
 
-        public bool CreateEmployee(string name, string nif, string username)
+        public bool CreateEmployee(string username, string name, string nif)
         {
             try
             {
                 Employee employee = new Employee();
+                employee.Username = username;
                 employee.Name = name;
                 employee.NIF = nif;
-                employee.Username = username;
                 Console.WriteLine("Creating employee...");
                 context.Employees.Add(employee);
                 context.SaveChanges();
@@ -36,14 +37,14 @@ namespace iCanteen.controllers
             }
         }
 
-        public bool UpdateEmployee(int id, string name, string nif, string username)
+        public bool UpdateEmployee(int id, string username, string name, string nif)
         {
             try
             {
                 Employee employee = context.Employees.Find(id);
+                employee.Username = username;
                 employee.Name = name;
                 employee.NIF = nif;
-                employee.Username = username;
                 Console.WriteLine("Updating employee...");
                 context.SaveChanges();
                 return true;

@@ -60,7 +60,7 @@
             this.lblUsernameEmployee.Location = new System.Drawing.Point(78, 68);
             this.lblUsernameEmployee.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblUsernameEmployee.Name = "lblUsernameEmployee";
-            this.lblUsernameEmployee.Size = new System.Drawing.Size(94, 20);
+            this.lblUsernameEmployee.Size = new System.Drawing.Size(81, 17);
             this.lblUsernameEmployee.TabIndex = 31;
             this.lblUsernameEmployee.Text = "Username";
             // 
@@ -70,7 +70,7 @@
             this.lblEmployee.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblEmployee.Location = new System.Drawing.Point(76, 23);
             this.lblEmployee.Name = "lblEmployee";
-            this.lblEmployee.Size = new System.Drawing.Size(149, 32);
+            this.lblEmployee.Size = new System.Drawing.Size(118, 26);
             this.lblEmployee.TabIndex = 30;
             this.lblEmployee.Text = "Employee";
             this.lblEmployee.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -82,7 +82,7 @@
             this.lblNIF.Location = new System.Drawing.Point(78, 141);
             this.lblNIF.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblNIF.Name = "lblNIF";
-            this.lblNIF.Size = new System.Drawing.Size(38, 20);
+            this.lblNIF.Size = new System.Drawing.Size(32, 17);
             this.lblNIF.TabIndex = 33;
             this.lblNIF.Text = "NIF";
             // 
@@ -104,7 +104,7 @@
             this.lblName.Location = new System.Drawing.Point(78, 105);
             this.lblName.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblName.Name = "lblName";
-            this.lblName.Size = new System.Drawing.Size(57, 20);
+            this.lblName.Size = new System.Drawing.Size(49, 17);
             this.lblName.TabIndex = 34;
             this.lblName.Text = "Name";
             // 
@@ -195,6 +195,7 @@
             this.Controls.Add(this.lblEmployee);
             this.Name = "EmployeesDetails";
             this.Text = "EmployeesDetails";
+            this.Load += new System.EventHandler(this.EmployeesDetails_Load);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
