@@ -28,10 +28,11 @@ namespace iCantina.views
 		private void CanteenMenu_Load(object sender, EventArgs e)
 		{
 			dishLister();
-			monthCalendar.MinDate = DateTime.Now;
+			if (menu == null)
+				monthCalendar.MinDate = DateTime.Now;
+
 			if (this.menu != null)
 			{
-				monthCalendar.MinDate = menu.Date;
 				monthCalendar.SelectionStart = menu.Date;
 				if (menu.Date.Hour == 12)
 				{
@@ -44,10 +45,29 @@ namespace iCantina.views
 				numQuantity.Text = menu.QuantityAvailable.ToString();
 				txtBoxPriceStudent.Text = menu.PriceStudent.ToString();
 				txtBoxPriceProfessor.Text = menu.PriceProfessor.ToString();
-				cmbBoxDish.SelectedItem = (Dish)menu.Dish;
-				foreach (var item in menu.Extras)
+				
+				if (menu.Dish != null) {
+					foreach (var item in cmbBoxDish.Items)
+					{
+						if (((models.Dish)item).Id == (menu.Dish).Id)
+						{
+							cmbBoxDish.SelectedItem = item;
+						}
+					}
+				}
+				if (menu.Extras != null)
 				{
-					chListBoxExtras.SetItemChecked(chListBoxExtras.Items.IndexOf(item), true);
+					var items = controller.GetExtras();
+					foreach (var item in items)
+					{
+						foreach (var extra in menu.Extras)
+						{
+							if (extra.Id == ((Extra)item).Id)
+							{
+								chListBoxExtras.SetItemChecked(chListBoxExtras.Items.IndexOf(item), true);
+							}
+						}
+					}
 				}
 				checkIfCanActions();
 			}
@@ -56,7 +76,7 @@ namespace iCantina.views
 		private void dishLister()
 		{
 			cmbBoxDish.DataSource = null;
-			cmbBoxDish.DataSource = controller.GetDishesByType(helpers.DishTypeEnum.Meat);
+			cmbBoxDish.DataSource = controller.GetDishes();
 			chListBoxExtras.DataSource = null;
 			chListBoxExtras.DataSource = controller.GetExtras();
 		}
@@ -67,7 +87,6 @@ namespace iCantina.views
 			{
 				if (
 				  cmbBoxDish.SelectedIndex != -1 &&
-				  chListBoxExtras.CheckedItems.Count > 1 &&
 				  numQuantity.Value > 0 &&
 				  Regex.IsMatch(txtBoxPriceStudent.Text, @"^\d+(\.\d{1,2})?$") &&
 				  Regex.IsMatch(txtBoxPriceProfessor.Text, @"^\d+(\.\d{1,2})?$"))
@@ -87,7 +106,6 @@ namespace iCantina.views
 			{
 				if (
 				  (cmbBoxDish.SelectedIndex != -1) &&
-				  chListBoxExtras.CheckedItems.Count > 1 &&
 				  numQuantity.Text != "" &&
 				  Regex.IsMatch(txtBoxPriceStudent.Text, @"^\d+(\.\d{1,2})?$") &&
 				  Regex.IsMatch(txtBoxPriceProfessor.Text, @"^\d+(\.\d{1,2})?$"))
@@ -150,21 +168,21 @@ namespace iCantina.views
 				if (((models.Dish)cmbBoxDish.SelectedItem) != null)
 					dishId = ((models.Dish)cmbBoxDish.SelectedItem).Id;
 
-				TimeSpan ts;
+				DateTime date = monthCalendar.SelectionStart;
 				if (rdoBtnLunch.Checked)
 				{
-					ts = new TimeSpan(12, 00, 0);
+					date = DateTime.ParseExact(date.ToString("dd/MM/yyyy") + " 12:00:00", "dd/MM/yyyy HH:mm:ss", System.Globalization.CultureInfo.InvariantCulture);
 				}
 				else
 				{
-					ts = new TimeSpan(19, 00, 0);
+					date = DateTime.ParseExact(date.ToString("dd/MM/yyyy") + " 19:00:00", "dd/MM/yyyy HH:mm:ss", System.Globalization.CultureInfo.InvariantCulture);
 				}
 
 				bool success = controller.CreateMenu(
-				  monthCalendar.SelectionStart + ts,
+				  date,
 				  Convert.ToInt32(numQuantity.Text),
-				  Convert.ToDouble(txtBoxPriceStudent.Text),
-				  Convert.ToDouble(txtBoxPriceProfessor.Text),
+				  float.Parse(txtBoxPriceStudent.Text),
+				  float.Parse(txtBoxPriceProfessor.Text),
 				  listExtras,
 				  dishId
 				);
@@ -177,6 +195,7 @@ namespace iCantina.views
 				{
 					MessageBox.Show("An error occurred while creating the menu.");
 				}
+				this.Close();
 			}
 			catch (Exception ex)
 			{
@@ -195,26 +214,27 @@ namespace iCantina.views
 					listExtras.Add((Extra)item);
 				}
 
-				TimeSpan ts;
+				DateTime date = monthCalendar.SelectionStart;
 				if (rdoBtnLunch.Checked)
 				{
-					ts = new TimeSpan(12, 00, 0);
+					date = DateTime.ParseExact(date.ToString("dd/MM/yyyy") + " 12:00:00", "dd/MM/yyyy HH:mm:ss", System.Globalization.CultureInfo.InvariantCulture);
 				}
 				else
 				{
-					ts = new TimeSpan(19, 00, 0);
+					date = DateTime.ParseExact(date.ToString("dd/MM/yyyy") + " 19:00:00", "dd/MM/yyyy HH:mm:ss", System.Globalization.CultureInfo.InvariantCulture);
 				}
 
 				controller.UpdateMenu(
 				  menu.Id,
-				  monthCalendar.SelectionStart + ts,
+				  date,
 				  Convert.ToInt32(numQuantity.Text),
-				  Convert.ToDouble(txtBoxPriceStudent.Text),
-				  Convert.ToDouble(txtBoxPriceProfessor.Text),
+				  float.Parse(txtBoxPriceStudent.Text),
+				  float.Parse(txtBoxPriceProfessor.Text),
 				  listExtras,
 				  ((models.Dish)cmbBoxDish.SelectedItem).Id
 				);
 				MessageBox.Show("Updated successfully.");
+				this.Close();
 			}
 			catch (Exception ex)
 			{
@@ -227,6 +247,7 @@ namespace iCantina.views
 			try
 			{
 				controller.DeleteMenu(menu.Id);
+				this.Close();
 			}
 			catch (Exception ex)
 			{

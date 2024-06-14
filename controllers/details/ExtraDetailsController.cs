@@ -13,7 +13,7 @@ namespace iCantina.controllers
     {
         public ExtraDetailsController() : base() { }
 
-        public bool CreateExtra(string description, double price, bool isActive) 
+        public bool CreateExtra(string description, float price, bool isActive) 
         {
             try
             {
@@ -31,7 +31,7 @@ namespace iCantina.controllers
             }
         }
 
-        public bool EditExtra(int extraId, string description, double price, bool isActive)
+        public bool EditExtra(int extraId, string description, float price, bool isActive)
         {
 			try
             {

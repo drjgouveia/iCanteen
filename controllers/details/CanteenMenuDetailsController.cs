@@ -34,7 +34,7 @@ namespace iCantina.controllers
 			}
 		}
 
-		public bool CreateMenu(DateTime date, int quantity, double priceStudent, double priceProfessor, List<Extra> extras, int dishId = -1)
+		public bool CreateMenu(DateTime date, int quantity, float priceStudent, float priceProfessor, List<Extra> extras, int dishId = -1)
 		{
 			try
 			{
@@ -46,8 +46,7 @@ namespace iCantina.controllers
 				if (dish != null)
 					menu.Dish = dish;
 
-				menu.Extras.Clear();
-				List<Extra> listExtras = new List<Extra>();
+				menu.Extras = new List<Extra>();
 				foreach (var item in extras)
 				{
 					menu.Extras.Add((models.Extra)item);
@@ -64,16 +63,18 @@ namespace iCantina.controllers
 			}
 		}
 
-		public void UpdateMenu(int id, DateTime date, int quantity, double priceStudent, double priceProfessor, List<Extra> extras, int dishId = -1)
+		public void UpdateMenu(int id, DateTime date, int quantity, float priceStudent, float priceProfessor, List<Extra> extras, int dishId = -1)
 		{
 			models.Menu menu = context.Menus.Find(id);
+			List<Reservation> reservations = context.Reservations.Where(r => r.Menu.Id == id).ToList();
+			context.Menus.Remove(menu); // foi preciso fazer isto pq a relação Extra <-> Menu estava a dar erro
+
+			menu = new models.Menu();
 			menu.Date = date;
 
 			Dish dish = dishId == -1 ? null : context.Dishes.Find(dishId);
 			if (dish != null)
 				menu.Dish = dish;
-
-			menu.Extras.Clear();
 			List<Extra> listExtras = new List<Extra>();
 			foreach (var item in extras)
 			{
@@ -83,7 +84,14 @@ namespace iCantina.controllers
 			menu.QuantityAvailable = quantity;
 			menu.PriceStudent = priceStudent;
 			menu.PriceProfessor = priceProfessor;
-			base.context.Menus.AddOrUpdate(menu);
+			foreach (var reservation in reservations)
+			{
+				if (reservation.Date > date)
+				{
+					reservation.Menu = menu;
+				}
+			}
+			context.Menus.Add(menu);
 			base.context.SaveChanges();
 		}
 
@@ -103,5 +111,6 @@ namespace iCantina.controllers
 		{
 			return context.Dishes.Where(dish => dish.Active).ToList();
 		}
+
 	}
 }

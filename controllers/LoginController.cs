@@ -18,7 +18,7 @@ namespace iCantina.controllers
     {
       try
       {
-        Employee employee = context.Employees.FirstOrDefault(e => e.Username == username);
+        Employee employee = context.Users.OfType<Employee>().FirstOrDefault(e => e.Username == username);
 
         return employee;
       }

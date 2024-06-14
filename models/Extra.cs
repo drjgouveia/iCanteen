@@ -8,7 +8,7 @@ namespace iCantina.models
 		[Key]
 		public int Id { get; set; }
 		public string Description { get; set; }
-		public double Price { get; set; }
+		public float Price { get; set; }
 		public bool Active { get; set; }
 		public ICollection<Menu> Menus { get; set; }
 		public ICollection<Reservation> Reservations { get; set; }
@@ -16,9 +16,12 @@ namespace iCantina.models
 
 		public Extra()
 		{
+			Menus = new List<Menu>();
+			Reservations = new List<Reservation>();
+			Reservations = new List<Reservation>();
 		}
 
-		public Extra(string description, double price, bool isActive) : this()
+		public Extra(string description, float price, bool isActive) : this()
 		{
 			Description = description;
 			Price = price;

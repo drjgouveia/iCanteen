@@ -72,13 +72,9 @@
     <Compile Include="controllers\details\ReservationDetailsController.cs" />
     <Compile Include="helpers\DishTypeEnum.cs" />
     <Compile Include="iCanteenContext.cs" />
-    <Compile Include="Migrations\202406041752383_Initial.cs" />
-    <Compile Include="Migrations\202406041752383_Initial.Designer.cs">
-      <DependentUpon>202406041752383_Initial.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202406071735013_MinorChanges.cs" />
-    <Compile Include="Migrations\202406071735013_MinorChanges.Designer.cs">
-      <DependentUpon>202406071735013_MinorChanges.cs</DependentUpon>
+    <Compile Include="Migrations\202406141923255_Initial.cs" />
+    <Compile Include="Migrations\202406141923255_Initial.Designer.cs">
+      <DependentUpon>202406141923255_Initial.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="models\Client.cs" />
@@ -106,6 +102,12 @@
     </Compile>
     <Compile Include="views\details\ClientDetails.Designer.cs">
       <DependentUpon>ClientDetails.cs</DependentUpon>
+    </Compile>
+    <Compile Include="views\details\ReservationDetails.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="views\details\ReservationDetails.Designer.cs">
+      <DependentUpon>ReservationDetails.cs</DependentUpon>
     </Compile>
     <Compile Include="views\EmployeesDetails.cs">
       <SubType>Form</SubType>
@@ -173,17 +175,8 @@
     <Compile Include="views\MainPage.Designer.cs">
       <DependentUpon>MainPage.cs</DependentUpon>
     </Compile>
-    <Compile Include="views\details\ReservationDetails.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="views\details\ReservationDetails.Designer.cs">
-      <DependentUpon>ReservationDetails.cs</DependentUpon>
-    </Compile>
-    <EmbeddedResource Include="Migrations\202406041752383_Initial.resx">
-      <DependentUpon>202406041752383_Initial.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202406071735013_MinorChanges.resx">
-      <DependentUpon>202406071735013_MinorChanges.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202406141923255_Initial.resx">
+      <DependentUpon>202406141923255_Initial.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -202,6 +195,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="views\details\DishDetails.resx">
       <DependentUpon>DishDetails.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="views\details\ReservationDetails.resx">
+      <DependentUpon>ReservationDetails.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="views\EmployeesDetails.resx">
       <DependentUpon>EmployeesDetails.cs</DependentUpon>
@@ -229,9 +225,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="views\MainPage.resx">
       <DependentUpon>MainPage.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="views\details\ReservationDetails.resx">
-      <DependentUpon>ReservationDetails.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="controllers\.gitkeep" />
     <None Include="helpers\.gitkeep" />

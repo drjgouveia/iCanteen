@@ -72,7 +72,7 @@ namespace iCantina.views
 
 		private void btnCreate_Click(object sender, EventArgs e)
 		{
-			bool success = extrasController.CreateExtra(textBoxDescriptionExtras.Text, double.Parse(textBoxPriceExtras.Text), checkBoxActiveExtras.Checked);
+			bool success = extrasController.CreateExtra(textBoxDescriptionExtras.Text, float.Parse(textBoxPriceExtras.Text), checkBoxActiveExtras.Checked);
 			if (success)
 			{
 				MessageBox.Show("Extra created successfully.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -98,7 +98,7 @@ namespace iCantina.views
 
 		private void btnEdit_Click(object sender, EventArgs e)
 		{
-			bool success = extrasController.EditExtra(extra.Id, textBoxDescriptionExtras.Text, double.Parse(textBoxPriceExtras.Text), checkBoxActiveExtras.Checked);
+			bool success = extrasController.EditExtra(extra.Id, textBoxDescriptionExtras.Text, float.Parse(textBoxPriceExtras.Text), checkBoxActiveExtras.Checked);
 			if (success)
 			{
 				MessageBox.Show("Extra edited successfully.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);

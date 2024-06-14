@@ -53,20 +53,6 @@ namespace iCanteen.views
 
         private void txtBoxUserNameEmployee_TextChanged(object sender, EventArgs e)
         {
-            if (Regex.IsMatch(txtBoxNameEmployee.Text, @"^[a-zA-Z ]+$"))
-            {
-                txtBoxNameEmployee.BackColor = Color.White;
-                if (this.profe != null || this.student != null)
-                    btnEdit.Enabled = true;
-                else
-                    CheckIfCanActions();
-            }
-            else
-            {
-                txtBoxName.BackColor = Color.Red;
-                btnCreate.Enabled = false;
-                btnEdit.Enabled = false;
-            }
         }
     }
 

@@ -15,17 +15,17 @@ namespace iCantina.models
     public Dish Dish { get; set; }
     public ICollection<Extra> Extras { get; set; }
     public int QuantityAvailable { get; set; }
-    public double PriceStudent { get; set; }
-    public double PriceProfessor { get; set; }
+    public float PriceStudent { get; set; }
+    public float PriceProfessor { get; set; }
 
     public Menu()
     {
-      Extras = new List<Extra>();
+        Extras = new List<Extra>();
     }
 
     public override string ToString()
     {
-      return Date.ToString("dd/MM/yyyy HH:mm");
+      return $"{Dish.Description} - {Dish.Type} - {Date.ToString("dd/MM/yyyy HH:mm")}";
     }
   }
 }

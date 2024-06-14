@@ -39,6 +39,8 @@
 			// 
 			// listBoxReservations
 			// 
+			this.listBoxReservations.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
 			this.listBoxReservations.FormattingEnabled = true;
 			this.listBoxReservations.Location = new System.Drawing.Point(11, 87);
 			this.listBoxReservations.Margin = new System.Windows.Forms.Padding(2);
@@ -87,6 +89,7 @@
 			this.btnMark.TabIndex = 11;
 			this.btnMark.Text = "Mark as served";
 			this.btnMark.UseVisualStyleBackColor = true;
+			this.btnMark.Click += new System.EventHandler(this.btnMark_Click);
 			// 
 			// btnCreate
 			// 
@@ -101,6 +104,8 @@
 			// 
 			// listBoxPastReservations
 			// 
+			this.listBoxPastReservations.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
 			this.listBoxPastReservations.FormattingEnabled = true;
 			this.listBoxPastReservations.Location = new System.Drawing.Point(11, 267);
 			this.listBoxPastReservations.Margin = new System.Windows.Forms.Padding(2);

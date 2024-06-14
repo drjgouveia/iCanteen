@@ -1,33 +1,33 @@
 namespace iCantina.views
 {
-    partial class CanteenMenuDetails
-    {
-        /// <summary>
-        /// Required designer variable.
-        /// </summary>
-        private System.ComponentModel.IContainer components = null;
+	partial class CanteenMenuDetails
+	{
+		/// <summary>
+		/// Required designer variable.
+		/// </summary>
+		private System.ComponentModel.IContainer components = null;
 
-        /// <summary>
-        /// Clean up any resources being used.
-        /// </summary>
-        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
-        protected override void Dispose(bool disposing)
-        {
-            if (disposing && (components != null))
-            {
-                components.Dispose();
-            }
-            base.Dispose(disposing);
-        }
+		/// <summary>
+		/// Clean up any resources being used.
+		/// </summary>
+		/// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+		protected override void Dispose(bool disposing)
+		{
+			if (disposing && (components != null))
+			{
+				components.Dispose();
+			}
+			base.Dispose(disposing);
+		}
 
-        #region Windows Form Designer generated code
+		#region Windows Form Designer generated code
 
-        /// <summary>
-        /// Required method for Designer support - do not modify
-        /// the contents of this method with the code editor.
-        /// </summary>
-        private void InitializeComponent()
-        {
+		/// <summary>
+		/// Required method for Designer support - do not modify
+		/// the contents of this method with the code editor.
+		/// </summary>
+		private void InitializeComponent()
+		{
 			this.lblExtras = new System.Windows.Forms.Label();
 			this.chListBoxExtras = new System.Windows.Forms.CheckedListBox();
 			this.monthCalendar = new System.Windows.Forms.MonthCalendar();
@@ -66,9 +66,9 @@ namespace iCantina.views
 			this.chListBoxExtras.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
 			this.chListBoxExtras.FormattingEnabled = true;
 			this.chListBoxExtras.Items.AddRange(new object[] {
-            "Extra 1",
-            "Extra 2",
-            "Extra 3"});
+			"Extra 1",
+			"Extra 2",
+			"Extra 3"});
 			this.chListBoxExtras.Location = new System.Drawing.Point(16, 230);
 			this.chListBoxExtras.Margin = new System.Windows.Forms.Padding(2);
 			this.chListBoxExtras.Name = "chListBoxExtras";
@@ -159,9 +159,9 @@ namespace iCantina.views
 			// 
 			// btnDelete
 			// 
-			this.btnDelete.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+			this.btnDelete.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+			| System.Windows.Forms.AnchorStyles.Left)
+			| System.Windows.Forms.AnchorStyles.Right)));
 			this.btnDelete.Location = new System.Drawing.Point(383, 3);
 			this.btnDelete.Name = "btnDelete";
 			this.btnDelete.Size = new System.Drawing.Size(186, 24);
@@ -172,9 +172,9 @@ namespace iCantina.views
 			// 
 			// btnEdit
 			// 
-			this.btnEdit.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+			this.btnEdit.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+			| System.Windows.Forms.AnchorStyles.Left)
+			| System.Windows.Forms.AnchorStyles.Right)));
 			this.btnEdit.Location = new System.Drawing.Point(193, 3);
 			this.btnEdit.Name = "btnEdit";
 			this.btnEdit.Size = new System.Drawing.Size(184, 24);
@@ -185,9 +185,9 @@ namespace iCantina.views
 			// 
 			// btnCreate
 			// 
-			this.btnCreate.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+			this.btnCreate.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+			| System.Windows.Forms.AnchorStyles.Left)
+			| System.Windows.Forms.AnchorStyles.Right)));
 			this.btnCreate.Location = new System.Drawing.Point(3, 3);
 			this.btnCreate.Name = "btnCreate";
 			this.btnCreate.Size = new System.Drawing.Size(184, 24);
@@ -214,10 +214,10 @@ namespace iCantina.views
 			this.numQuantity.Size = new System.Drawing.Size(49, 20);
 			this.numQuantity.TabIndex = 43;
 			this.numQuantity.Value = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
+			1,
+			0,
+			0,
+			0});
 			// 
 			// lblPriceStudent
 			// 
@@ -286,27 +286,27 @@ namespace iCantina.views
 			this.ResumeLayout(false);
 			this.PerformLayout();
 
-        }
+		}
 
-        #endregion
+		#endregion
 
-        private System.Windows.Forms.Label lblExtras;
-        private System.Windows.Forms.CheckedListBox chListBoxExtras;
-        private System.Windows.Forms.MonthCalendar monthCalendar;
-        private System.Windows.Forms.ComboBox cmbBoxDish;
-        private System.Windows.Forms.Label lblDish;
-        private System.Windows.Forms.Label lblMenu;
-    private System.Windows.Forms.RadioButton rdoBtnLunch;
-    private System.Windows.Forms.RadioButton rdoBtnDinner;
-    private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
-    private System.Windows.Forms.Button btnDelete;
-    private System.Windows.Forms.Button btnEdit;
-    private System.Windows.Forms.Button btnCreate;
-    private System.Windows.Forms.Label label1;
-    private System.Windows.Forms.NumericUpDown numQuantity;
-    private System.Windows.Forms.Label lblPriceStudent;
-    private System.Windows.Forms.Label lblPriceProfessor;
-    private System.Windows.Forms.TextBox txtBoxPriceStudent;
-    private System.Windows.Forms.TextBox txtBoxPriceProfessor;
-  }
+		private System.Windows.Forms.Label lblExtras;
+		private System.Windows.Forms.CheckedListBox chListBoxExtras;
+		private System.Windows.Forms.MonthCalendar monthCalendar;
+		private System.Windows.Forms.ComboBox cmbBoxDish;
+		private System.Windows.Forms.Label lblDish;
+		private System.Windows.Forms.Label lblMenu;
+		private System.Windows.Forms.RadioButton rdoBtnLunch;
+		private System.Windows.Forms.RadioButton rdoBtnDinner;
+		private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
+		private System.Windows.Forms.Button btnDelete;
+		private System.Windows.Forms.Button btnEdit;
+		private System.Windows.Forms.Button btnCreate;
+		private System.Windows.Forms.Label label1;
+		private System.Windows.Forms.NumericUpDown numQuantity;
+		private System.Windows.Forms.Label lblPriceStudent;
+		private System.Windows.Forms.Label lblPriceProfessor;
+		private System.Windows.Forms.TextBox txtBoxPriceStudent;
+		private System.Windows.Forms.TextBox txtBoxPriceProfessor;
+	}
 }

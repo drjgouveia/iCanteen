@@ -1,253 +1,227 @@
 ﻿namespace iCantina.views
 {
-    partial class ReservationDetails
+  partial class ReservationDetails
+  {
+    /// <summary>
+    /// Required designer variable.
+    /// </summary>
+    private System.ComponentModel.IContainer components = null;
+
+    /// <summary>
+    /// Clean up any resources being used.
+    /// </summary>
+    /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+    protected override void Dispose(bool disposing)
     {
-        /// <summary>
-        /// Required designer variable.
-        /// </summary>
-        private System.ComponentModel.IContainer components = null;
+      if (disposing && (components != null))
+      {
+        components.Dispose();
+      }
+      base.Dispose(disposing);
+    }
 
-        /// <summary>
-        /// Clean up any resources being used.
-        /// </summary>
-        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
-        protected override void Dispose(bool disposing)
-        {
-            if (disposing && (components != null))
-            {
-                components.Dispose();
-            }
-            base.Dispose(disposing);
-        }
+    #region Windows Form Designer generated code
 
-        #region Windows Form Designer generated code
-
-        /// <summary>
-        /// Required method for Designer support - do not modify
-        /// the contents of this method with the code editor.
-        /// </summary>
-        private void InitializeComponent()
-        {
-			this.label1 = new System.Windows.Forms.Label();
-			this.label7 = new System.Windows.Forms.Label();
-			this.buttonReservation = new System.Windows.Forms.Button();
-			this.checkedListBoxExtrasReservation = new System.Windows.Forms.CheckedListBox();
-			this.comboBoxClientCreate = new System.Windows.Forms.ComboBox();
-			this.label5 = new System.Windows.Forms.Label();
-			this.radioButtonVegetarianReservation = new System.Windows.Forms.RadioButton();
-			this.radioButtonFishReservation = new System.Windows.Forms.RadioButton();
-			this.radioButtonMeatReservation = new System.Windows.Forms.RadioButton();
-			this.label4 = new System.Windows.Forms.Label();
-			this.radioButtonDinner = new System.Windows.Forms.RadioButton();
-			this.radioButtonLunch = new System.Windows.Forms.RadioButton();
-			this.dateTimePickerDayReservation = new System.Windows.Forms.DateTimePicker();
-			this.label3 = new System.Windows.Forms.Label();
+    /// <summary>
+    /// Required method for Designer support - do not modify
+    /// the contents of this method with the code editor.
+    /// </summary>
+    private void InitializeComponent()
+    {
+			this.btnDelete = new System.Windows.Forms.Button();
+			this.lstBoxMenus = new System.Windows.Forms.ListBox();
+			this.cmbBoxYear = new System.Windows.Forms.ComboBox();
+			this.cmbBoxWeek = new System.Windows.Forms.ComboBox();
+			this.cmbBoxClients = new System.Windows.Forms.ComboBox();
+			this.lblClient = new System.Windows.Forms.Label();
+			this.lblYear = new System.Windows.Forms.Label();
+			this.lblWeek = new System.Windows.Forms.Label();
+			this.buttonCreate = new System.Windows.Forms.Button();
+			this.chckBoxExtras = new System.Windows.Forms.CheckedListBox();
+			this.lblCost = new System.Windows.Forms.Label();
+			this.lblBalance = new System.Windows.Forms.Label();
 			this.btnAddClient = new System.Windows.Forms.Button();
+			this.lblReservations = new System.Windows.Forms.Label();
 			this.SuspendLayout();
 			// 
-			// label1
+			// btnDelete
 			// 
-			this.label1.AutoSize = true;
-			this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.875F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.label1.Location = new System.Drawing.Point(119, 9);
-			this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-			this.label1.Name = "label1";
-			this.label1.Size = new System.Drawing.Size(171, 31);
-			this.label1.TabIndex = 0;
-			this.label1.Text = "Reservation";
+			this.btnDelete.Location = new System.Drawing.Point(567, 35);
+			this.btnDelete.Name = "btnDelete";
+			this.btnDelete.Size = new System.Drawing.Size(75, 23);
+			this.btnDelete.TabIndex = 27;
+			this.btnDelete.Text = "Delete";
+			this.btnDelete.UseVisualStyleBackColor = true;
+			this.btnDelete.Click += new System.EventHandler(this.btnCreate_Click);
 			// 
-			// label7
+			// lstBoxMenus
 			// 
-			this.label7.AutoSize = true;
-			this.label7.Location = new System.Drawing.Point(204, 208);
-			this.label7.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-			this.label7.Name = "label7";
-			this.label7.Size = new System.Drawing.Size(39, 13);
-			this.label7.TabIndex = 27;
-			this.label7.Text = "Extras:";
+			this.lstBoxMenus.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+			this.lstBoxMenus.FormattingEnabled = true;
+			this.lstBoxMenus.Location = new System.Drawing.Point(26, 145);
+			this.lstBoxMenus.Name = "lstBoxMenus";
+			this.lstBoxMenus.Size = new System.Drawing.Size(300, 186);
+			this.lstBoxMenus.TabIndex = 25;
+			this.lstBoxMenus.SelectedIndexChanged += new System.EventHandler(this.lstBoxMenus_SelectedIndexChanged);
+			this.lstBoxMenus.DoubleClick += new System.EventHandler(this.lstBoxMenus_DoubleClick);
 			// 
-			// buttonReservation
+			// cmbBoxYear
 			// 
-			this.buttonReservation.Location = new System.Drawing.Point(152, 359);
-			this.buttonReservation.Margin = new System.Windows.Forms.Padding(2);
-			this.buttonReservation.Name = "buttonReservation";
-			this.buttonReservation.Size = new System.Drawing.Size(80, 26);
-			this.buttonReservation.TabIndex = 26;
-			this.buttonReservation.Text = "Reservation";
-			this.buttonReservation.UseVisualStyleBackColor = true;
+			this.cmbBoxYear.FormattingEnabled = true;
+			this.cmbBoxYear.Location = new System.Drawing.Point(26, 118);
+			this.cmbBoxYear.Name = "cmbBoxYear";
+			this.cmbBoxYear.Size = new System.Drawing.Size(300, 21);
+			this.cmbBoxYear.TabIndex = 28;
+			this.cmbBoxYear.SelectedIndexChanged += new System.EventHandler(this.cmbBoxYear_SelectedIndexChanged);
 			// 
-			// checkedListBoxExtrasReservation
+			// cmbBoxWeek
 			// 
-			this.checkedListBoxExtrasReservation.FormattingEnabled = true;
-			this.checkedListBoxExtrasReservation.Location = new System.Drawing.Point(207, 223);
-			this.checkedListBoxExtrasReservation.Margin = new System.Windows.Forms.Padding(2);
-			this.checkedListBoxExtrasReservation.Name = "checkedListBoxExtrasReservation";
-			this.checkedListBoxExtrasReservation.Size = new System.Drawing.Size(137, 94);
-			this.checkedListBoxExtrasReservation.TabIndex = 25;
-			this.checkedListBoxExtrasReservation.ItemCheck += new System.Windows.Forms.ItemCheckEventHandler(this.checkedListBoxExtrasReservation_ItemCheck);
+			this.cmbBoxWeek.FormattingEnabled = true;
+			this.cmbBoxWeek.Location = new System.Drawing.Point(332, 118);
+			this.cmbBoxWeek.Name = "cmbBoxWeek";
+			this.cmbBoxWeek.Size = new System.Drawing.Size(310, 21);
+			this.cmbBoxWeek.TabIndex = 29;
+			this.cmbBoxWeek.SelectedIndexChanged += new System.EventHandler(this.cmbBoxWeek_SelectedIndexChanged);
 			// 
-			// comboBoxClientCreate
+			// cmbBoxClients
 			// 
-			this.comboBoxClientCreate.FormattingEnabled = true;
-			this.comboBoxClientCreate.Location = new System.Drawing.Point(101, 63);
-			this.comboBoxClientCreate.Margin = new System.Windows.Forms.Padding(2);
-			this.comboBoxClientCreate.Name = "comboBoxClientCreate";
-			this.comboBoxClientCreate.Size = new System.Drawing.Size(215, 21);
-			this.comboBoxClientCreate.TabIndex = 24;
+			this.cmbBoxClients.FormattingEnabled = true;
+			this.cmbBoxClients.Location = new System.Drawing.Point(26, 69);
+			this.cmbBoxClients.Name = "cmbBoxClients";
+			this.cmbBoxClients.Size = new System.Drawing.Size(584, 21);
+			this.cmbBoxClients.TabIndex = 30;
+			this.cmbBoxClients.SelectedIndexChanged += new System.EventHandler(this.cmbBoxClients_SelectedIndexChanged);
 			// 
-			// label5
+			// lblClient
 			// 
-			this.label5.AutoSize = true;
-			this.label5.Location = new System.Drawing.Point(55, 66);
-			this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-			this.label5.Name = "label5";
-			this.label5.Size = new System.Drawing.Size(36, 13);
-			this.label5.TabIndex = 23;
-			this.label5.Text = "Client:";
+			this.lblClient.AutoSize = true;
+			this.lblClient.Location = new System.Drawing.Point(26, 54);
+			this.lblClient.Name = "lblClient";
+			this.lblClient.Size = new System.Drawing.Size(33, 13);
+			this.lblClient.TabIndex = 31;
+			this.lblClient.Text = "Client";
 			// 
-			// radioButtonVegetarianReservation
+			// lblYear
 			// 
-			this.radioButtonVegetarianReservation.AutoSize = true;
-			this.radioButtonVegetarianReservation.Location = new System.Drawing.Point(67, 298);
-			this.radioButtonVegetarianReservation.Margin = new System.Windows.Forms.Padding(2);
-			this.radioButtonVegetarianReservation.Name = "radioButtonVegetarianReservation";
-			this.radioButtonVegetarianReservation.Size = new System.Drawing.Size(76, 17);
-			this.radioButtonVegetarianReservation.TabIndex = 22;
-			this.radioButtonVegetarianReservation.TabStop = true;
-			this.radioButtonVegetarianReservation.Text = "Vegetarian";
-			this.radioButtonVegetarianReservation.UseVisualStyleBackColor = true;
+			this.lblYear.AutoSize = true;
+			this.lblYear.Location = new System.Drawing.Point(26, 102);
+			this.lblYear.Name = "lblYear";
+			this.lblYear.Size = new System.Drawing.Size(29, 13);
+			this.lblYear.TabIndex = 32;
+			this.lblYear.Text = "Year";
 			// 
-			// radioButtonFishReservation
+			// lblWeek
 			// 
-			this.radioButtonFishReservation.AutoSize = true;
-			this.radioButtonFishReservation.Location = new System.Drawing.Point(67, 267);
-			this.radioButtonFishReservation.Margin = new System.Windows.Forms.Padding(2);
-			this.radioButtonFishReservation.Name = "radioButtonFishReservation";
-			this.radioButtonFishReservation.Size = new System.Drawing.Size(44, 17);
-			this.radioButtonFishReservation.TabIndex = 21;
-			this.radioButtonFishReservation.TabStop = true;
-			this.radioButtonFishReservation.Text = "Fish";
-			this.radioButtonFishReservation.UseVisualStyleBackColor = true;
+			this.lblWeek.AutoSize = true;
+			this.lblWeek.Location = new System.Drawing.Point(329, 102);
+			this.lblWeek.Name = "lblWeek";
+			this.lblWeek.Size = new System.Drawing.Size(36, 13);
+			this.lblWeek.TabIndex = 33;
+			this.lblWeek.Text = "Week";
 			// 
-			// radioButtonMeatReservation
+			// buttonCreate
 			// 
-			this.radioButtonMeatReservation.AutoSize = true;
-			this.radioButtonMeatReservation.Location = new System.Drawing.Point(65, 234);
-			this.radioButtonMeatReservation.Margin = new System.Windows.Forms.Padding(2);
-			this.radioButtonMeatReservation.Name = "radioButtonMeatReservation";
-			this.radioButtonMeatReservation.Size = new System.Drawing.Size(49, 17);
-			this.radioButtonMeatReservation.TabIndex = 20;
-			this.radioButtonMeatReservation.TabStop = true;
-			this.radioButtonMeatReservation.Text = "Meat";
-			this.radioButtonMeatReservation.UseVisualStyleBackColor = true;
+			this.buttonCreate.Location = new System.Drawing.Point(486, 35);
+			this.buttonCreate.Name = "buttonCreate";
+			this.buttonCreate.Size = new System.Drawing.Size(75, 23);
+			this.buttonCreate.TabIndex = 35;
+			this.buttonCreate.Text = "Create";
+			this.buttonCreate.UseVisualStyleBackColor = true;
+			this.buttonCreate.Click += new System.EventHandler(this.buttonCreate_Click);
 			// 
-			// label4
+			// chckBoxExtras
 			// 
-			this.label4.AutoSize = true;
-			this.label4.Location = new System.Drawing.Point(66, 209);
-			this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-			this.label4.Name = "label4";
-			this.label4.Size = new System.Drawing.Size(34, 13);
-			this.label4.TabIndex = 19;
-			this.label4.Text = "Type:";
+			this.chckBoxExtras.FormattingEnabled = true;
+			this.chckBoxExtras.Location = new System.Drawing.Point(333, 145);
+			this.chckBoxExtras.Name = "chckBoxExtras";
+			this.chckBoxExtras.Size = new System.Drawing.Size(309, 184);
+			this.chckBoxExtras.TabIndex = 36;
+			this.chckBoxExtras.ItemCheck += new System.Windows.Forms.ItemCheckEventHandler(this.chckBoxExtras_ItemCheck);
+			this.chckBoxExtras.SelectedIndexChanged += new System.EventHandler(this.chckBoxExtras_SelectedIndexChanged);
 			// 
-			// radioButtonDinner
+			// lblCost
 			// 
-			this.radioButtonDinner.AutoSize = true;
-			this.radioButtonDinner.Location = new System.Drawing.Point(207, 144);
-			this.radioButtonDinner.Margin = new System.Windows.Forms.Padding(2);
-			this.radioButtonDinner.Name = "radioButtonDinner";
-			this.radioButtonDinner.Size = new System.Drawing.Size(56, 17);
-			this.radioButtonDinner.TabIndex = 18;
-			this.radioButtonDinner.TabStop = true;
-			this.radioButtonDinner.Text = "Dinner";
-			this.radioButtonDinner.UseVisualStyleBackColor = true;
+			this.lblCost.AutoSize = true;
+			this.lblCost.Location = new System.Drawing.Point(26, 345);
+			this.lblCost.Name = "lblCost";
+			this.lblCost.Size = new System.Drawing.Size(34, 13);
+			this.lblCost.TabIndex = 37;
+			this.lblCost.Text = "Cost: ";
 			// 
-			// radioButtonLunch
+			// lblBalance
 			// 
-			this.radioButtonLunch.AutoSize = true;
-			this.radioButtonLunch.Location = new System.Drawing.Point(89, 144);
-			this.radioButtonLunch.Margin = new System.Windows.Forms.Padding(2);
-			this.radioButtonLunch.Name = "radioButtonLunch";
-			this.radioButtonLunch.Size = new System.Drawing.Size(55, 17);
-			this.radioButtonLunch.TabIndex = 17;
-			this.radioButtonLunch.TabStop = true;
-			this.radioButtonLunch.Text = "Lunch";
-			this.radioButtonLunch.UseVisualStyleBackColor = true;
-			// 
-			// dateTimePickerDayReservation
-			// 
-			this.dateTimePickerDayReservation.Location = new System.Drawing.Point(114, 110);
-			this.dateTimePickerDayReservation.Margin = new System.Windows.Forms.Padding(2);
-			this.dateTimePickerDayReservation.Name = "dateTimePickerDayReservation";
-			this.dateTimePickerDayReservation.Size = new System.Drawing.Size(230, 20);
-			this.dateTimePickerDayReservation.TabIndex = 16;
-			// 
-			// label3
-			// 
-			this.label3.AutoSize = true;
-			this.label3.Location = new System.Drawing.Point(55, 116);
-			this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-			this.label3.Name = "label3";
-			this.label3.Size = new System.Drawing.Size(29, 13);
-			this.label3.TabIndex = 15;
-			this.label3.Text = "Day:";
+			this.lblBalance.AutoSize = true;
+			this.lblBalance.Location = new System.Drawing.Point(26, 368);
+			this.lblBalance.Name = "lblBalance";
+			this.lblBalance.Size = new System.Drawing.Size(52, 13);
+			this.lblBalance.TabIndex = 38;
+			this.lblBalance.Text = "Balance: ";
 			// 
 			// btnAddClient
 			// 
-			this.btnAddClient.Location = new System.Drawing.Point(321, 63);
+			this.btnAddClient.Location = new System.Drawing.Point(617, 69);
 			this.btnAddClient.Name = "btnAddClient";
-			this.btnAddClient.Size = new System.Drawing.Size(23, 23);
-			this.btnAddClient.TabIndex = 28;
+			this.btnAddClient.Size = new System.Drawing.Size(25, 23);
+			this.btnAddClient.TabIndex = 39;
 			this.btnAddClient.Text = "+";
 			this.btnAddClient.UseVisualStyleBackColor = true;
 			this.btnAddClient.Click += new System.EventHandler(this.btnAddClient_Click);
+			// 
+			// lblReservations
+			// 
+			this.lblReservations.AutoSize = true;
+			this.lblReservations.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.lblReservations.Location = new System.Drawing.Point(22, 22);
+			this.lblReservations.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+			this.lblReservations.Name = "lblReservations";
+			this.lblReservations.Size = new System.Drawing.Size(164, 20);
+			this.lblReservations.TabIndex = 40;
+			this.lblReservations.Text = "Create Reservation";
 			// 
 			// ReservationDetails
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(400, 424);
+			this.ClientSize = new System.Drawing.Size(662, 413);
+			this.Controls.Add(this.lblReservations);
 			this.Controls.Add(this.btnAddClient);
-			this.Controls.Add(this.label7);
-			this.Controls.Add(this.buttonReservation);
-			this.Controls.Add(this.checkedListBoxExtrasReservation);
-			this.Controls.Add(this.comboBoxClientCreate);
-			this.Controls.Add(this.label5);
-			this.Controls.Add(this.radioButtonVegetarianReservation);
-			this.Controls.Add(this.radioButtonFishReservation);
-			this.Controls.Add(this.radioButtonMeatReservation);
-			this.Controls.Add(this.label4);
-			this.Controls.Add(this.radioButtonDinner);
-			this.Controls.Add(this.radioButtonLunch);
-			this.Controls.Add(this.dateTimePickerDayReservation);
-			this.Controls.Add(this.label3);
-			this.Controls.Add(this.label1);
-			this.Margin = new System.Windows.Forms.Padding(2);
+			this.Controls.Add(this.lblBalance);
+			this.Controls.Add(this.lblCost);
+			this.Controls.Add(this.chckBoxExtras);
+			this.Controls.Add(this.buttonCreate);
+			this.Controls.Add(this.lblWeek);
+			this.Controls.Add(this.lblYear);
+			this.Controls.Add(this.lblClient);
+			this.Controls.Add(this.cmbBoxClients);
+			this.Controls.Add(this.cmbBoxWeek);
+			this.Controls.Add(this.cmbBoxYear);
+			this.Controls.Add(this.btnDelete);
+			this.Controls.Add(this.lstBoxMenus);
 			this.Name = "ReservationDetails";
-			this.Text = "Reservation";
-			this.Load += new System.EventHandler(this.ReservationDetails_Load);
+			this.Text = "Create Reservation";
+			this.Load += new System.EventHandler(this.ListCanteenMenus_Load);
 			this.ResumeLayout(false);
 			this.PerformLayout();
 
-        }
+    }
 
-        #endregion
+    #endregion
 
-        private System.Windows.Forms.Label label1;
-		private System.Windows.Forms.Label label7;
-		private System.Windows.Forms.Button buttonReservation;
-		private System.Windows.Forms.CheckedListBox checkedListBoxExtrasReservation;
-		private System.Windows.Forms.ComboBox comboBoxClientCreate;
-		private System.Windows.Forms.Label label5;
-		private System.Windows.Forms.RadioButton radioButtonVegetarianReservation;
-		private System.Windows.Forms.RadioButton radioButtonFishReservation;
-		private System.Windows.Forms.RadioButton radioButtonMeatReservation;
-		private System.Windows.Forms.Label label4;
-		private System.Windows.Forms.RadioButton radioButtonDinner;
-		private System.Windows.Forms.RadioButton radioButtonLunch;
-		private System.Windows.Forms.DateTimePicker dateTimePickerDayReservation;
-		private System.Windows.Forms.Label label3;
+    private System.Windows.Forms.Button btnDelete;
+    private System.Windows.Forms.ListBox lstBoxMenus;
+		private System.Windows.Forms.ComboBox cmbBoxYear;
+		private System.Windows.Forms.ComboBox cmbBoxWeek;
+		private System.Windows.Forms.ComboBox cmbBoxClients;
+		private System.Windows.Forms.Label lblClient;
+		private System.Windows.Forms.Label lblYear;
+		private System.Windows.Forms.Label lblWeek;
+		private System.Windows.Forms.Button buttonCreate;
+		private System.Windows.Forms.CheckedListBox chckBoxExtras;
+		private System.Windows.Forms.Label lblCost;
+		private System.Windows.Forms.Label lblBalance;
 		private System.Windows.Forms.Button btnAddClient;
+		private System.Windows.Forms.Label lblReservations;
 	}
 }

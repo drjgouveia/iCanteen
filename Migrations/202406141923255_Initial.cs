@@ -25,10 +25,13 @@
                         Id = c.Int(nullable: false, identity: true),
                         Date = c.DateTime(nullable: false),
                         QuantityAvailable = c.Int(nullable: false),
-                        PriceStudent = c.Double(nullable: false),
-                        PriceProfessor = c.Double(nullable: false),
+                        PriceStudent = c.Single(nullable: false),
+                        PriceProfessor = c.Single(nullable: false),
+                        Dish_Id = c.Int(),
                     })
-                .PrimaryKey(t => t.Id);
+                .PrimaryKey(t => t.Id)
+                .ForeignKey("dbo.Dishes", t => t.Dish_Id)
+                .Index(t => t.Dish_Id);
             
             CreateTable(
                 "dbo.Extras",
@@ -36,7 +39,7 @@
                     {
                         Id = c.Int(nullable: false, identity: true),
                         Description = c.String(),
-                        Price = c.Double(nullable: false),
+                        Price = c.Single(nullable: false),
                         Active = c.Boolean(nullable: false),
                     })
                 .PrimaryKey(t => t.Id);
@@ -47,43 +50,34 @@
                     {
                         Id = c.Int(nullable: false, identity: true),
                         Date = c.DateTime(nullable: false),
+                        Served = c.Boolean(nullable: false),
+                        Client_Id = c.Int(),
                         Dish_Id = c.Int(),
                         Menu_Id = c.Int(),
                         Penalty_Id = c.Int(),
-                        Professor_Id = c.Int(),
-                        Student_Id = c.Int(),
                     })
                 .PrimaryKey(t => t.Id)
+                .ForeignKey("dbo.Users", t => t.Client_Id)
                 .ForeignKey("dbo.Dishes", t => t.Dish_Id)
                 .ForeignKey("dbo.Menus", t => t.Menu_Id)
                 .ForeignKey("dbo.Penalties", t => t.Penalty_Id)
-                .ForeignKey("dbo.Professors", t => t.Professor_Id)
-                .ForeignKey("dbo.Students", t => t.Student_Id)
+                .Index(t => t.Client_Id)
                 .Index(t => t.Dish_Id)
                 .Index(t => t.Menu_Id)
-                .Index(t => t.Penalty_Id)
-                .Index(t => t.Professor_Id)
-                .Index(t => t.Student_Id);
+                .Index(t => t.Penalty_Id);
             
             CreateTable(
-                "dbo.Penalties",
+                "dbo.Users",
                 c => new
                     {
                         Id = c.Int(nullable: false, identity: true),
-                        Amount = c.Double(nullable: false),
-                        Hours = c.Int(nullable: false),
-                    })
-                .PrimaryKey(t => t.Id);
-            
-            CreateTable(
-                "dbo.Professors",
-                c => new
-                    {
-                        Id = c.Int(nullable: false, identity: true),
-                        Email = c.String(),
-                        Balance = c.Single(nullable: false),
                         Name = c.String(),
                         NIF = c.String(),
+                        Balance = c.Single(),
+                        Email = c.String(),
+                        StudentNumber = c.Int(),
+                        Username = c.String(),
+                        Discriminator = c.String(nullable: false, maxLength: 128),
                     })
                 .PrimaryKey(t => t.Id);
             
@@ -94,14 +88,11 @@
                         Id = c.Int(nullable: false, identity: true),
                         Date = c.DateTime(nullable: false),
                         Total = c.Single(nullable: false),
-                        Professor_Id = c.Int(),
-                        Student_Id = c.Int(),
+                        Client_Id = c.Int(),
                     })
                 .PrimaryKey(t => t.Id)
-                .ForeignKey("dbo.Professors", t => t.Professor_Id)
-                .ForeignKey("dbo.Students", t => t.Student_Id)
-                .Index(t => t.Professor_Id)
-                .Index(t => t.Student_Id);
+                .ForeignKey("dbo.Users", t => t.Client_Id)
+                .Index(t => t.Client_Id);
             
             CreateTable(
                 "dbo.InvoiceLines",
@@ -117,25 +108,12 @@
                 .Index(t => t.Invoice_Id);
             
             CreateTable(
-                "dbo.Students",
+                "dbo.Penalties",
                 c => new
                     {
                         Id = c.Int(nullable: false, identity: true),
-                        StudentNumber = c.Int(nullable: false),
-                        Balance = c.Single(nullable: false),
-                        Name = c.String(),
-                        NIF = c.String(),
-                    })
-                .PrimaryKey(t => t.Id);
-            
-            CreateTable(
-                "dbo.Employees",
-                c => new
-                    {
-                        Id = c.Int(nullable: false, identity: true),
-                        Username = c.String(),
-                        Name = c.String(),
-                        NIF = c.String(),
+                        Amount = c.Single(nullable: false),
+                        Hours = c.Int(nullable: false),
                     })
                 .PrimaryKey(t => t.Id);
             
@@ -153,72 +131,50 @@
                 .Index(t => t.Menu_Id);
             
             CreateTable(
-                "dbo.ExtraReservations",
+                "dbo.ReservationExtras",
                 c => new
                     {
-                        Extra_Id = c.Int(nullable: false),
                         Reservation_Id = c.Int(nullable: false),
+                        Extra_Id = c.Int(nullable: false),
                     })
-                .PrimaryKey(t => new { t.Extra_Id, t.Reservation_Id })
-                .ForeignKey("dbo.Extras", t => t.Extra_Id, cascadeDelete: true)
+                .PrimaryKey(t => new { t.Reservation_Id, t.Extra_Id })
                 .ForeignKey("dbo.Reservations", t => t.Reservation_Id, cascadeDelete: true)
-                .Index(t => t.Extra_Id)
-                .Index(t => t.Reservation_Id);
-            
-            CreateTable(
-                "dbo.DishMenus",
-                c => new
-                    {
-                        Dish_Id = c.Int(nullable: false),
-                        Menu_Id = c.Int(nullable: false),
-                    })
-                .PrimaryKey(t => new { t.Dish_Id, t.Menu_Id })
-                .ForeignKey("dbo.Dishes", t => t.Dish_Id, cascadeDelete: true)
-                .ForeignKey("dbo.Menus", t => t.Menu_Id, cascadeDelete: true)
-                .Index(t => t.Dish_Id)
-                .Index(t => t.Menu_Id);
+                .ForeignKey("dbo.Extras", t => t.Extra_Id, cascadeDelete: true)
+                .Index(t => t.Reservation_Id)
+                .Index(t => t.Extra_Id);
             
         }
         
         public override void Down()
         {
-            DropForeignKey("dbo.DishMenus", "Menu_Id", "dbo.Menus");
-            DropForeignKey("dbo.DishMenus", "Dish_Id", "dbo.Dishes");
-            DropForeignKey("dbo.ExtraReservations", "Reservation_Id", "dbo.Reservations");
-            DropForeignKey("dbo.ExtraReservations", "Extra_Id", "dbo.Extras");
-            DropForeignKey("dbo.Reservations", "Student_Id", "dbo.Students");
-            DropForeignKey("dbo.Invoices", "Student_Id", "dbo.Students");
-            DropForeignKey("dbo.Reservations", "Professor_Id", "dbo.Professors");
-            DropForeignKey("dbo.Invoices", "Professor_Id", "dbo.Professors");
-            DropForeignKey("dbo.InvoiceLines", "Invoice_Id", "dbo.Invoices");
             DropForeignKey("dbo.Reservations", "Penalty_Id", "dbo.Penalties");
             DropForeignKey("dbo.Reservations", "Menu_Id", "dbo.Menus");
+            DropForeignKey("dbo.ReservationExtras", "Extra_Id", "dbo.Extras");
+            DropForeignKey("dbo.ReservationExtras", "Reservation_Id", "dbo.Reservations");
             DropForeignKey("dbo.Reservations", "Dish_Id", "dbo.Dishes");
+            DropForeignKey("dbo.Reservations", "Client_Id", "dbo.Users");
+            DropForeignKey("dbo.Invoices", "Client_Id", "dbo.Users");
+            DropForeignKey("dbo.InvoiceLines", "Invoice_Id", "dbo.Invoices");
             DropForeignKey("dbo.ExtraMenus", "Menu_Id", "dbo.Menus");
             DropForeignKey("dbo.ExtraMenus", "Extra_Id", "dbo.Extras");
-            DropIndex("dbo.DishMenus", new[] { "Menu_Id" });
-            DropIndex("dbo.DishMenus", new[] { "Dish_Id" });
-            DropIndex("dbo.ExtraReservations", new[] { "Reservation_Id" });
-            DropIndex("dbo.ExtraReservations", new[] { "Extra_Id" });
+            DropForeignKey("dbo.Menus", "Dish_Id", "dbo.Dishes");
+            DropIndex("dbo.ReservationExtras", new[] { "Extra_Id" });
+            DropIndex("dbo.ReservationExtras", new[] { "Reservation_Id" });
             DropIndex("dbo.ExtraMenus", new[] { "Menu_Id" });
             DropIndex("dbo.ExtraMenus", new[] { "Extra_Id" });
             DropIndex("dbo.InvoiceLines", new[] { "Invoice_Id" });
-            DropIndex("dbo.Invoices", new[] { "Student_Id" });
-            DropIndex("dbo.Invoices", new[] { "Professor_Id" });
-            DropIndex("dbo.Reservations", new[] { "Student_Id" });
-            DropIndex("dbo.Reservations", new[] { "Professor_Id" });
+            DropIndex("dbo.Invoices", new[] { "Client_Id" });
             DropIndex("dbo.Reservations", new[] { "Penalty_Id" });
             DropIndex("dbo.Reservations", new[] { "Menu_Id" });
             DropIndex("dbo.Reservations", new[] { "Dish_Id" });
-            DropTable("dbo.DishMenus");
-            DropTable("dbo.ExtraReservations");
+            DropIndex("dbo.Reservations", new[] { "Client_Id" });
+            DropIndex("dbo.Menus", new[] { "Dish_Id" });
+            DropTable("dbo.ReservationExtras");
             DropTable("dbo.ExtraMenus");
-            DropTable("dbo.Employees");
-            DropTable("dbo.Students");
+            DropTable("dbo.Penalties");
             DropTable("dbo.InvoiceLines");
             DropTable("dbo.Invoices");
-            DropTable("dbo.Professors");
-            DropTable("dbo.Penalties");
+            DropTable("dbo.Users");
             DropTable("dbo.Reservations");
             DropTable("dbo.Extras");
             DropTable("dbo.Menus");

@@ -19,11 +19,11 @@ namespace iCanteen.controllers
         {
             if (search == "")
             {
-                return context.Employees.ToList();  
+                return context.Users.OfType<Employee>().ToList();  
             }   
             else
             {
-                return context.Employees.Where(s=>s.Name.Contains(search) || s.NIF.Contains(search)).ToList();
+                return context.Users.OfType<Employee>().Where(s=>s.Name.Contains(search) || s.NIF.Contains(search)).ToList();
             }
         }
 

@@ -1,4 +1,6 @@
 using System;
+using System.Collections.Generic;
+using System.Globalization;
 using System.Windows.Forms;
 
 namespace iCantina.views
@@ -13,15 +15,21 @@ namespace iCantina.views
 			controller = new controllers.ListCanteenMenuController();
 		}
 
-		private void txtBoxSearch_TextChanged(object sender, EventArgs e)
-		{
-			lstBoxMenus.DataSource = null;
-			lstBoxMenus.DataSource = controller.GetMenus(txtBoxSearch.Text);
-		}
-
 		private void ListCanteenMenus_Load(object sender, EventArgs e)
 		{
-			lstBoxMenus.DataSource = controller.GetMenus();
+			Calendar calendar = CultureInfo.InvariantCulture.Calendar;
+			CalendarWeekRule calendarWeekRule = CultureInfo.InvariantCulture.DateTimeFormat.CalendarWeekRule;
+			int week = calendar.GetWeekOfYear(DateTime.Now, calendarWeekRule, DayOfWeek.Monday);
+			cmbBoxYear.DataSource = null;
+			cmbBoxYear.DataSource = controller.GetYears();
+			cmbBoxYear.SelectedItem = DateTime.Now.Year;
+			cmbBoxWeek.DataSource = null;
+			cmbBoxWeek.DataSource = controller.GetWeeksOfYear(DateTime.Now.Year);
+			cmbBoxWeek.SelectedItem = $"Week {week}";
+
+			List<models.Menu> menus = controller.GetMenus(week, DateTime.Now.Year);
+			lstBoxMenus.DataSource = null;
+			lstBoxMenus.DataSource = menus;
 		}
 
 		private void btnCreate_Click(object sender, EventArgs e)
@@ -42,5 +50,19 @@ namespace iCantina.views
 			this.Close();
 		}
 
+		private void cmbBoxYear_SelectedIndexChanged(object sender, EventArgs e)
+		{
+			cmbBoxWeek.DataSource = null;
+			cmbBoxWeek.DataSource = controller.GetWeeksOfYear((int)cmbBoxYear.SelectedItem);
+			cmbBoxWeek.SelectedItem = "Week 1";
+			lstBoxMenus.DataSource = null;
+			lstBoxMenus.DataSource = controller.GetMenus(1, (int)cmbBoxYear.SelectedItem);
+		}
+
+		private void cmbBoxWeek_SelectedIndexChanged(object sender, EventArgs e)
+		{
+			lstBoxMenus.DataSource = null;
+			lstBoxMenus.DataSource = controller.GetMenus(cmbBoxWeek.SelectedIndex + 1, cmbBoxYear.SelectedItem != null ? (int)cmbBoxYear.SelectedItem : (int)DateTime.Now.Year);
+		}
 	}
 }

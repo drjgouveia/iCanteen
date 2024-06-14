@@ -8,22 +8,40 @@ namespace iCantina.models
 	{
 		[Key]
 		public int Id { get; set; }
-		public Student Student { get; set; }
-		public Professor Professor { get; set; }
+		public Client Client { get; set; }
 		public DateTime Date { get; set; }
 		public Dish Dish { get; set; }
 		public ICollection<Extra> Extras { get; set; }
 		public Menu Menu { get; set; }
 		public Penalty Penalty { get; set; }
+		public bool Served { get; set; }
 
 		public Reservation()
 		{
 			Extras = new List<Extra>();
 		}
 
+		public float GetTotal()
+		{
+			float total = 0;
+			foreach (Extra extra in Extras)
+			{
+				total += extra.Price;
+			}
+			if (this.Client is Student)
+				total += this.Menu.PriceStudent;
+			else
+				total += this.Menu.PriceProfessor;
+
+			if (Penalty != null)
+				total += Penalty.Amount;
+
+			return total;
+		}
+
 		public override string ToString()
 		{
-			return $"Reservation: {(this.Student != null ? this.Student as Client : this.Professor as Client)} - {Date} - {Dish} - {Menu} - {Penalty}";
+			return $"Reservation: {(this.Client)} - {Date} - {Dish} - {Menu} - {Penalty}";
 		}
 	}
 }

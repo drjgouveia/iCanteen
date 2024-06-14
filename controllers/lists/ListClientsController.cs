@@ -16,11 +16,11 @@ namespace iCantina.controllers
     {
       if (search == "")
       {
-        return context.Students.ToList();
+        return context.Users.OfType<Student>().ToList();
       }
       else
       {
-        return context.Students.Where(s => s.Name.Contains(search) || s.NIF.Contains(search)).ToList();
+        return context.Users.OfType<Student>().Where(s => s.Name.Contains(search) || s.NIF.Contains(search)).ToList();
       }
     }
 
@@ -28,11 +28,11 @@ namespace iCantina.controllers
     {
       if (search == "")
       {
-        return context.Professors.ToList();
+        return context.Users.OfType<Professor>().ToList();
       }
       else
       {
-        return context.Professors.Where(s => s.Name.Contains(search) || s.NIF.Contains(search) || s.Email.Contains(search)).ToList();
+        return context.Users.OfType<Professor>().Where(s => s.Name.Contains(search) || s.NIF.Contains(search) || s.Email.Contains(search)).ToList();
       }
     }
   }

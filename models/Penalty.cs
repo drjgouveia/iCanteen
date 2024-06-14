@@ -6,7 +6,7 @@ namespace iCantina.models
 	{
 		[Key]
 		public int Id { get; set; }
-		public double Amount { get; set; }
+		public float Amount { get; set; }
 		public int Hours { get; set; }
 
 		public Penalty()

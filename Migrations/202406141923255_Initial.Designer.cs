@@ -13,7 +13,7 @@ namespace iCanteen.Migrations
         
         string IMigrationMetadata.Id
         {
-            get { return "202406041752383_Initial"; }
+            get { return "202406141923255_Initial"; }
         }
         
         string IMigrationMetadata.Source

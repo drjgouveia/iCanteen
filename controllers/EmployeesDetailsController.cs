@@ -26,7 +26,7 @@ namespace iCanteen.controllers
                 employee.NIF = nif;
                 employee.Username = username;
                 Console.WriteLine("Creating employee...");
-                context.Employees.Add(employee);
+                context.Users.Add(employee);
                 context.SaveChanges();
                 return true;
             }
@@ -40,7 +40,7 @@ namespace iCanteen.controllers
         {
             try
             {
-                Employee employee = context.Employees.Find(id);
+                Employee employee = context.Users.OfType<Employee>().FirstOrDefault(e => e.Id == id);
                 employee.Name = name;
                 employee.NIF = nif;
                 employee.Username = username;
@@ -58,9 +58,9 @@ namespace iCanteen.controllers
         {
             try
             {
-                Employee employee = context.Employees.Find(id);
+                Employee employee = context.Users.OfType<Employee>().FirstOrDefault(e => e.Id == id);
                 Console.WriteLine("Deleting employee...");
-                context.Employees.Remove(employee);
+				context.Users.Remove(employee);
                 context.SaveChanges();
                 return true;
             }
@@ -73,7 +73,7 @@ namespace iCanteen.controllers
 
         public List<Employee> GetEmployees()
         {
-            return context.Employees.ToList();
+            return context.Users.OfType<Employee>().ToList();
         }
     }
 }

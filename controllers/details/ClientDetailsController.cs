@@ -16,7 +16,7 @@ namespace iCantina.controllers
 		{
 			try
 			{
-				if (context.Professors.FirstOrDefault(prof => prof.NIF == nif) != null || context.Students.FirstOrDefault(stud => stud.NIF == nif) != null)
+				if (context.Users.OfType<Professor>().FirstOrDefault(prof => prof.NIF == nif) != null)
 				{
 					return false;
 				}
@@ -26,7 +26,7 @@ namespace iCantina.controllers
 				student.StudentNumber = number;
 				student.Balance = balance;
 				Console.WriteLine("Creating student...");
-				context.Students.Add(student);
+				context.Users.Add(student);
 				context.SaveChanges();
 				return true;
 			}
@@ -40,7 +40,7 @@ namespace iCantina.controllers
 		{
 			try
 			{
-				if (context.Professors.FirstOrDefault(prof => prof.NIF == nif) != null || context.Students.FirstOrDefault(stud => stud.NIF == nif) != null)
+				if (context.Users.OfType<Professor>().FirstOrDefault(prof => prof.NIF == nif) != null)
 				{
 					return false;
 				}
@@ -50,7 +50,7 @@ namespace iCantina.controllers
 				professor.NIF = nif;
 				professor.Balance = balance;
 				Console.WriteLine("Creating professor...");
-				context.Professors.Add(professor);
+				context.Users.Add(professor);
 				context.SaveChanges();
 				return true;
 			}
@@ -64,7 +64,7 @@ namespace iCantina.controllers
 		{
 			try
 			{
-				Student student = context.Students.Find(id);
+				Student student = context.Users.OfType<Student>().FirstOrDefault(s => s.Id == id);
 				student.Name = name;
 				student.NIF = nif;
 				student.StudentNumber = number;
@@ -83,7 +83,7 @@ namespace iCantina.controllers
 		{
 			try
 			{
-				Professor professor = context.Professors.Find(id);
+				Professor professor = context.Users.OfType<Professor>().FirstOrDefault(p => p.Id == id);
 				professor.Name = name;
 				professor.Email = email;
 				professor.NIF = nif;
@@ -102,9 +102,9 @@ namespace iCantina.controllers
 		{
 			try
 			{
-				Student student = context.Students.Find(id);
+				Student student = context.Users.OfType<Student>().FirstOrDefault(s => s.Id == id);
 				Console.WriteLine("Deleting student...");
-				context.Students.Remove(student);
+				context.Users.Remove(student);
 				context.SaveChanges();
 				return true;
 			}
@@ -118,9 +118,9 @@ namespace iCantina.controllers
 		{
 			try
 			{
-				Professor professor = context.Professors.Find(id);
+				Professor professor = context.Users.OfType<Professor>().FirstOrDefault(p => p.Id == id);
 				Console.WriteLine("Deleting professor...");
-				context.Professors.Remove(professor);
+				context.Users.Remove(professor);
 				context.SaveChanges();
 				return true;
 			}
@@ -132,12 +132,12 @@ namespace iCantina.controllers
 
 		public List<Student> GetStudents()
 		{
-			return context.Students.ToList();
+			return context.Users.OfType<Student>().ToList();
 		}
 
 		public List<Professor> GetProfessors()
 		{
-			return context.Professors.ToList();
+			return context.Users.OfType<Professor>().ToList();
 		}
 	}
 }
