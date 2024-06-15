@@ -1,5 +1,6 @@
 ﻿using iCanteen.controllers;
 using iCantina.models;
+using iCantina.views;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -53,7 +54,7 @@ namespace iCanteen.views
             {
                 if(controller != null)
                 {
-
+                    
                     controller.CreateEmployee(txtBoxUserNameEmployee.Text, txtBoxNameEmployee.Text, txtBoxNifEmployee.Text);
                     MessageBox.Show("Employee is created!");
                     this.Close();
@@ -84,8 +85,8 @@ namespace iCanteen.views
                 btnCreateEmployee.Enabled = true;
                 if (Regex.IsMatch(txtBoxUserNameEmployee.Text, @"^[a-zA-Z ]+$") && Regex.IsMatch(txtBoxNameEmployee.Text, @"^[a-zA-Z ]+$") && Regex.IsMatch(txtBoxNifEmployee.Text, @"^\d{9}$"))
                 {
-                    btnEditEmployee.Enabled = true;
-                    btnDeleteEmployee.Enabled = true;
+                    btnEditEmployee.Enabled = false;
+                    btnDeleteEmployee.Enabled = false;
                 }
                 else
                 {
