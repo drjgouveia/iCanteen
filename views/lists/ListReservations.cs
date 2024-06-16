@@ -26,7 +26,8 @@ namespace iCanteen.views
 		private void ListReservations_Load(object sender, EventArgs e)
 		{
 			comboBoxClients.DataSource = controller.GetClients();
-			if (comboBoxClients.SelectedItem != null){
+			if (comboBoxClients.SelectedItem != null)
+			{
 				listBoxReservations.DataSource = controller.GetFutureReservations(((Client)comboBoxClients.SelectedItem).NIF);
 				listBoxPastReservations.DataSource = controller.GetPastReservations(((Client)comboBoxClients.SelectedItem).NIF);
 			}
@@ -49,5 +50,14 @@ namespace iCanteen.views
 				controller.MarkAsServed(reservation);
 			}
 		}
-	}
+
+		private void listBoxReservations_SelectedIndexChanged(object sender, EventArgs e)
+		{
+			if (listBoxReservations.SelectedItem != null)
+			{
+
+			}
+
+		}
+	}	
 }

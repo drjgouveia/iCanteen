@@ -61,20 +61,22 @@
     <Compile Include="controllers\details\ClientDetailsController.cs" />
     <Compile Include="controllers\Controller.cs" />
     <Compile Include="controllers\details\ExtraDetailsController.cs" />
+    <Compile Include="controllers\details\PenaltyDetailsController.cs" />
     <Compile Include="controllers\lists\ListCanteenMenuController.cs" />
     <Compile Include="controllers\lists\ListExtrasController.cs" />
     <Compile Include="controllers\lists\ListClientsController.cs" />
     <Compile Include="controllers\lists\ListDishesController.cs" />
-    <Compile Include="controllers\EmployeesDetailsController.cs" />
-    <Compile Include="controllers\ListEmployeesController.cs" />
+    <Compile Include="controllers\details\EmployeesDetailsController.cs" />
+    <Compile Include="controllers\lists\ListEmployeesController.cs" />
+    <Compile Include="controllers\lists\ListPenaltiesController.cs" />
     <Compile Include="controllers\LoginController.cs" />
     <Compile Include="controllers\lists\ListReservationsController.cs" />
     <Compile Include="controllers\details\ReservationDetailsController.cs" />
     <Compile Include="helpers\DishTypeEnum.cs" />
     <Compile Include="iCanteenContext.cs" />
-    <Compile Include="Migrations\202406141923255_Initial.cs" />
-    <Compile Include="Migrations\202406141923255_Initial.Designer.cs">
-      <DependentUpon>202406141923255_Initial.cs</DependentUpon>
+    <Compile Include="Migrations\202406151807385_InitialCreate.cs" />
+    <Compile Include="Migrations\202406151807385_InitialCreate.Designer.cs">
+      <DependentUpon>202406151807385_InitialCreate.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="models\Client.cs" />
@@ -102,6 +104,12 @@
     </Compile>
     <Compile Include="views\details\ClientDetails.Designer.cs">
       <DependentUpon>ClientDetails.cs</DependentUpon>
+    </Compile>
+    <Compile Include="views\details\FineDetails.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="views\details\FineDetails.Designer.cs">
+      <DependentUpon>FineDetails.cs</DependentUpon>
     </Compile>
     <Compile Include="views\details\ReservationDetails.cs">
       <SubType>Form</SubType>
@@ -157,6 +165,12 @@
     <Compile Include="views\lists\ListExtras.Designer.cs">
       <DependentUpon>ListExtras.cs</DependentUpon>
     </Compile>
+    <Compile Include="views\lists\ListFines.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="views\lists\ListFines.Designer.cs">
+      <DependentUpon>ListFines.cs</DependentUpon>
+    </Compile>
     <Compile Include="views\lists\ListReservations.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -175,8 +189,8 @@
     <Compile Include="views\MainPage.Designer.cs">
       <DependentUpon>MainPage.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="Migrations\202406141923255_Initial.resx">
-      <DependentUpon>202406141923255_Initial.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202406151807385_InitialCreate.resx">
+      <DependentUpon>202406151807385_InitialCreate.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -195,6 +209,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="views\details\DishDetails.resx">
       <DependentUpon>DishDetails.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="views\details\FineDetails.resx">
+      <DependentUpon>FineDetails.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="views\details\ReservationDetails.resx">
       <DependentUpon>ReservationDetails.cs</DependentUpon>
@@ -216,6 +233,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="views\ListEmployees.resx">
       <DependentUpon>ListEmployees.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="views\lists\ListFines.resx">
+      <DependentUpon>ListFines.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="views\lists\ListReservations.resx">
       <DependentUpon>ListReservations.cs</DependentUpon>

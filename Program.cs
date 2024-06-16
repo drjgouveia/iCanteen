@@ -24,7 +24,7 @@ namespace iCantina
             using (var context = new iCanteenContext()) // Substitua YourDbContext pelo nome do seu contexto do Entity Framework
             {
                 // Verifica se existem dados na tabela Employee
-                bool hasEmployees = context.Employees.Any();
+                bool hasEmployees = context.Users.Any();
 
                 if (hasEmployees)
                 {
