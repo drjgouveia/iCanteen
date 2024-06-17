@@ -38,7 +38,7 @@ namespace iCantina.views
 			cmbBoxWeek.SelectedItem = $"Week {week}";
 
 			List<models.Menu> menus = controller.GetMenus(week, DateTime.Now.Year);
-			lstBoxMenus.DataSource = null;
+            lstBoxMenus.DataSource = null;
 			lstBoxMenus.DataSource = menus;
 			getPrice();
 		}
@@ -204,7 +204,7 @@ namespace iCantina.views
 				return;
 			}
 
-			if (menu.Date.Year >= DateTime.Now.Year || menu.Date.Month >= DateTime.Now.Month || menu.Date.Day >= DateTime.Now.Day || menu.Date.Hour >= DateTime.Now.Hour || menu.Date.Minute >= DateTime.Now.Minute)
+			if (DateTime.Now < reservation.Date)
 			{
 				if (controller.CreateReservation(reservation))
 				{
@@ -218,7 +218,7 @@ namespace iCantina.views
 			} 
 			else
 			{
-				MessageBox.Show("You can only reserve menus for today.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+				MessageBox.Show("You can only reserve menus for today and next days.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
 				return;
 			}
 

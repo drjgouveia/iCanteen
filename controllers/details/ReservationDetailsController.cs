@@ -110,8 +110,8 @@ namespace iCanteen.controllers
 				Extra extra = context.Extras.Find(extraId);
 				extrasList.Add(extra);
 			}
-			reservation.Extras = extrasList;
-			reservation.Dish = menu.Dish;
+            reservation.Extras = extrasList;
+            reservation.Dish = menu.Dish;
 			context.Reservations.Add(reservation);
 			context.SaveChanges();
 			return true;
@@ -132,10 +132,11 @@ namespace iCanteen.controllers
 		{
 			try
 			{
-				context.Reservations.Add(reservation);
-				reservation.Client.Balance -= reservation.GetTotal();
-				context.SaveChanges();
-				return true;
+                context.Reservations.Add(reservation);
+                reservation.Client.Balance -= reservation.GetTotal();
+                context.SaveChanges();
+                return true;
+				
 			}
 			catch (Exception ex)
 			{
