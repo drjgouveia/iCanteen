@@ -67,7 +67,7 @@ namespace iCantina.controllers
 		{
 			models.Menu menu = context.Menus.Find(id);
 			List<Reservation> reservations = context.Reservations.Where(r => r.Menu.Id == id).ToList();
-			context.Menus.Remove(menu); // foi preciso fazer isto pq a relação Extra <-> Menu estava a dar erro
+			context.Menus.Remove(menu); // foi preciso fazer isto pq a relaï¿½ï¿½o Extra <-> Menu estava a dar erro
 
 			menu = new models.Menu();
 			menu.Date = date;

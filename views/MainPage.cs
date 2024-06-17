@@ -71,5 +71,11 @@ namespace iCantina.views
 			ListExtras listExtras = new ListExtras();
 			listExtras.Show();
 		}
-	}
+
+        private void btnFines_Click(object sender, EventArgs e)
+        {
+			ListPenalties listPenalties = new ListPenalties();
+			listPenalties.Show(); 
+        }
+    }
 }

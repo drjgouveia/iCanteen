@@ -1,4 +1,5 @@
 ﻿using iCantina.controllers;
+using iCantina.helpers;
 using iCantina.models;
 using System;
 using System.Collections.Generic;
@@ -8,7 +9,7 @@ using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace iCanteen.controllers.details
+namespace iCanteen.controllers
 {
     public class PenaltyDetailsController : Controller
     {
@@ -34,6 +35,8 @@ namespace iCanteen.controllers.details
                 return false;
             }
         }
+
+
 
         public bool ReadPenalty(int id)
         {

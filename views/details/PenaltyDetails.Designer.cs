@@ -1,6 +1,6 @@
 ﻿namespace iCanteen.views.details
 {
-    partial class FineDetails
+    partial class PenaltyDetails
     {
         /// <summary>
         /// Required designer variable.
@@ -32,7 +32,7 @@
             this.lblTime = new System.Windows.Forms.Label();
             this.txtAmount = new System.Windows.Forms.TextBox();
             this.lblNameAmount = new System.Windows.Forms.Label();
-            this.lblFine = new System.Windows.Forms.Label();
+            this.lblPenalty = new System.Windows.Forms.Label();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.btnDelete = new System.Windows.Forms.Button();
             this.btnEdit = new System.Windows.Forms.Button();
@@ -61,7 +61,7 @@
             this.lblTime.Location = new System.Drawing.Point(17, 85);
             this.lblTime.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblTime.Name = "lblTime";
-            this.lblTime.Size = new System.Drawing.Size(63, 25);
+            this.lblTime.Size = new System.Drawing.Size(50, 20);
             this.lblTime.TabIndex = 42;
             this.lblTime.Text = "Time";
             // 
@@ -82,20 +82,20 @@
             this.lblNameAmount.Location = new System.Drawing.Point(17, 52);
             this.lblNameAmount.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblNameAmount.Name = "lblNameAmount";
-            this.lblNameAmount.Size = new System.Drawing.Size(90, 25);
+            this.lblNameAmount.Size = new System.Drawing.Size(72, 20);
             this.lblNameAmount.TabIndex = 39;
             this.lblNameAmount.Text = "Amount";
             // 
-            // lblFine
+            // lblPenalty
             // 
-            this.lblFine.AutoSize = true;
-            this.lblFine.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblFine.Location = new System.Drawing.Point(12, 9);
-            this.lblFine.Name = "lblFine";
-            this.lblFine.Size = new System.Drawing.Size(74, 32);
-            this.lblFine.TabIndex = 38;
-            this.lblFine.Text = "Fine";
-            this.lblFine.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblPenalty.AutoSize = true;
+            this.lblPenalty.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPenalty.Location = new System.Drawing.Point(12, 9);
+            this.lblPenalty.Name = "lblPenalty";
+            this.lblPenalty.Size = new System.Drawing.Size(117, 32);
+            this.lblPenalty.TabIndex = 38;
+            this.lblPenalty.Text = "Penalty";
+            this.lblPenalty.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // tableLayoutPanel1
             // 
@@ -127,6 +127,7 @@
             this.btnDelete.TabIndex = 2;
             this.btnDelete.Text = "Delete";
             this.btnDelete.UseVisualStyleBackColor = true;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
             // btnEdit
             // 
@@ -153,6 +154,7 @@
             this.btnCreate.TabIndex = 0;
             this.btnCreate.Text = "Create";
             this.btnCreate.UseVisualStyleBackColor = true;
+            this.btnCreate.Click += new System.EventHandler(this.btnCreate_Click);
             // 
             // txtBoxTime
             // 
@@ -164,7 +166,7 @@
             this.txtBoxTime.Size = new System.Drawing.Size(542, 22);
             this.txtBoxTime.TabIndex = 44;
             // 
-            // FineDetails
+            // PenaltyDetails
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -174,9 +176,9 @@
             this.Controls.Add(this.lblTime);
             this.Controls.Add(this.txtAmount);
             this.Controls.Add(this.lblNameAmount);
-            this.Controls.Add(this.lblFine);
+            this.Controls.Add(this.lblPenalty);
             this.Controls.Add(this.tableLayoutPanel1);
-            this.Name = "FineDetails";
+            this.Name = "PenaltyDetails";
             this.Text = "FineDetails";
             this.tableLayoutPanel1.ResumeLayout(false);
             this.ResumeLayout(false);
@@ -190,7 +192,7 @@
         private System.Windows.Forms.Label lblTime;
         private System.Windows.Forms.TextBox txtAmount;
         private System.Windows.Forms.Label lblNameAmount;
-        private System.Windows.Forms.Label lblFine;
+        private System.Windows.Forms.Label lblPenalty;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.Button btnDelete;
         private System.Windows.Forms.Button btnEdit;

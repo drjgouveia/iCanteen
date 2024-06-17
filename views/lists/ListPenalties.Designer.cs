@@ -1,6 +1,6 @@
 ﻿namespace iCanteen.views.lists
 {
-    partial class ListFines
+    partial class ListPenalties
     {
         /// <summary>
         /// Required designer variable.
@@ -57,6 +57,7 @@
             this.btnCreateFines.TabIndex = 35;
             this.btnCreateFines.Text = "Create";
             this.btnCreateFines.UseVisualStyleBackColor = true;
+            this.btnCreateFines.Click += new System.EventHandler(this.btnCreateFines_Click);
             // 
             // txtBoxSearchFines
             // 
@@ -68,19 +69,20 @@
             this.txtBoxSearchFines.Name = "txtBoxSearchFines";
             this.txtBoxSearchFines.Size = new System.Drawing.Size(498, 22);
             this.txtBoxSearchFines.TabIndex = 34;
+            this.txtBoxSearchFines.TextChanged += new System.EventHandler(this.txtBoxSearchFines_TextChanged);
             // 
             // lblFines
             // 
             this.lblFines.AutoSize = true;
             this.lblFines.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblFines.Location = new System.Drawing.Point(27, 26);
+            this.lblFines.Location = new System.Drawing.Point(27, 30);
             this.lblFines.Name = "lblFines";
-            this.lblFines.Size = new System.Drawing.Size(225, 40);
+            this.lblFines.Size = new System.Drawing.Size(233, 32);
             this.lblFines.TabIndex = 33;
-            this.lblFines.Text = "List of Fines";
+            this.lblFines.Text = "List of Penalties";
             this.lblFines.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // ListFines
+            // ListPenalties
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -89,7 +91,7 @@
             this.Controls.Add(this.btnCreateFines);
             this.Controls.Add(this.txtBoxSearchFines);
             this.Controls.Add(this.lblFines);
-            this.Name = "ListFines";
+            this.Name = "ListPenalties";
             this.Text = "ListFines";
             this.Load += new System.EventHandler(this.ListFines_Load);
             this.ResumeLayout(false);

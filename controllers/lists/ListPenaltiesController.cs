@@ -15,15 +15,19 @@ namespace iCanteen.controllers.lists
             Console.WriteLine("List Penalties controller initialized.");
         }
 
+
+
+
         public List<Penalty> GetPenalties(string search = "")
         {
+
 
             if(search == "")
             {
                 return context.Penalties.ToList();
             } else
             {
-                return context.Penalties.Where(s => s.Amount.ToString().Contains(search)).ToList();
+               return context.Penalties.Where(p => p.Id.ToString().Contains(search) || p.Amount.ToString().Contains(search) || p.Hours.ToString().Contains(search)).ToList();
             }
       
         }
