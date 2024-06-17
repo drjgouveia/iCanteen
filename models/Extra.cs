@@ -30,7 +30,7 @@ namespace iCantina.models
 
 		public override string ToString()
 		{
-			return Description + " - " + Price + "€" + (Active ? "" : " (inactive)");
+			return Description + " - " + Price + "ï¿½" + (Active ? "" : " (inactive)");
 		}
 	}
 }

@@ -9,6 +9,7 @@ namespace iCantina.models
 		public float Amount { get; set; }
 		public int Hours { get; set; }
 
+
 		public Penalty()
 		{
 		}

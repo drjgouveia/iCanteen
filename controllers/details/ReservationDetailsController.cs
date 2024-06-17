@@ -13,12 +13,7 @@ namespace iCanteen.controllers
 {
 	public class ReservationDetailsController : Controller
 	{
-		private const int LunchHourLimit = 10;
-		private const int DinnerHourLimit = 16;
-        private const float PenaltyHour = (float)2.50m;
-	
-	
-		public ReservationDetailsController() : base()
+        public ReservationDetailsController() : base()
 		{
 		}
 
@@ -120,7 +115,8 @@ namespace iCanteen.controllers
 			context.Reservations.Add(reservation);
 			context.SaveChanges();
 			return true;
-		}
+
+        }
 
 		public bool IsClientStudent(Client client)
 		{
@@ -147,7 +143,31 @@ namespace iCanteen.controllers
 			}
 		}
 
-		public bool GenerateInvoice(Invoice invoice)
+        public static float CalculatePenaltyHours(DateTime date)
+        {
+            const int LunchHourLimit = 10;
+            const int DinnerHourLimit = 16;
+            const float PenaltyHour = 2.50f;
+			float penalyAmount = 0;
+			
+
+            TimeSpan timeSpan = DateTime.Now - date;
+            double totalHours = timeSpan.TotalHours;
+
+            if (totalHours > LunchHourLimit && totalHours <= DinnerHourLimit)
+            {
+                return (float)(totalHours - LunchHourLimit) * PenaltyHour;
+            }
+            else if (totalHours > DinnerHourLimit)
+            {
+                return (float)(totalHours - DinnerHourLimit) * PenaltyHour;
+            }
+
+            return penalyAmount;
+
+        }
+
+        public bool GenerateInvoice(Invoice invoice)
 		{
 			try
 			{
@@ -159,23 +179,5 @@ namespace iCanteen.controllers
 				return false;
 			}
 		}
-
-        public static float CalculatePenaltyHours(DateTime date)
-        {
-            DateTime now = DateTime.Now;
-            TimeSpan timeSpan = now - date;
-            int hours = timeSpan.Hours;
-            if (hours > LunchHourLimit)
-            {
-                return (hours - LunchHourLimit) * PenaltyHour;
-            }
-
-			if(hours>DinnerHourLimit)
-			{
-				   return (hours - DinnerHourLimit) * PenaltyHour;
-			}
-
-            return 0;
-        }
     }
 }

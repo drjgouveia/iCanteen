@@ -1,3 +1,4 @@
+
 using iCanteen.controllers;
 using iCantina.models;
 using System;
@@ -11,8 +12,12 @@ namespace iCantina.views
 	{
 		private ReservationDetailsController controller = null;
 		private bool isStudent = false;
+        private const int LunchHourLimit = 10;
+        private const int DinnerHourLimit = 16;
+        private const float PenaltyHour = (float)2.50;
 
-		public ReservationDetails()
+
+        public ReservationDetails()
 		{
 			InitializeComponent();
 			controller = new ReservationDetailsController();
@@ -37,8 +42,8 @@ namespace iCantina.views
 			lstBoxMenus.DataSource = menus;
 			getPrice();
 		}
-
-		private void btnCreate_Click(object sender, EventArgs e)
+			               
+        private void btnCreate_Click(object sender, EventArgs e)
 		{
 			getPrice();
 			CanteenMenuDetails canteenMenu = new CanteenMenuDetails();
@@ -46,9 +51,10 @@ namespace iCantina.views
 			ReservationDetails listCanteenMenus = new ReservationDetails();
 			listCanteenMenus.Show();
 			this.Close();
-		}
+		
+        }
 
-		private void lstBoxMenus_DoubleClick(object sender, EventArgs e)
+        private void lstBoxMenus_DoubleClick(object sender, EventArgs e)
 		{
 			CanteenMenuDetails canteenMenu = new CanteenMenuDetails((models.Menu)lstBoxMenus.SelectedItem);
 			canteenMenu.ShowDialog();
@@ -174,6 +180,9 @@ namespace iCantina.views
 			reservation.Menu = menu;
 			reservation.Client = (Client)cmbBoxClients.SelectedItem;
 
+            float penaltyAmount = ReservationDetailsController.CalculatePenaltyHours(menu.Date);
+
+            /*
 			foreach (Penalty penalty in controller.GetPenalties())
 			{
 				if (penalty.Hours < DateTime.Now.Hour - menu.Date.Hour)
@@ -181,8 +190,14 @@ namespace iCantina.views
 					reservation.Penalty = penalty;
 				}
 			}
-			
-			Client client = (Client)cmbBoxClients.SelectedItem;
+			*/
+
+            if (penaltyAmount > 0)
+            {
+                reservation.Penalty = new Penalty { Amount = penaltyAmount };
+            }
+
+            Client client = (Client)cmbBoxClients.SelectedItem;
 			if (client.Balance < reservation.GetTotal())
 			{
 				MessageBox.Show("The client does not have enough balance to make the reservation.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);

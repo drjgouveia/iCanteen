@@ -127,5 +127,6 @@ namespace iCanteen.views.details
 			}
 			checkIfCanActions();
 		}
-	}
+
+    }
 }

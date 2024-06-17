@@ -35,9 +35,6 @@ namespace iCanteen.controllers
                 return false;
             }
         }
-
-
-
         public bool ReadPenalty(int id)
         {
 
