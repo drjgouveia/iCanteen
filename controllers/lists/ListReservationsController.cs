@@ -4,6 +4,7 @@ using iCantina.helpers;
 using iCantina.models;
 using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 
 namespace iCanteen.controllers
@@ -30,16 +31,19 @@ namespace iCanteen.controllers
 
 		public List<Reservation> GetFutureReservations(string clientNif)
 		{
-			return context.Reservations.Where(r => r.Menu.Date >= DateTime.Now && (
-				(r.Client != null && r.Client.NIF.Contains(clientNif) && r.Served == true)
-			)).ToList();
+			return context.Reservations
+				.Where(r => r.Menu.Date >= DateTime.Now && ((r.Client != null && r.Client.NIF.Contains(clientNif) && r.Served == false)))
+				.Include(r => r.Dish)
+				.Include(r => r.Menu)
+				.Include(r => r.Penalty)
+				.ToList();
 		}
 
 		internal object GetPastReservations(string clientNif)
 		{
 			return context.Reservations.Where(r => r.Menu.Date < DateTime.Now && (
-				(r.Client != null && r.Client.NIF.Contains(clientNif) && r.Served == true)
-			)).ToList();
+				(r.Client != null && r.Client.NIF.Contains(clientNif) && r.Served == true)))
+				.ToList();
 		}
 
 		public bool MarkAsServed (Reservation reservation)

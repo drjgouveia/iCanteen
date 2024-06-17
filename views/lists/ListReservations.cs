@@ -21,16 +21,24 @@ namespace iCanteen.views
 		{
 			InitializeComponent();
 			controller = new ListReservationsController();
-		}
+            Load_Reservations();
 
-		private void ListReservations_Load(object sender, EventArgs e)
-		{
-			comboBoxClients.DataSource = controller.GetClients();
-			if (comboBoxClients.SelectedItem != null)
-			{
+        }
+        private void Load_Reservations()
+        {
+            comboBoxClients.DataSource = controller.GetClients();
+            if (comboBoxClients.SelectedItem != null)
+            {
+                listBoxReservations.DataSource = null;
 				listBoxReservations.DataSource = controller.GetFutureReservations(((Client)comboBoxClients.SelectedItem).NIF);
-				listBoxPastReservations.DataSource = controller.GetPastReservations(((Client)comboBoxClients.SelectedItem).NIF);
-			}
+                listBoxPastReservations.DataSource = null;
+                listBoxPastReservations.DataSource = controller.GetPastReservations(((Client)comboBoxClients.SelectedItem).NIF);
+            }
+        }
+
+        private void ListReservations_Load(object sender, EventArgs e)
+		{
+			Load_Reservations();
 		}
 
 		private void btnCreate_Click(object sender, EventArgs e)
