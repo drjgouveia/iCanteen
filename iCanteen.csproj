@@ -105,11 +105,11 @@
     <Compile Include="views\details\ClientDetails.Designer.cs">
       <DependentUpon>ClientDetails.cs</DependentUpon>
     </Compile>
-    <Compile Include="views\details\FineDetails.cs">
+    <Compile Include="views\details\PenaltyDetails.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="views\details\FineDetails.Designer.cs">
-      <DependentUpon>FineDetails.cs</DependentUpon>
+    <Compile Include="views\details\PenaltyDetails.Designer.cs">
+      <DependentUpon>PenaltyDetails.cs</DependentUpon>
     </Compile>
     <Compile Include="views\details\ReservationDetails.cs">
       <SubType>Form</SubType>
@@ -165,11 +165,11 @@
     <Compile Include="views\lists\ListExtras.Designer.cs">
       <DependentUpon>ListExtras.cs</DependentUpon>
     </Compile>
-    <Compile Include="views\lists\ListFines.cs">
+    <Compile Include="views\lists\ListPenalties.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="views\lists\ListFines.Designer.cs">
-      <DependentUpon>ListFines.cs</DependentUpon>
+    <Compile Include="views\lists\ListPenalties.Designer.cs">
+      <DependentUpon>ListPenalties.cs</DependentUpon>
     </Compile>
     <Compile Include="views\lists\ListReservations.cs">
       <SubType>Form</SubType>
@@ -210,8 +210,8 @@
     <EmbeddedResource Include="views\details\DishDetails.resx">
       <DependentUpon>DishDetails.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="views\details\FineDetails.resx">
-      <DependentUpon>FineDetails.cs</DependentUpon>
+    <EmbeddedResource Include="views\details\PenaltyDetails.resx">
+      <DependentUpon>PenaltyDetails.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="views\details\ReservationDetails.resx">
       <DependentUpon>ReservationDetails.cs</DependentUpon>
@@ -234,8 +234,8 @@
     <EmbeddedResource Include="views\ListEmployees.resx">
       <DependentUpon>ListEmployees.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="views\lists\ListFines.resx">
-      <DependentUpon>ListFines.cs</DependentUpon>
+    <EmbeddedResource Include="views\lists\ListPenalties.resx">
+      <DependentUpon>ListPenalties.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="views\lists\ListReservations.resx">
       <DependentUpon>ListReservations.cs</DependentUpon>

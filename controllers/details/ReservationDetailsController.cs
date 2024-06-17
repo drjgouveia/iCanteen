@@ -7,11 +7,17 @@ using System.Linq;
 using System.Globalization;
 using System.Windows.Forms;
 using System.Reflection;
+using System.Runtime.CompilerServices;
 
 namespace iCanteen.controllers
 {
 	public class ReservationDetailsController : Controller
 	{
+		private const int LunchHourLimit = 10;
+		private const int DinnerHourLimit = 16;
+        private const float PenaltyHour = (float)2.50m;
+	
+	
 		public ReservationDetailsController() : base()
 		{
 		}
@@ -154,5 +160,23 @@ namespace iCanteen.controllers
 				return false;
 			}
 		}
-	}
+
+        public static float CalculatePenaltyHours(DateTime date)
+        {
+            DateTime now = DateTime.Now;
+            TimeSpan timeSpan = now - date;
+            int hours = timeSpan.Hours;
+            if (hours > LunchHourLimit)
+            {
+                return (hours - LunchHourLimit) * PenaltyHour;
+            }
+
+			if(hours>DinnerHourLimit)
+			{
+				   return (hours - DinnerHourLimit) * PenaltyHour;
+			}
+
+            return 0;
+        }
+    }
 }
