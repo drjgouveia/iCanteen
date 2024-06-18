@@ -38,7 +38,7 @@ namespace iCanteen.views.lists
 
         private void txtBoxSearchFines_TextChanged(object sender, EventArgs e)
         {
-                LoadData();
+            LoadData();
         }
 
         private void btnCreateFines_Click(object sender, EventArgs e)

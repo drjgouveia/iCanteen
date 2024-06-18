@@ -89,10 +89,13 @@
                         Date = c.DateTime(nullable: false),
                         Total = c.Single(nullable: false),
                         Client_Id = c.Int(),
+                        Menu_Id = c.Int(),
                     })
                 .PrimaryKey(t => t.Id)
                 .ForeignKey("dbo.Users", t => t.Client_Id)
-                .Index(t => t.Client_Id);
+                .ForeignKey("dbo.Menus", t => t.Menu_Id)
+                .Index(t => t.Client_Id)
+                .Index(t => t.Menu_Id);
             
             CreateTable(
                 "dbo.InvoiceLines",
@@ -153,8 +156,9 @@
             DropForeignKey("dbo.ReservationExtras", "Reservation_Id", "dbo.Reservations");
             DropForeignKey("dbo.Reservations", "Dish_Id", "dbo.Dishes");
             DropForeignKey("dbo.Reservations", "Client_Id", "dbo.Users");
-            DropForeignKey("dbo.Invoices", "Client_Id", "dbo.Users");
+            DropForeignKey("dbo.Invoices", "Menu_Id", "dbo.Menus");
             DropForeignKey("dbo.InvoiceLines", "Invoice_Id", "dbo.Invoices");
+            DropForeignKey("dbo.Invoices", "Client_Id", "dbo.Users");
             DropForeignKey("dbo.ExtraMenus", "Menu_Id", "dbo.Menus");
             DropForeignKey("dbo.ExtraMenus", "Extra_Id", "dbo.Extras");
             DropForeignKey("dbo.Menus", "Dish_Id", "dbo.Dishes");
@@ -163,6 +167,7 @@
             DropIndex("dbo.ExtraMenus", new[] { "Menu_Id" });
             DropIndex("dbo.ExtraMenus", new[] { "Extra_Id" });
             DropIndex("dbo.InvoiceLines", new[] { "Invoice_Id" });
+            DropIndex("dbo.Invoices", new[] { "Menu_Id" });
             DropIndex("dbo.Invoices", new[] { "Client_Id" });
             DropIndex("dbo.Reservations", new[] { "Penalty_Id" });
             DropIndex("dbo.Reservations", new[] { "Menu_Id" });

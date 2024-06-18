@@ -15,6 +15,7 @@ namespace iCantina.models
         public float Total { get; set; }
         public Client Client { get; set; }
         public ICollection<InvoiceLine> InvoiceLines { get; set; }
+        public Menu Menu { get; set; }
 
 
         public Invoice()

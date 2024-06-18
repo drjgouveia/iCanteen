@@ -67,35 +67,6 @@ namespace iCanteen.views
 				this.Close();
 			}
 
-			using (SaveFileDialog saveFileDialog = new SaveFileDialog())
-			{
-				saveFileDialog.Filter = "PDF files (*.pdf)|*.pdf";
-				if(saveFileDialog.ShowDialog() == DialogResult.OK)
-				{
-					PdfDocument pdf = new PdfDocument();
-					
-					pdf.Info.Title = "Invoice of Reservation";
-					PdfPage pdfPage = pdf.AddPage();
-
-					InvoiceLine line = new InvoiceLine();
-					foreach (Reservation reservation in listBoxReservations.Items)
-					{
-						line.Description = reservation.ToString();
-						line.Price = reservation.GetTotal();
-					}
-					
-                    
-					XGraphics gfx = XGraphics.FromPdfPage(pdfPage);
-
-					XFont font = new XFont("Verdana", 20);
-
-					gfx.DrawString("Invoice of Reservation", font, XBrushes.Black, 
-						new XRect(0, 0, pdfPage.Width.Point, pdfPage.Height.Point), XStringFormats.TopCenter);
-
-					pdf.Save(saveFileDialog.FileName);
-				}
-			}
-
 		}
 
 		private void listBoxReservations_SelectedIndexChanged(object sender, EventArgs e)

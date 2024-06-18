@@ -152,9 +152,9 @@ namespace iCanteen.controllers
 				{ (9, 10), 1.00f },
 				{ (10, 11), 1.50f },
 				{ (11, 12), 2.00f },
-				{ (15, 16), 1.00f },
-				{ (16, 17), 1.50f },
-				{ (17, 18), 2.00f }
+				{ (16, 17), 1.00f },
+				{ (17, 18), 1.50f },
+				{ (18, 19), 2.00f }
             };
 
             foreach (var rate in penaltyIntervals)

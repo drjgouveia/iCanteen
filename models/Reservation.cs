@@ -41,7 +41,7 @@ namespace iCantina.models
 
 		public override string ToString()
 		{
-			return $"Reservation: {(this.Client)} - {Date} - {Dish} - {Menu} - {Penalty}";
+			return $"Reservation: {(this.Client)} - {Date} - {Menu} - {Penalty}";
 		}
 	}
 }
