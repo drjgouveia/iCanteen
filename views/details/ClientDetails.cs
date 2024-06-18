@@ -115,7 +115,8 @@ namespace iCantina.views
 				btnCreate.Enabled = false;
 				btnEdit.Enabled = true;
 				btnDelete.Enabled = true;
-				listBoxInvoices.DataSource = this.professor.Invoices; // TODO: Add on click event to show invoice details
+				listBoxInvoices.DataSource = null;
+				listBoxInvoices.DataSource = this.professor.Invoices;
 			}
 			else if (this.student != null)
 			{
@@ -130,7 +131,8 @@ namespace iCantina.views
 				btnCreate.Enabled = false;
 				btnEdit.Enabled = true;
 				btnDelete.Enabled = true;
-				listBoxInvoices.DataSource = this.student.Invoices; // TODO: Add on click event to show invoice details
+				listBoxInvoices.DataSource = null;
+				listBoxInvoices.DataSource = this.student.Invoices;
 			}
 			else
 			{

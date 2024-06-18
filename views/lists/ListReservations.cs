@@ -32,7 +32,7 @@ namespace iCanteen.views
                 listBoxReservations.DataSource = null;
 				listBoxReservations.DataSource = controller.GetFutureReservations(((Client)comboBoxClients.SelectedItem).NIF);
                 listBoxPastReservations.DataSource = null;
-                listBoxPastReservations.DataSource = controller.GetPastReservations(((Client)comboBoxClients.SelectedItem).NIF);
+                listBoxPastReservations.DataSource = controller.GetServedReservations(((Client)comboBoxClients.SelectedItem).NIF);
             }
         }
 
@@ -56,6 +56,7 @@ namespace iCanteen.views
 			{
 				Reservation reservation = (Reservation)listBoxReservations.SelectedItem;
 				controller.MarkAsServed(reservation);
+				MessageBox.Show("Reservation marked as served");
 			}
 		}
 

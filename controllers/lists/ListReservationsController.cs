@@ -32,17 +32,16 @@ namespace iCanteen.controllers
 		public List<Reservation> GetFutureReservations(string clientNif)
 		{
 			return context.Reservations
-				.Where(r => r.Menu.Date >= DateTime.Now && ((r.Client != null && r.Client.NIF.Contains(clientNif) && r.Served == false)))
+				.Where(r => ((r.Client != null && r.Date > DateTime.Now && r.Client.NIF.Contains(clientNif) && r.Served == false)))
 				.Include(r => r.Dish)
 				.Include(r => r.Menu)
 				.Include(r => r.Penalty)
 				.ToList();
 		}
 
-		internal object GetPastReservations(string clientNif)
+		internal object GetServedReservations(string clientNif)
 		{
-			return context.Reservations.Where(r => r.Menu.Date < DateTime.Now && (
-				(r.Client != null && r.Client.NIF.Contains(clientNif) && r.Served == true)))
+			return context.Reservations.Where(r => ((r.Client != null && r.Client.NIF.Contains(clientNif) && r.Served == true)))
 				.ToList();
 		}
 

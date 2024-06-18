@@ -196,7 +196,7 @@ namespace iCantina.views
 				return;
 			}
 
-			if (DateTime.Now < reservation.Date)
+			if (DateTime.Now < reservation.Menu.Date)
 			{
 				if (controller.CreateReservation(reservation))
 				{
