@@ -28,29 +28,29 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.listBoxClients = new System.Windows.Forms.ListBox();
+            this.listBoxInvoices = new System.Windows.Forms.ListBox();
             this.btnCreate = new System.Windows.Forms.Button();
             this.txtBoxSearch = new System.Windows.Forms.TextBox();
-            this.lblClients = new System.Windows.Forms.Label();
+            this.lblInvoices = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
-            // listBoxClients
+            // listBoxInvoices
             // 
-            this.listBoxClients.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            this.listBoxInvoices.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.listBoxClients.DisplayMember = "w";
-            this.listBoxClients.FormattingEnabled = true;
-            this.listBoxClients.ItemHeight = 16;
-            this.listBoxClients.Location = new System.Drawing.Point(73, 118);
-            this.listBoxClients.Margin = new System.Windows.Forms.Padding(4);
-            this.listBoxClients.Name = "listBoxClients";
-            this.listBoxClients.Size = new System.Drawing.Size(282, 292);
-            this.listBoxClients.TabIndex = 36;
-            this.listBoxClients.ValueMember = "w";
+            this.listBoxInvoices.DisplayMember = "w";
+            this.listBoxInvoices.FormattingEnabled = true;
+            this.listBoxInvoices.ItemHeight = 16;
+            this.listBoxInvoices.Location = new System.Drawing.Point(73, 131);
+            this.listBoxInvoices.Margin = new System.Windows.Forms.Padding(4);
+            this.listBoxInvoices.Name = "listBoxInvoices";
+            this.listBoxInvoices.Size = new System.Drawing.Size(422, 292);
+            this.listBoxInvoices.TabIndex = 36;
+            this.listBoxInvoices.ValueMember = "w";
             // 
             // btnCreate
             // 
-            this.btnCreate.Location = new System.Drawing.Point(300, 32);
+            this.btnCreate.Location = new System.Drawing.Point(395, 40);
             this.btnCreate.Margin = new System.Windows.Forms.Padding(4);
             this.btnCreate.Name = "btnCreate";
             this.btnCreate.Size = new System.Drawing.Size(100, 28);
@@ -66,29 +66,29 @@
             this.txtBoxSearch.Location = new System.Drawing.Point(73, 90);
             this.txtBoxSearch.Margin = new System.Windows.Forms.Padding(4);
             this.txtBoxSearch.Name = "txtBoxSearch";
-            this.txtBoxSearch.Size = new System.Drawing.Size(282, 22);
+            this.txtBoxSearch.Size = new System.Drawing.Size(422, 22);
             this.txtBoxSearch.TabIndex = 34;
             // 
-            // lblClients
+            // lblInvoices
             // 
-            this.lblClients.AutoSize = true;
-            this.lblClients.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblClients.Location = new System.Drawing.Point(67, 32);
-            this.lblClients.Name = "lblClients";
-            this.lblClients.Size = new System.Drawing.Size(200, 32);
-            this.lblClients.TabIndex = 33;
-            this.lblClients.Text = "List of Clients";
-            this.lblClients.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblInvoices.AutoSize = true;
+            this.lblInvoices.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblInvoices.Location = new System.Drawing.Point(67, 32);
+            this.lblInvoices.Name = "lblInvoices";
+            this.lblInvoices.Size = new System.Drawing.Size(217, 32);
+            this.lblInvoices.TabIndex = 33;
+            this.lblInvoices.Text = "List of Invoices";
+            this.lblInvoices.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // ListInvoices
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(571, 446);
-            this.Controls.Add(this.listBoxClients);
+            this.Controls.Add(this.listBoxInvoices);
             this.Controls.Add(this.btnCreate);
             this.Controls.Add(this.txtBoxSearch);
-            this.Controls.Add(this.lblClients);
+            this.Controls.Add(this.lblInvoices);
             this.Name = "ListInvoices";
             this.Text = "ListInvoices";
             this.ResumeLayout(false);
@@ -98,9 +98,9 @@
 
         #endregion
 
-        private System.Windows.Forms.ListBox listBoxClients;
+        private System.Windows.Forms.ListBox listBoxInvoices;
         private System.Windows.Forms.Button btnCreate;
         private System.Windows.Forms.TextBox txtBoxSearch;
-        private System.Windows.Forms.Label lblClients;
+        private System.Windows.Forms.Label lblInvoices;
     }
 }

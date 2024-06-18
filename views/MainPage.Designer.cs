@@ -129,6 +129,7 @@
             this.btnInvoices.TabIndex = 3;
             this.btnInvoices.Text = "Invoices";
             this.btnInvoices.UseVisualStyleBackColor = true;
+            this.btnInvoices.Click += new System.EventHandler(this.btnInvoices_Click);
             // 
             // btnDishes
             // 

@@ -10,6 +10,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using PdfSharp;
+using PdfSharp.Drawing;
+using PdfSharp.Pdf;
+using PdfSharp.Pdf.IO;
 
 namespace iCanteen.views
 {
@@ -20,6 +24,7 @@ namespace iCanteen.views
 		public ListReservations()
 		{
 			InitializeComponent();
+			System.Text.Encoding.RegisterProvider(System.Text.CodePagesEncodingProvider.Instance);
 			controller = new ListReservationsController();
             Load_Reservations();
 
@@ -58,6 +63,28 @@ namespace iCanteen.views
 				controller.MarkAsServed(reservation);
 				MessageBox.Show("Reservation marked as served");
 			}
+
+			using (SaveFileDialog saveFileDialog = new SaveFileDialog())
+			{
+				saveFileDialog.Filter = "PDF files (*.pdf)|*.pdf";
+				if(saveFileDialog.ShowDialog() == DialogResult.OK)
+				{
+					PdfDocument pdf = new PdfDocument();
+					
+					pdf.Info.Title = "Invoice of Reservation";
+					PdfPage pdfPage = pdf.AddPage();
+
+					XGraphics gfx = XGraphics.FromPdfPage(pdfPage);
+
+					XFont font = new XFont("Verdana", 20);
+
+					gfx.DrawString("Invoice of Reservation", font, XBrushes.Black, 
+						new XRect(0, 0, pdfPage.Width.Point, pdfPage.Height.Point), XStringFormats.TopCenter);
+
+					pdf.Save(saveFileDialog.FileName);
+				}
+			}
+
 		}
 
 		private void listBoxReservations_SelectedIndexChanged(object sender, EventArgs e)
