@@ -180,6 +180,7 @@ namespace iCantina.views
 			Reservation reservation = new Reservation();
 			foreach (Extra extra in chckBoxExtras.CheckedItems)
 			{
+
 				reservation.Extras.Add(extra);
 			}
 			reservation.Date = DateTime.Now;

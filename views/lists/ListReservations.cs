@@ -14,6 +14,11 @@ using PdfSharp;
 using PdfSharp.Drawing;
 using PdfSharp.Pdf;
 using PdfSharp.Pdf.IO;
+using System.Data.Entity.Infrastructure;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
+using System.Reflection;
+using System.Diagnostics.Eventing.Reader;
+using PdfSharp.UniversalAccessibility.Drawing;
 
 namespace iCanteen.views
 {
@@ -26,7 +31,6 @@ namespace iCanteen.views
 			InitializeComponent();
 			System.Text.Encoding.RegisterProvider(System.Text.CodePagesEncodingProvider.Instance);
 			controller = new ListReservationsController();
-            Load_Reservations();
 
         }
         private void Load_Reservations()
@@ -76,6 +80,17 @@ namespace iCanteen.views
 
 			}
 
+		}
+
+		private void comboBoxClients_SelectedIndexChanged(object sender, EventArgs e)
+		{
+			listBoxPastReservations.DataSource = null;
+			listBoxReservations.DataSource = null;
+			if (comboBoxClients.SelectedItem != null)
+			{
+				listBoxReservations.DataSource = controller.GetFutureReservations(((Client)comboBoxClients.SelectedItem).NIF);
+				listBoxPastReservations.DataSource = controller.GetServedReservations(((Client)comboBoxClients.SelectedItem).NIF);
+			}
 		}
 	}	
 }
