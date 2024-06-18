@@ -74,6 +74,14 @@ namespace iCanteen.views
 					pdf.Info.Title = "Invoice of Reservation";
 					PdfPage pdfPage = pdf.AddPage();
 
+					InvoiceLine line = new InvoiceLine();
+					foreach (Reservation reservation in listBoxReservations.Items)
+					{
+						line.Description = reservation.ToString();
+						line.Price = reservation.GetTotal();
+					}
+					
+                    
 					XGraphics gfx = XGraphics.FromPdfPage(pdfPage);
 
 					XFont font = new XFont("Verdana", 20);
