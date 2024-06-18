@@ -81,5 +81,16 @@ namespace iCanteen.views
 			}
 
 		}
+
+		private void comboBoxClients_SelectedIndexChanged(object sender, EventArgs e)
+		{
+			listBoxPastReservations.DataSource = null;
+			listBoxReservations.DataSource = null;
+			if (comboBoxClients.SelectedItem != null)
+			{
+				listBoxReservations.DataSource = controller.GetFutureReservations(((Client)comboBoxClients.SelectedItem).NIF);
+				listBoxPastReservations.DataSource = controller.GetServedReservations(((Client)comboBoxClients.SelectedItem).NIF);
+			}
+		}
 	}	
 }
