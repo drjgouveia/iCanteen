@@ -77,5 +77,11 @@ namespace iCantina.views
 			ListPenalties listPenalties = new ListPenalties();
 			listPenalties.Show(); 
         }
+
+        private void btnInvoices_Click(object sender, EventArgs e)
+        {
+			ListInvoices listInvoices = new ListInvoices();
+			listInvoices.Show();
+        }
     }
 }

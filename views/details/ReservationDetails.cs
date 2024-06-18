@@ -186,9 +186,6 @@ namespace iCantina.views
 			reservation.Dish = menu.Dish;
 			reservation.Menu = menu;
 			reservation.Client = (Client)cmbBoxClients.SelectedItem;
-
-            float penaltyAmount = ReservationDetailsController.CalculatePenaltyHours(menu.Date);
-
             /*
 			foreach (Penalty penalty in controller.GetPenalties())
 			{
@@ -198,11 +195,6 @@ namespace iCantina.views
 				}
 			}
 			*/
-
-            if (penaltyAmount > 0)
-            {
-                reservation.Penalty = new Penalty { Amount = penaltyAmount };
-            }
 
             Client client = (Client)cmbBoxClients.SelectedItem;
 			if (client.Balance < reservation.GetTotal())

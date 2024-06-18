@@ -144,29 +144,55 @@ namespace iCanteen.controllers
 			}
 		}
 
-        public static float CalculatePenaltyHours(DateTime date)
-        {
-            const int LunchHourLimit = 10;
-            const int DinnerHourLimit = 16;
-            const float PenaltyHour = 2.50f;
-			float penalyAmount = 0;
-			
+		public float CalculatePenaltyHours(DateTime date)
+		{
 
-            TimeSpan timeSpan = DateTime.Now - date;
-            double totalHours = timeSpan.TotalHours;
-
-            if (totalHours > LunchHourLimit && totalHours <= DinnerHourLimit)
+			var penaltyIntervals = new Dictionary<(int, int), float>
             {
-                return (float)(totalHours - LunchHourLimit) * PenaltyHour;
-            }
-            else if (totalHours > DinnerHourLimit)
+				{ (9, 10), 1.00f },
+				{ (10, 11), 1.50f },
+				{ (11, 12), 2.00f },
+				{ (15, 16), 1.00f },
+				{ (16, 17), 1.50f },
+				{ (17, 18), 2.00f }
+            };
+
+            foreach (var rate in penaltyIntervals)
             {
-                return (float)(totalHours - DinnerHourLimit) * PenaltyHour;
+                if (date.Hour >= rate.Key.Item1 && date.Hour <= rate.Key.Item2)
+                {
+                    return (date.Hour - rate.Key.Item1) * rate.Value;
+                }
             }
 
-            return penalyAmount;
+            return 0.0f;
+            /*
+			if (date.Hour >= 9 && date.Hour <= 10)
+			{
+				return (float)(date.Hour - 9) * 1.00f;
+			} else if (date.Hour >= 10 && date.Hour <= 11) 
+			{
+				return (float)(date.Hour - 10) * 1.50f;
+			} else if (date.Hour >= 11 && date.Hour <= 12)
+			{
+				return (float)(date.Hour - 11) * 2.00f;
+			}
+
+			if (date.Hour >= 15 && date.Hour <= 16)
+            {
+                return (float)(date.Hour - 15) * 1.00f;
+            } else if (date.Hour >= 16 && date.Hour <= 17)
+            {
+                return (float)(date.Hour - 16) * 1.50f;
+            } else if (date.Hour >= 17 && date.Hour <= 18)
+            {
+                return (float)(date.Hour - 17) * 2.00f;
+            }
+				return 0.0f;
+			*/
 
         }
+
 
         public bool GenerateInvoice(Invoice invoice)
 		{
