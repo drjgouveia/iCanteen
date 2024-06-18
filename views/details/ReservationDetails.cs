@@ -78,7 +78,14 @@ namespace iCantina.views
 		{
 			chckBoxExtras.DataSource = null;
 			lstBoxMenus.DataSource = null;
-			lstBoxMenus.DataSource = controller.GetMenus(cmbBoxWeek.SelectedIndex + 1, (int)cmbBoxYear.SelectedItem);
+			try { 
+				lstBoxMenus.DataSource = controller.GetMenus(cmbBoxWeek.SelectedIndex + 1, (int)cmbBoxYear.SelectedItem);
+			} catch (Exception ex)
+			{
+				MessageBox.Show("There is no menu created. Create one and try again.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+				this.Close(); 
+				return;
+			}
 			getPrice();
 		}
 

@@ -32,7 +32,7 @@ namespace iCanteen.controllers
 		public List<Reservation> GetFutureReservations(string clientNif)
 		{
 			return context.Reservations
-				.Where(r => ((r.Client != null && r.Date > DateTime.Now && r.Client.NIF.Contains(clientNif) && r.Served == false)))
+				.Where(r => ((r.Client != null && r.Menu.Date > DateTime.Now && r.Client.NIF.Contains(clientNif) && r.Served == false)))
 				.Include(r => r.Dish)
 				.Include(r => r.Menu)
 				.Include(r => r.Penalty)
@@ -45,13 +45,16 @@ namespace iCanteen.controllers
 				.ToList();
 		}
 
-		public bool MarkAsServed (Reservation reservation)
+		public bool MarkAsServed(int reservationId)
 		{
 			try
 			{
-				ListReservations listReservations = new ListReservations();
+				Reservation reservation = context.Reservations.Find(reservationId);
 				Invoice invoice = new Invoice();
 				invoice.Date = DateTime.Now;
+				invoice.Total = reservation.GetTotal();
+				invoice.Client = reservation.Client;
+				invoice.InvoiceLines = new List<InvoiceLine>();
 				InvoiceLine invoiceLine = new InvoiceLine();
 				invoiceLine.Price = reservation.GetTotal();
 				invoiceLine.Description = reservation.ToString();
