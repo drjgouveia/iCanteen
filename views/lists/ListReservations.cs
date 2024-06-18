@@ -55,8 +55,11 @@ namespace iCanteen.views
 			if (listBoxReservations.SelectedItem != null)
 			{
 				Reservation reservation = (Reservation)listBoxReservations.SelectedItem;
-				controller.MarkAsServed(reservation);
+				controller.MarkAsServed(reservation.Id);
 				MessageBox.Show("Reservation marked as served");
+				ListReservations listReservations = new ListReservations();
+				listReservations.Show();
+				this.Close();
 			}
 		}
 

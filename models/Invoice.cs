@@ -13,6 +13,7 @@ namespace iCantina.models
         public int Id { get; set; }
         public DateTime Date { get; set; }
         public float Total { get; set; }
+        public Client Client { get; set; }
         public ICollection<InvoiceLine> InvoiceLines { get; set; }
 
 
