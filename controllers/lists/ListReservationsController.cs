@@ -77,6 +77,20 @@ namespace iCanteen.controllers
 				reservation.Menu.QuantityAvailable--;
 				reservation.Served = true;
 				context.SaveChanges();
+
+				GeneratePDF(invoice);
+                
+                return true;
+			}
+			catch (Exception e)
+			{
+				return false;
+			}
+		}
+		public bool GeneratePDF(Invoice invoice)
+		{
+			try
+			{
                 using (SaveFileDialog saveFileDialog = new SaveFileDialog())
                 {
                     saveFileDialog.Filter = "PDF files (.pdf)|.pdf";
@@ -96,7 +110,7 @@ namespace iCanteen.controllers
                         double total = 0;
                         int yOffset = 60;
 
-                        
+
                         foreach (var item in invoice.InvoiceLines)
                         {
                             gfx.DrawString($"Description: {item.Description}", itemFont, XBrushes.Black,
@@ -112,12 +126,12 @@ namespace iCanteen.controllers
                         pdf.Save(saveFileDialog.FileName);
                     }
                 }
-                return true;
-			}
-			catch (Exception e)
+				return true;
+            }catch (Exception e)
 			{
 				return false;
 			}
-		}
+            
+        }
 	}
 }

@@ -99,5 +99,5 @@ namespace iCanteen.views
 				listBoxPastReservations.DataSource = controller.GetServedReservations(((Client)comboBoxClients.SelectedItem).NIF);
 			}
 		}
-	}	
+    }	
 }
