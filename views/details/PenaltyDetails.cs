@@ -22,16 +22,21 @@ namespace iCanteen.views.details
         {
             InitializeComponent();
 			controller = new PenaltyDetailsController();
-        }
+			CanPerformActions();
+		}
 
-        public PenaltyDetails(Penalty penalty) : this()
+		public PenaltyDetails(Penalty penalty) : this()
         {
 			this.Penalty = penalty;
-        }
+			txtAmount.Text = penalty.Amount.ToString();
+			txtHours.Text = penalty.Hours.ToString();
+			CanPerformActions();
+		}
 
 		private void txtHours_TextChanged(object sender, EventArgs e)
 		{
-            if (txtHours.Text.Length > 0 && Regex.IsMatch(txtAmount.Text, "^[0-9]*$"))
+			CanPerformActions();
+			if (txtHours.Text.Length > 0 && Regex.IsMatch(txtAmount.Text, "^[0-9]*$"))
             {
 				txtHours.BackColor = Color.White;
 			}
@@ -43,6 +48,7 @@ namespace iCanteen.views.details
 
 		private void txtAmount_TextChanged(object sender, EventArgs e)
 		{
+			CanPerformActions();
 			if (txtAmount.Text.Length > 0 && Regex.IsMatch(txtAmount.Text, @"^\d+(\.\d{1,2})?$"))
 			{
 				txtAmount.BackColor = Color.White;
@@ -85,7 +91,31 @@ namespace iCanteen.views.details
 				float amount = float.Parse(txtAmount.Text);
 				controller.CreatePenalty(amount, hours);
 				MessageBox.Show($"The penalty has been created", "Penalty", MessageBoxButtons.OK);
+				this.Close();
 			}
+		}
+
+		private void btnEdit_Click(object sender, EventArgs e)
+		{
+			if (txtHours.Text.Length == 0 || txtAmount.Text.Length == 0)
+			{
+				MessageBox.Show("Please fill in all fields", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+			}
+			else
+			{
+				int hours = int.Parse(txtHours.Text);
+				float amount = float.Parse(txtAmount.Text);
+				controller.UpdatePenalty(this.Penalty.Id, amount, hours);
+				MessageBox.Show($"The penalty has been updated", "Penalty", MessageBoxButtons.OK);
+				this.Close();
+			}
+		}
+
+		private void btnDelete_Click(object sender, EventArgs e)
+		{
+			controller.DeletePenalty(this.Penalty.Id);
+			MessageBox.Show($"The penalty has been deleted", "Penalty", MessageBoxButtons.OK);
+			this.Close();
 		}
 	}
 }

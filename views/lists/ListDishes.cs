@@ -1,5 +1,6 @@
 ﻿using iCanteen.views.details;
 using iCantina.controllers;
+using iCantina.models;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -33,14 +34,23 @@ namespace iCanteen.views.lists
 
 		private void ListDishes_Load(object sender, EventArgs e)
 		{
-			listBoxClients.DataSource = null;
-			listBoxClients.DataSource = controller.GetDishes(txtBoxSearch.Text);
+			listBoxDishes.DataSource = null;
+			listBoxDishes.DataSource = controller.GetDishes(txtBoxSearch.Text);
 		}
 
 		private void txtBoxSearch_TextChanged(object sender, EventArgs e)
 		{
-			listBoxClients.DataSource = null;
-			listBoxClients.DataSource = controller.GetDishes(txtBoxSearch.Text);
+			listBoxDishes.DataSource = null;
+			listBoxDishes.DataSource = controller.GetDishes(txtBoxSearch.Text);
+		}
+
+		private void listBoxClients_MouseDoubleClick(object sender, MouseEventArgs e)
+		{
+			DishDetails dishDetails = new DishDetails((Dish)listBoxDishes.SelectedItem);
+			dishDetails.ShowDialog();
+			ListDishes listDishes = new ListDishes();
+			listDishes.Show();
+			this.Close();
 		}
 	}
 }

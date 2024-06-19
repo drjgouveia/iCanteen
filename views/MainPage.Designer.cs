@@ -1,4 +1,6 @@
-﻿namespace iCantina.views
+﻿using System.Windows.Forms;
+
+namespace iCantina.views
 {
     partial class MainPage
     {
@@ -224,7 +226,8 @@
         private System.Windows.Forms.Button btnDishes;
         private System.Windows.Forms.Button btnStudents;
         private System.Windows.Forms.Button btnProfessors;
-    private System.Windows.Forms.Label lblUser;
+		private Button btnEmployees;
+		private System.Windows.Forms.Label lblUser;
     private System.Windows.Forms.Button btnLogout;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
     }

@@ -50,7 +50,15 @@ namespace iCanteen.views.lists
             this.Close();
         }
 
-    }
+		private void listBoxFines_MouseDoubleClick(object sender, MouseEventArgs e)
+		{
+			PenaltyDetails penaltyDetails = new PenaltyDetails((Penalty)listBoxFines.SelectedItem);
+			penaltyDetails.ShowDialog();
+			ListPenalties listPenalties = new ListPenalties();
+			listPenalties.Show();
+			this.Close();
+		}
+	}
 
  
 }
