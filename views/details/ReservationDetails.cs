@@ -190,8 +190,9 @@ namespace iCantina.views
 			reservation.Client = (Client)cmbBoxClients.SelectedItem;
 
 			using (SaveFileDialog saveFileDialog = new SaveFileDialog())
-			{ 
-				if(saveFileDialog.ShowDialog()==DialogResult.OK)
+			{
+                saveFileDialog.Filter = "Txt files (.txt)|.txt";
+                if (saveFileDialog.ShowDialog()==DialogResult.OK)
 				{
                     string reservationDetails = $"Reservation: {reservation.Client} - {reservation.Menu}";
 			reservation.Penalty = controller.CalculatePenaltyHours(reservation.Menu.Date);
