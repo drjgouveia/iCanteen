@@ -16,7 +16,7 @@ namespace iCantina.models
 
 		public override string ToString()
 		{
-			return $"Penalty: {Amount}� for {Hours} hours";
+			return $"Penalty: {Amount} € for {Hours} hours";
 		}
 	}
 }

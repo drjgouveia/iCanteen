@@ -143,9 +143,9 @@
     <Compile Include="controllers\details\ReservationDetailsController.cs" />
     <Compile Include="helpers\DishTypeEnum.cs" />
     <Compile Include="iCanteenContext.cs" />
-    <Compile Include="Migrations\202406151807385_InitialCreate.cs" />
-    <Compile Include="Migrations\202406151807385_InitialCreate.Designer.cs">
-      <DependentUpon>202406151807385_InitialCreate.cs</DependentUpon>
+    <Compile Include="Migrations\202406191409253_Initial.cs" />
+    <Compile Include="Migrations\202406191409253_Initial.Designer.cs">
+      <DependentUpon>202406191409253_Initial.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="models\Client.cs" />
@@ -270,8 +270,8 @@
     <Compile Include="views\MainPage.Designer.cs">
       <DependentUpon>MainPage.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="Migrations\202406151807385_InitialCreate.resx">
-      <DependentUpon>202406151807385_InitialCreate.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202406191409253_Initial.resx">
+      <DependentUpon>202406191409253_Initial.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

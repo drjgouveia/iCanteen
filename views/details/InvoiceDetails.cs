@@ -26,6 +26,7 @@ namespace iCanteen.views.details
 
         private void btnGenerateInvoice_Click(object sender, EventArgs e)
         {
+			/*
             using (SaveFileDialog saveFileDialog = new SaveFileDialog())
             {
                 saveFileDialog.Filter = "PDF files (*.pdf)|*.pdf";
@@ -67,7 +68,7 @@ namespace iCanteen.views.details
 
                     pdf.Save(saveFileDialog.FileName);
                 }
-            }
-        }
-    }
+            }*/
+		}
+	}
 }

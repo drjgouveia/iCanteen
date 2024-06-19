@@ -12,10 +12,6 @@ namespace iCantina.views
 	{
 		private ReservationDetailsController controller = null;
 		private bool isStudent = false;
-        private const int LunchHourLimit = 10;
-        private const int DinnerHourLimit = 16;
-        private const float PenaltyHour = (float)2.50;
-
 
         public ReservationDetails()
 		{
@@ -133,6 +129,7 @@ namespace iCantina.views
 				{
 					price += extra.Price;
 				}
+				price += controller.CalculatePenaltyHours(menu.Date) != null ? controller.CalculatePenaltyHours(menu.Date).Amount : 0.0f;
 				lblCost.Text = $"Cost: {price}";
 			}
 		}
@@ -187,15 +184,7 @@ namespace iCantina.views
 			reservation.Dish = menu.Dish;
 			reservation.Menu = menu;
 			reservation.Client = (Client)cmbBoxClients.SelectedItem;
-            /*
-			foreach (Penalty penalty in controller.GetPenalties())
-			{
-				if (penalty.Hours < DateTime.Now.Hour - menu.Date.Hour)
-				{
-					reservation.Penalty = penalty;
-				}
-			}
-			*/
+			reservation.Penalty = controller.CalculatePenaltyHours(reservation.Menu.Date);
 
             Client client = (Client)cmbBoxClients.SelectedItem;
 			if (client.Balance < reservation.GetTotal())

@@ -74,10 +74,9 @@ namespace iCanteen.controllers
 			return context.Extras.Where(e => e.Active).ToList();
 		}
 
-		public bool CreateReservation(DateTime date, string clientNif, ICollection<int> extras, int menuId, bool isLunch, DishTypeEnum dishType)
+		public bool CreateReservation(Reservation reservation)
 		{
-			Reservation reservation = new Reservation();
-			iCantina.models.Menu menu = context.Menus.Find(menuId);
+			iCantina.models.Menu menu = reservation.Menu;
 			if (menu == null)
 				throw new Exception("Menu not available");
 
@@ -85,33 +84,12 @@ namespace iCanteen.controllers
 				throw new Exception("Menu not available");
 
 			menu.QuantityAvailable--;
-			if (isLunch)
-				date = DateTime.ParseExact(date.ToString("dd/MM/yyyy") + " 12:00:00", "dd/MM/yyyy HH:mm:ss", System.Globalization.CultureInfo.InvariantCulture);
-			else
-				date = DateTime.ParseExact(date.ToString("dd/MM/yyyy") + " 19:00:00", "dd/MM/yyyy HH:mm:ss", System.Globalization.CultureInfo.InvariantCulture);
 
-			reservation.Date = date;
-			reservation.Menu = menu;
-			Student student = context.Users.OfType<Student>().FirstOrDefault(s => s.NIF.Contains(clientNif));
-			reservation.Client = student;
-			Professor professor = null;
-			if (student == null)
-            {
-				professor = context.Users.OfType<Professor>().FirstOrDefault(s => s.NIF.Contains(clientNif));
-				reservation.Client = professor;
-			}
-
-			if (student == null && professor == null)
-				throw new Exception("Client not found");
-
-			List<Extra> extrasList = new List<Extra>();
-			foreach (int extraId in extras)
-			{
-				Extra extra = context.Extras.Find(extraId);
-				extrasList.Add(extra);
-			}
-            reservation.Extras = extrasList;
             reservation.Dish = menu.Dish;
+
+			reservation.Client.Balance -= reservation.GetTotal();
+			reservation.Client.Balance -= CalculatePenaltyHours(reservation.Menu.Date) != null ? CalculatePenaltyHours(reservation.Menu.Date).Amount : 0.0f;
+
 			context.Reservations.Add(reservation);
 			context.SaveChanges();
 			return true;
@@ -128,77 +106,28 @@ namespace iCanteen.controllers
 			return context.Penalties.ToList();
 		}
 
-		public bool CreateReservation(Reservation reservation)
-		{
-			try
-			{
-                context.Reservations.Add(reservation);
-                reservation.Client.Balance -= reservation.GetTotal();
-                context.SaveChanges();
-                return true;
-				
-			}
-			catch (Exception ex)
-			{
-				return false;
-			}
-		}
-
-		public float CalculatePenaltyHours(DateTime date)
+		public Penalty CalculatePenaltyHours(DateTime date)
 		{
 
-			var penaltyIntervals = new Dictionary<(int, int), float>
-            {
-				{ (9, 10), 1.00f },
-				{ (10, 11), 1.50f },
-				{ (11, 12), 2.00f },
-				{ (16, 17), 1.00f },
-				{ (17, 18), 1.50f },
-				{ (18, 19), 2.00f }
-            };
+			List<Penalty> penalties = new List<Penalty>();
+			penalties = context.Penalties.OrderByDescending(x => x.Hours).ToList();
 
-            foreach (var rate in penaltyIntervals)
+            foreach (var rate in penalties)
             {
-                if (date.Hour >= rate.Key.Item1 && date.Hour <= rate.Key.Item2)
+				if ((date - DateTime.Now).Hours == rate.Hours)
                 {
-                    return (date.Hour - rate.Key.Item1) * rate.Value;
+                    return rate;
                 }
             }
-
-            return 0.0f;
-            /*
-			if (date.Hour >= 9 && date.Hour <= 10)
-			{
-				return (float)(date.Hour - 9) * 1.00f;
-			} else if (date.Hour >= 10 && date.Hour <= 11) 
-			{
-				return (float)(date.Hour - 10) * 1.50f;
-			} else if (date.Hour >= 11 && date.Hour <= 12)
-			{
-				return (float)(date.Hour - 11) * 2.00f;
-			}
-
-			if (date.Hour >= 15 && date.Hour <= 16)
-            {
-                return (float)(date.Hour - 15) * 1.00f;
-            } else if (date.Hour >= 16 && date.Hour <= 17)
-            {
-                return (float)(date.Hour - 16) * 1.50f;
-            } else if (date.Hour >= 17 && date.Hour <= 18)
-            {
-                return (float)(date.Hour - 17) * 2.00f;
-            }
-				return 0.0f;
-			*/
-
+			return null;
         }
 
 
-        public bool GenerateInvoice(Invoice invoice)
+        public bool GenerateInvoice(Invoice invoice, Client client)
 		{
 			try
 			{
-				context.Invoices.Add(invoice);
+				client.Invoices.Add(invoice);
 				return true;
 			}
 			catch (Exception ex)

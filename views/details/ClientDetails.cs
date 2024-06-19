@@ -116,7 +116,7 @@ namespace iCantina.views
 				btnEdit.Enabled = true;
 				btnDelete.Enabled = true;
 				listBoxInvoices.DataSource = null;
-				listBoxInvoices.DataSource = this.professor.Invoices;
+				listBoxInvoices.DataSource = controller.GetInvoicesOfClient(this.student);
 			}
 			else if (this.student != null)
 			{
@@ -132,7 +132,7 @@ namespace iCantina.views
 				btnEdit.Enabled = true;
 				btnDelete.Enabled = true;
 				listBoxInvoices.DataSource = null;
-				listBoxInvoices.DataSource = this.student.Invoices;
+				listBoxInvoices.DataSource = controller.GetInvoicesOfClient(this.student);
 			}
 			else
 			{

@@ -139,5 +139,10 @@ namespace iCantina.controllers
 		{
 			return context.Users.OfType<Professor>().ToList();
 		}
+
+		internal object GetInvoicesOfClient(Client client)
+		{
+			return context.Invoices.Where(i => i.Client.Id == client.Id).ToList();
+		}
 	}
 }
