@@ -36,10 +36,9 @@
             // 
             // btnCreateEmployee
             // 
-            this.btnCreateEmployee.Location = new System.Drawing.Point(375, 67);
-            this.btnCreateEmployee.Margin = new System.Windows.Forms.Padding(4);
+            this.btnCreateEmployee.Location = new System.Drawing.Point(281, 54);
             this.btnCreateEmployee.Name = "btnCreateEmployee";
-            this.btnCreateEmployee.Size = new System.Drawing.Size(100, 28);
+            this.btnCreateEmployee.Size = new System.Drawing.Size(75, 23);
             this.btnCreateEmployee.TabIndex = 31;
             this.btnCreateEmployee.Text = "Create";
             this.btnCreateEmployee.UseVisualStyleBackColor = true;
@@ -50,10 +49,9 @@
             this.txtBoxSearchEmployees.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtBoxSearchEmployees.Location = new System.Drawing.Point(58, 112);
-            this.txtBoxSearchEmployees.Margin = new System.Windows.Forms.Padding(4);
+            this.txtBoxSearchEmployees.Location = new System.Drawing.Point(44, 91);
             this.txtBoxSearchEmployees.Name = "txtBoxSearchEmployees";
-            this.txtBoxSearchEmployees.Size = new System.Drawing.Size(417, 22);
+            this.txtBoxSearchEmployees.Size = new System.Drawing.Size(314, 20);
             this.txtBoxSearchEmployees.TabIndex = 30;
             this.txtBoxSearchEmployees.TextChanged += new System.EventHandler(this.txtBoxSearchEmployees_TextChanged);
             // 
@@ -63,11 +61,9 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lstBoxEmployees.FormattingEnabled = true;
-            this.lstBoxEmployees.ItemHeight = 16;
-            this.lstBoxEmployees.Location = new System.Drawing.Point(58, 152);
-            this.lstBoxEmployees.Margin = new System.Windows.Forms.Padding(4);
+            this.lstBoxEmployees.Location = new System.Drawing.Point(44, 124);
             this.lstBoxEmployees.Name = "lstBoxEmployees";
-            this.lstBoxEmployees.Size = new System.Drawing.Size(417, 244);
+            this.lstBoxEmployees.Size = new System.Drawing.Size(314, 199);
             this.lstBoxEmployees.TabIndex = 29;
             this.lstBoxEmployees.DoubleClick += new System.EventHandler(this.lstBoxEmployees_DoubleClick);
             // 
@@ -75,7 +71,8 @@
             // 
             this.lblEmployees.AutoSize = true;
             this.lblEmployees.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblEmployees.Location = new System.Drawing.Point(52, 26);
+            this.lblEmployees.Location = new System.Drawing.Point(39, 21);
+            this.lblEmployees.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblEmployees.Name = "lblEmployees";
             this.lblEmployees.Size = new System.Drawing.Size(202, 26);
             this.lblEmployees.TabIndex = 28;
@@ -84,13 +81,15 @@
             // 
             // ListEmployees
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(571, 424);
+            this.ClientSize = new System.Drawing.Size(428, 344);
             this.Controls.Add(this.btnCreateEmployee);
             this.Controls.Add(this.txtBoxSearchEmployees);
             this.Controls.Add(this.lstBoxEmployees);
             this.Controls.Add(this.lblEmployees);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "ListEmployees";
             this.Text = "ListEmployees";
             this.Load += new System.EventHandler(this.ListEmployees_Load);

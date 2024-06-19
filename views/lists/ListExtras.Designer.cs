@@ -40,21 +40,18 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.listBoxExtras.DisplayMember = "w";
             this.listBoxExtras.FormattingEnabled = true;
-            this.listBoxExtras.ItemHeight = 16;
-            this.listBoxExtras.Location = new System.Drawing.Point(44, 128);
-            this.listBoxExtras.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.listBoxExtras.Location = new System.Drawing.Point(33, 104);
             this.listBoxExtras.Name = "listBoxExtras";
-            this.listBoxExtras.Size = new System.Drawing.Size(511, 292);
+            this.listBoxExtras.Size = new System.Drawing.Size(384, 238);
             this.listBoxExtras.TabIndex = 36;
             this.listBoxExtras.ValueMember = "w";
             this.listBoxExtras.DoubleClick += new System.EventHandler(this.listBoxExtras_DoubleClick);
             // 
             // btnCreate
             // 
-            this.btnCreate.Location = new System.Drawing.Point(456, 38);
-            this.btnCreate.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnCreate.Location = new System.Drawing.Point(342, 31);
             this.btnCreate.Name = "btnCreate";
-            this.btnCreate.Size = new System.Drawing.Size(100, 28);
+            this.btnCreate.Size = new System.Drawing.Size(75, 23);
             this.btnCreate.TabIndex = 35;
             this.btnCreate.Text = "Create";
             this.btnCreate.UseVisualStyleBackColor = true;
@@ -65,10 +62,9 @@
             this.txtBoxSearch.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtBoxSearch.Location = new System.Drawing.Point(44, 96);
-            this.txtBoxSearch.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtBoxSearch.Location = new System.Drawing.Point(33, 78);
             this.txtBoxSearch.Name = "txtBoxSearch";
-            this.txtBoxSearch.Size = new System.Drawing.Size(511, 22);
+            this.txtBoxSearch.Size = new System.Drawing.Size(384, 20);
             this.txtBoxSearch.TabIndex = 34;
             this.txtBoxSearch.TextChanged += new System.EventHandler(this.txtBoxSearch_TextChanged);
             // 
@@ -76,23 +72,24 @@
             // 
             this.title.AutoSize = true;
             this.title.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.title.Location = new System.Drawing.Point(37, 38);
+            this.title.Location = new System.Drawing.Point(28, 31);
+            this.title.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.title.Name = "title";
-            this.title.Size = new System.Drawing.Size(191, 32);
+            this.title.Size = new System.Drawing.Size(152, 26);
             this.title.TabIndex = 33;
             this.title.Text = "List of Extras";
             this.title.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // ListExtras
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(592, 459);
+            this.ClientSize = new System.Drawing.Size(444, 373);
             this.Controls.Add(this.listBoxExtras);
             this.Controls.Add(this.btnCreate);
             this.Controls.Add(this.txtBoxSearch);
             this.Controls.Add(this.title);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "ListExtras";
             this.Text = "ListExtras";
             this.Load += new System.EventHandler(this.ListExtras_Load);

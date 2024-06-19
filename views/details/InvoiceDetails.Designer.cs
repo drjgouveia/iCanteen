@@ -43,20 +43,18 @@
             // 
             this.txtDescription.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtDescription.Location = new System.Drawing.Point(148, 95);
-            this.txtDescription.Margin = new System.Windows.Forms.Padding(4);
+            this.txtDescription.Location = new System.Drawing.Point(111, 77);
             this.txtDescription.Name = "txtDescription";
-            this.txtDescription.Size = new System.Drawing.Size(384, 22);
+            this.txtDescription.Size = new System.Drawing.Size(289, 20);
             this.txtDescription.TabIndex = 36;
             // 
             // lblDescription
             // 
             this.lblDescription.AutoSize = true;
             this.lblDescription.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDescription.Location = new System.Drawing.Point(34, 95);
-            this.lblDescription.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblDescription.Location = new System.Drawing.Point(26, 77);
             this.lblDescription.Name = "lblDescription";
-            this.lblDescription.Size = new System.Drawing.Size(106, 20);
+            this.lblDescription.Size = new System.Drawing.Size(90, 17);
             this.lblDescription.TabIndex = 35;
             this.lblDescription.Text = "Description";
             // 
@@ -64,9 +62,10 @@
             // 
             this.Invoices.AutoSize = true;
             this.Invoices.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Invoices.Location = new System.Drawing.Point(12, 9);
+            this.Invoices.Location = new System.Drawing.Point(9, 7);
+            this.Invoices.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.Invoices.Name = "Invoices";
-            this.Invoices.Size = new System.Drawing.Size(126, 32);
+            this.Invoices.Size = new System.Drawing.Size(100, 26);
             this.Invoices.TabIndex = 34;
             this.Invoices.Text = "Invoices";
             this.Invoices.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -75,10 +74,9 @@
             // 
             this.labelCliente.AutoSize = true;
             this.labelCliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelCliente.Location = new System.Drawing.Point(33, 59);
-            this.labelCliente.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.labelCliente.Location = new System.Drawing.Point(25, 48);
             this.labelCliente.Name = "labelCliente";
-            this.labelCliente.Size = new System.Drawing.Size(68, 20);
+            this.labelCliente.Size = new System.Drawing.Size(58, 17);
             this.labelCliente.TabIndex = 37;
             this.labelCliente.Text = "Cliente";
             // 
@@ -86,38 +84,36 @@
             // 
             this.textBoxCliente.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBoxCliente.Location = new System.Drawing.Point(120, 59);
-            this.textBoxCliente.Margin = new System.Windows.Forms.Padding(4);
+            this.textBoxCliente.Location = new System.Drawing.Point(90, 48);
             this.textBoxCliente.Name = "textBoxCliente";
-            this.textBoxCliente.Size = new System.Drawing.Size(411, 22);
+            this.textBoxCliente.Size = new System.Drawing.Size(309, 20);
             this.textBoxCliente.TabIndex = 38;
             // 
             // textBoxPreco
             // 
             this.textBoxPreco.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBoxPreco.Location = new System.Drawing.Point(107, 128);
-            this.textBoxPreco.Margin = new System.Windows.Forms.Padding(4);
+            this.textBoxPreco.Location = new System.Drawing.Point(80, 104);
             this.textBoxPreco.Name = "textBoxPreco";
-            this.textBoxPreco.Size = new System.Drawing.Size(424, 22);
+            this.textBoxPreco.Size = new System.Drawing.Size(319, 20);
             this.textBoxPreco.TabIndex = 39;
             // 
             // labelValue
             // 
             this.labelValue.AutoSize = true;
             this.labelValue.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelValue.Location = new System.Drawing.Point(33, 128);
-            this.labelValue.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.labelValue.Location = new System.Drawing.Point(25, 104);
             this.labelValue.Name = "labelValue";
-            this.labelValue.Size = new System.Drawing.Size(56, 20);
+            this.labelValue.Size = new System.Drawing.Size(49, 17);
             this.labelValue.TabIndex = 40;
             this.labelValue.Text = "Value";
             // 
             // btnGenerateInvoice
             // 
-            this.btnGenerateInvoice.Location = new System.Drawing.Point(385, 20);
+            this.btnGenerateInvoice.Location = new System.Drawing.Point(289, 16);
+            this.btnGenerateInvoice.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnGenerateInvoice.Name = "btnGenerateInvoice";
-            this.btnGenerateInvoice.Size = new System.Drawing.Size(146, 23);
+            this.btnGenerateInvoice.Size = new System.Drawing.Size(110, 19);
             this.btnGenerateInvoice.TabIndex = 41;
             this.btnGenerateInvoice.Text = "Generate Invoice";
             this.btnGenerateInvoice.UseVisualStyleBackColor = true;
@@ -125,17 +121,18 @@
             // listView1
             // 
             this.listView1.HideSelection = false;
-            this.listView1.Location = new System.Drawing.Point(36, 179);
+            this.listView1.Location = new System.Drawing.Point(27, 145);
+            this.listView1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(495, 202);
+            this.listView1.Size = new System.Drawing.Size(372, 165);
             this.listView1.TabIndex = 42;
             this.listView1.UseCompatibleStateImageBehavior = false;
             // 
             // InvoiceDetails
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(571, 409);
+            this.ClientSize = new System.Drawing.Size(428, 332);
             this.Controls.Add(this.listView1);
             this.Controls.Add(this.btnGenerateInvoice);
             this.Controls.Add(this.labelValue);
@@ -145,6 +142,8 @@
             this.Controls.Add(this.txtDescription);
             this.Controls.Add(this.lblDescription);
             this.Controls.Add(this.Invoices);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "InvoiceDetails";
             this.Text = "InvoiceDetails";
             this.ResumeLayout(false);

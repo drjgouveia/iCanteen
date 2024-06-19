@@ -46,10 +46,9 @@
             // 
             this.txtBoxUserNameEmployee.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtBoxUserNameEmployee.Location = new System.Drawing.Point(180, 66);
-            this.txtBoxUserNameEmployee.Margin = new System.Windows.Forms.Padding(4);
+            this.txtBoxUserNameEmployee.Location = new System.Drawing.Point(135, 54);
             this.txtBoxUserNameEmployee.Name = "txtBoxUserNameEmployee";
-            this.txtBoxUserNameEmployee.Size = new System.Drawing.Size(553, 22);
+            this.txtBoxUserNameEmployee.Size = new System.Drawing.Size(416, 20);
             this.txtBoxUserNameEmployee.TabIndex = 32;
             this.txtBoxUserNameEmployee.TextChanged += new System.EventHandler(this.txtBoxUserNameEmployee_TextChanged);
             // 
@@ -57,8 +56,7 @@
             // 
             this.lblUsernameEmployee.AutoSize = true;
             this.lblUsernameEmployee.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblUsernameEmployee.Location = new System.Drawing.Point(78, 68);
-            this.lblUsernameEmployee.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblUsernameEmployee.Location = new System.Drawing.Point(58, 55);
             this.lblUsernameEmployee.Name = "lblUsernameEmployee";
             this.lblUsernameEmployee.Size = new System.Drawing.Size(81, 17);
             this.lblUsernameEmployee.TabIndex = 31;
@@ -68,7 +66,8 @@
             // 
             this.lblEmployee.AutoSize = true;
             this.lblEmployee.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblEmployee.Location = new System.Drawing.Point(76, 23);
+            this.lblEmployee.Location = new System.Drawing.Point(57, 19);
+            this.lblEmployee.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblEmployee.Name = "lblEmployee";
             this.lblEmployee.Size = new System.Drawing.Size(118, 26);
             this.lblEmployee.TabIndex = 30;
@@ -79,8 +78,7 @@
             // 
             this.lblNIF.AutoSize = true;
             this.lblNIF.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNIF.Location = new System.Drawing.Point(78, 141);
-            this.lblNIF.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblNIF.Location = new System.Drawing.Point(58, 115);
             this.lblNIF.Name = "lblNIF";
             this.lblNIF.Size = new System.Drawing.Size(32, 17);
             this.lblNIF.TabIndex = 33;
@@ -90,10 +88,9 @@
             // 
             this.txtBoxNameEmployee.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtBoxNameEmployee.Location = new System.Drawing.Point(143, 105);
-            this.txtBoxNameEmployee.Margin = new System.Windows.Forms.Padding(4);
+            this.txtBoxNameEmployee.Location = new System.Drawing.Point(107, 85);
             this.txtBoxNameEmployee.Name = "txtBoxNameEmployee";
-            this.txtBoxNameEmployee.Size = new System.Drawing.Size(590, 22);
+            this.txtBoxNameEmployee.Size = new System.Drawing.Size(444, 20);
             this.txtBoxNameEmployee.TabIndex = 35;
             this.txtBoxNameEmployee.TextChanged += new System.EventHandler(this.txtBoxNameEmployee_TextChanged);
             // 
@@ -101,8 +98,7 @@
             // 
             this.lblName.AutoSize = true;
             this.lblName.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblName.Location = new System.Drawing.Point(78, 105);
-            this.lblName.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblName.Location = new System.Drawing.Point(58, 85);
             this.lblName.Name = "lblName";
             this.lblName.Size = new System.Drawing.Size(49, 17);
             this.lblName.TabIndex = 34;
@@ -112,10 +108,9 @@
             // 
             this.txtBoxNifEmployee.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtBoxNifEmployee.Location = new System.Drawing.Point(119, 139);
-            this.txtBoxNifEmployee.Margin = new System.Windows.Forms.Padding(4);
+            this.txtBoxNifEmployee.Location = new System.Drawing.Point(89, 113);
             this.txtBoxNifEmployee.Name = "txtBoxNifEmployee";
-            this.txtBoxNifEmployee.Size = new System.Drawing.Size(614, 22);
+            this.txtBoxNifEmployee.Size = new System.Drawing.Size(462, 20);
             this.txtBoxNifEmployee.TabIndex = 36;
             this.txtBoxNifEmployee.TextChanged += new System.EventHandler(this.txtBoxNifEmployee_TextChanged);
             // 
@@ -130,12 +125,11 @@
             this.tableLayoutPanel1.Controls.Add(this.btnDeleteEmployee, 2, 0);
             this.tableLayoutPanel1.Controls.Add(this.btnEditEmployee, 1, 0);
             this.tableLayoutPanel1.Controls.Add(this.btnCreateEmployee, 0, 0);
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(82, 178);
-            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(4);
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(62, 145);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 1;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(651, 37);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(488, 30);
             this.tableLayoutPanel1.TabIndex = 37;
             // 
             // btnDeleteEmployee
@@ -143,10 +137,9 @@
             this.btnDeleteEmployee.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnDeleteEmployee.Location = new System.Drawing.Point(438, 4);
-            this.btnDeleteEmployee.Margin = new System.Windows.Forms.Padding(4);
+            this.btnDeleteEmployee.Location = new System.Drawing.Point(327, 3);
             this.btnDeleteEmployee.Name = "btnDeleteEmployee";
-            this.btnDeleteEmployee.Size = new System.Drawing.Size(209, 29);
+            this.btnDeleteEmployee.Size = new System.Drawing.Size(158, 24);
             this.btnDeleteEmployee.TabIndex = 2;
             this.btnDeleteEmployee.Text = "Delete";
             this.btnDeleteEmployee.UseVisualStyleBackColor = true;
@@ -157,10 +150,9 @@
             this.btnEditEmployee.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnEditEmployee.Location = new System.Drawing.Point(221, 4);
-            this.btnEditEmployee.Margin = new System.Windows.Forms.Padding(4);
+            this.btnEditEmployee.Location = new System.Drawing.Point(165, 3);
             this.btnEditEmployee.Name = "btnEditEmployee";
-            this.btnEditEmployee.Size = new System.Drawing.Size(209, 29);
+            this.btnEditEmployee.Size = new System.Drawing.Size(156, 24);
             this.btnEditEmployee.TabIndex = 1;
             this.btnEditEmployee.Text = "Edit";
             this.btnEditEmployee.UseVisualStyleBackColor = true;
@@ -171,10 +163,9 @@
             this.btnCreateEmployee.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnCreateEmployee.Location = new System.Drawing.Point(4, 4);
-            this.btnCreateEmployee.Margin = new System.Windows.Forms.Padding(4);
+            this.btnCreateEmployee.Location = new System.Drawing.Point(3, 3);
             this.btnCreateEmployee.Name = "btnCreateEmployee";
-            this.btnCreateEmployee.Size = new System.Drawing.Size(209, 29);
+            this.btnCreateEmployee.Size = new System.Drawing.Size(156, 24);
             this.btnCreateEmployee.TabIndex = 0;
             this.btnCreateEmployee.Text = "Create";
             this.btnCreateEmployee.UseVisualStyleBackColor = true;
@@ -182,9 +173,9 @@
             // 
             // EmployeesDetails
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 228);
+            this.ClientSize = new System.Drawing.Size(600, 185);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Controls.Add(this.txtBoxNifEmployee);
             this.Controls.Add(this.txtBoxNameEmployee);
@@ -193,6 +184,8 @@
             this.Controls.Add(this.txtBoxUserNameEmployee);
             this.Controls.Add(this.lblUsernameEmployee);
             this.Controls.Add(this.lblEmployee);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "EmployeesDetails";
             this.Text = "EmployeesDetails";
             this.Load += new System.EventHandler(this.EmployeesDetails_Load);
