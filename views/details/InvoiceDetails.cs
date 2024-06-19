@@ -71,4 +71,7 @@ namespace iCanteen.views.details
             }*/
 		}
 	}
+            } */
+        }
+    }
 }
