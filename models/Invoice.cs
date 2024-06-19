@@ -33,7 +33,7 @@ namespace iCantina.models
 
         public override string ToString()
         {
-			return "Invoice: " + Id + " - " + Date + " - " + Total + " €";
+			return "Invoice: " + Id + " - " + Client.Name + " - " + Date + " - " + Total + " €";
 		}
     }
 }

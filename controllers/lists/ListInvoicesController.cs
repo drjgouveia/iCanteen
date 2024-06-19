@@ -12,10 +12,10 @@ namespace iCanteen.controllers.lists
     {
         public ListInvoicesController() : base()
         {
-            Console.WriteLine("Fines list controller initialized.");
+            Console.WriteLine("Invoices list controller initialized.");
         }
 
-        public List<Invoice> GetFines(string search = "")
+        public List<Invoice> GetInvoices(string search = "")
         {
             if (search == "")
             {
@@ -23,7 +23,7 @@ namespace iCanteen.controllers.lists
             }
             else
             {
-                return context.Invoices.Where(s => s.Date.ToString().Contains(search)).ToList();
+                return context.Invoices.Where(s => s.ToString().Contains(search)).ToList();
             }
         }
     }

@@ -240,12 +240,6 @@
     <Compile Include="views\lists\ListExtras.Designer.cs">
       <DependentUpon>ListExtras.cs</DependentUpon>
     </Compile>
-    <Compile Include="views\lists\ListInvoices.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="views\lists\ListInvoices.Designer.cs">
-      <DependentUpon>ListInvoices.cs</DependentUpon>
-    </Compile>
     <Compile Include="views\lists\ListPenalties.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -317,9 +311,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="views\ListEmployees.resx">
       <DependentUpon>ListEmployees.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="views\lists\ListInvoices.resx">
-      <DependentUpon>ListInvoices.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="views\lists\ListPenalties.resx">
       <DependentUpon>ListPenalties.cs</DependentUpon>

@@ -1,5 +1,7 @@
 using iCantina.controllers;
 using iCantina.models;
+using PdfSharp.Drawing;
+using PdfSharp.Pdf;
 using System;
 using System.Drawing;
 using System.Text.RegularExpressions;
@@ -276,5 +278,7 @@ namespace iCantina.views
 
 			this.Close();
 		}
+
+		
 	}
 }

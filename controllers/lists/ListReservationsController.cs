@@ -83,14 +83,13 @@ namespace iCanteen.controllers
                     if (saveFileDialog.ShowDialog() == DialogResult.OK)
                     {
                         PdfDocument pdf = new PdfDocument();
-
                         pdf.Info.Title = "Invoice of Reservation";
                         PdfPage pdfPage = pdf.AddPage();
                         XGraphics gfx = XGraphics.FromPdfPage(pdfPage);
                         XFont font = new XFont("Verdana", 20);
                         XFont titleFont = new XFont("Verdana", 20);
-                        XFont itemFont = new XFont("Verdana", 12);
-                        XFont totalFont = new XFont("Verdana", 14);
+                        XFont itemFont = new XFont("Verdana", 8);
+                        XFont totalFont = new XFont("Verdana", 10);
                         gfx.DrawString("Invoice of Reservation", titleFont, XBrushes.Black,
                         new XRect(0, 20, pdfPage.Width.Point, 40), XStringFormats.TopCenter);
 
@@ -100,15 +99,11 @@ namespace iCanteen.controllers
                         
                         foreach (var item in invoice.InvoiceLines)
                         {
-                            item.Description = item.Description;
-                            item.Price = item.Price;
-
-
                             gfx.DrawString($"Description: {item.Description}", itemFont, XBrushes.Black,
                             new XRect(40, yOffset, pdfPage.Width.Point - 80, 20), XStringFormats.TopLeft);
                             yOffset += 20;
 
-                            gfx.DrawString($"Price: {item.Price:C}", itemFont, XBrushes.Black,
+                            gfx.DrawString($"Price: {item.Price} €", itemFont, XBrushes.Black,
                             new XRect(60, yOffset, pdfPage.Width.Point - 120, 20), XStringFormats.TopLeft);
                             yOffset += 20;
 
