@@ -16,10 +16,6 @@ namespace iCantina.views
 	{
 		private ReservationDetailsController controller = null;
 		private bool isStudent = false;
-        private const int LunchHourLimit = 10;
-        private const int DinnerHourLimit = 16;
-        private const float PenaltyHour = (float)2.50;
-
 
         public ReservationDetails()
 		{
@@ -137,6 +133,7 @@ namespace iCantina.views
 				{
 					price += extra.Price;
 				}
+				price += controller.CalculatePenaltyHours(menu.Date) != null ? controller.CalculatePenaltyHours(menu.Date).Amount : 0.0f;
 				lblCost.Text = $"Cost: {price}";
 			}
 		}
@@ -197,6 +194,7 @@ namespace iCantina.views
 				if(saveFileDialog.ShowDialog()==DialogResult.OK)
 				{
                     string reservationDetails = $"Reservation: {reservation.Client} - {reservation.Menu}";
+			reservation.Penalty = controller.CalculatePenaltyHours(reservation.Menu.Date);
 
                     string fileName = $"{reservation.Client.Name}_{reservation.Date:yyyyMMdd_HHmmss}.txt";
 

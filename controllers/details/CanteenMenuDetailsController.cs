@@ -34,15 +34,15 @@ namespace iCantina.controllers
 			}
 		}
 
-		public bool CreateMenu(DateTime date, int quantity, float priceStudent, float priceProfessor, List<Extra> extras, int dishId = -1)
+		public bool CreateMenu(DateTime date, int quantity, float priceStudent, float priceProfessor, List<Extra> extras, int dishId)
 		{
 			try
 			{
-				if (context.Menus.FirstOrDefault(m => m.Date == date) != null)
+                Dish dish = context.Dishes.Find(dishId);
+                if (context.Menus.FirstOrDefault(m => m.Date == date && m.Dish.Id == dish.Id) != null)
 					throw new Exception("Menu for that time already exists.");
 				models.Menu menu = new models.Menu();
 				menu.Date = date;
-				Dish dish = dishId == -1 ? null : context.Dishes.Find(dishId);
 				if (dish != null)
 					menu.Dish = dish;
 

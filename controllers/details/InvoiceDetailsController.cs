@@ -11,7 +11,7 @@ namespace iCanteen.controllers.details
     {
         public InvoiceDetailsController() : base() 
         { 
-        
+            
         }
     }
 }

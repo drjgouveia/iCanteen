@@ -57,6 +57,7 @@ namespace iCanteen.controllers
 			{
 				Reservation reservation = context.Reservations.Find(reservationId);
 				Invoice invoice = new Invoice();
+				invoice.Client = reservation.Client;
 				invoice.Date = DateTime.Now;
 				invoice.Total = reservation.GetTotal();
 				invoice.Client = reservation.Client;

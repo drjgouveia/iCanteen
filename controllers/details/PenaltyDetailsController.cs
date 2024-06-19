@@ -19,7 +19,7 @@ namespace iCanteen.controllers
         }
 
 
-        public bool CreatePenalty(int id, float amount, int hours)
+        public bool CreatePenalty(float amount, int hours)
         {
             try
             {

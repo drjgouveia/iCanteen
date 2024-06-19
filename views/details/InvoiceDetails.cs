@@ -1,4 +1,4 @@
-﻿using iCanteen.controllers.details;
+using iCanteen.controllers.details;
 using iCantina.models;
 using PdfSharp.Drawing;
 using PdfSharp.Pdf;
