@@ -77,5 +77,6 @@ namespace iCantina.views
 			ListPenalties listPenalties = new ListPenalties();
 			listPenalties.Show(); 
         }
+
     }
 }

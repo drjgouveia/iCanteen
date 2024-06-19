@@ -99,7 +99,7 @@ namespace iCantina.views
 				{
 					btnCreate.Enabled = false;
 					btnEdit.Enabled = false;
-					btnDelete.Enabled = false;
+					btnDelete.Enabled = true;
 				}
 			}
 			else

@@ -118,7 +118,7 @@ namespace iCantina.views
 				btnEdit.Enabled = true;
 				btnDelete.Enabled = true;
 				listBoxInvoices.DataSource = null;
-				listBoxInvoices.DataSource = controller.GetInvoicesOfClient(this.student);
+				listBoxInvoices.DataSource = controller.GetInvoicesOfClient(this.professor);
 			}
 			else if (this.student != null)
 			{
@@ -279,6 +279,9 @@ namespace iCantina.views
 			this.Close();
 		}
 
-		
-	}
+        private void listBoxInvoices_MouseDoubleClick(object sender, MouseEventArgs e)
+        {
+            controller.OpenInvoice();
+        }
+    }
 }

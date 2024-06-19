@@ -243,6 +243,7 @@
             this.listBoxInvoices.Name = "listBoxInvoices";
             this.listBoxInvoices.Size = new System.Drawing.Size(471, 173);
             this.listBoxInvoices.TabIndex = 39;
+            this.listBoxInvoices.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.listBoxInvoices_MouseDoubleClick);
             // 
             // ClientDetails
             // 
