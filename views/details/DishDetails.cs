@@ -24,10 +24,12 @@ namespace iCanteen.views.details
 		{
 			InitializeComponent();
 			controller = new DishDetailsController();
+			checkIfCanActions();
 		}
 
 		public DishDetails(Dish dish) : this()
 		{
+			this.dish = dish;
 			txtDescription.Text = dish.Description;
 			cbBoxType.SelectedItem = dish.Type;
 			chBoxActive.Checked = dish.Active;

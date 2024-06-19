@@ -36,6 +36,12 @@ namespace iCanteen.views
         private void Load_Reservations()
         {
             comboBoxClients.DataSource = controller.GetClients();
+			if (comboBoxClients.Items.Count == 0)
+			{
+				MessageBox.Show("No clients created.");
+				this.Close();
+			}
+
             if (comboBoxClients.SelectedItem != null)
             {
                 listBoxReservations.DataSource = null;
@@ -57,6 +63,7 @@ namespace iCanteen.views
 			ListReservations listReservations = new ListReservations();
 			listReservations.Show();
 			this.Close();
+			
 		}
 
 		private void btnMark_Click(object sender, EventArgs e)

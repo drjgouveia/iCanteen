@@ -28,15 +28,13 @@ namespace iCantina.views
 			Calendar calendar = CultureInfo.InvariantCulture.Calendar;
 			CalendarWeekRule calendarWeekRule = CultureInfo.InvariantCulture.DateTimeFormat.CalendarWeekRule;
 			int week = calendar.GetWeekOfYear(DateTime.Now, calendarWeekRule, DayOfWeek.Monday);
-
-			cmbBoxClients.DataSource = controller.GetClients();
-			cmbBoxYear.DataSource = null;
-			cmbBoxYear.DataSource = controller.GetYears();
-			cmbBoxYear.SelectedItem = DateTime.Now.Year;
-			cmbBoxWeek.DataSource = null;
-			cmbBoxWeek.DataSource = controller.GetWeeksOfYear(DateTime.Now.Year);
-			cmbBoxWeek.SelectedItem = $"Week {week}";
-
+            cmbBoxClients.DataSource = controller.GetClients();
+            cmbBoxYear.DataSource = null;
+            cmbBoxYear.DataSource = controller.GetYears();
+            cmbBoxYear.SelectedItem = DateTime.Now.Year;
+            cmbBoxWeek.DataSource = null;
+            cmbBoxWeek.DataSource = controller.GetWeeksOfYear(DateTime.Now.Year);
+            cmbBoxWeek.SelectedItem = $"Week {week}";
 			List<models.Menu> menus = controller.GetMenus(week, DateTime.Now.Year);
             lstBoxMenus.DataSource = null;
 			lstBoxMenus.DataSource = menus;
@@ -120,23 +118,24 @@ namespace iCantina.views
 			{
 				models.Menu menu = (models.Menu)lstBoxMenus.SelectedItem;
 				double price = 0;
-				isStudent = controller.IsClientStudent((Client)cmbBoxClients.SelectedItem);
-				if (isStudent)
-				{
-					price = menu.PriceStudent;
-				}
-				else
-				{
-					price = menu.PriceProfessor;
-				}
-				foreach (Extra extra in chckBoxExtras.CheckedItems)
-				{
-					price += extra.Price;
-				}
-				price += controller.CalculatePenaltyHours(menu.Date) != null ? controller.CalculatePenaltyHours(menu.Date).Amount : 0.0f;
-				lblCost.Text = $"Cost: {price}";
-			}
-		}
+                isStudent = controller.IsClientStudent((Client)cmbBoxClients.SelectedItem);
+                if (isStudent)
+                {
+                    price = menu.PriceStudent;
+                }
+                else
+                {
+                    price = menu.PriceProfessor;
+                }
+                foreach (Extra extra in chckBoxExtras.CheckedItems)
+                {
+                    price += extra.Price;
+                }
+                price += controller.CalculatePenaltyHours(menu.Date) != null ? controller.CalculatePenaltyHours(menu.Date).Amount : 0.0f;
+                lblCost.Text = $"Cost: {price:F2}";
+
+            }
+        }
 
 		private void cmbBoxClients_SelectedIndexChanged(object sender, EventArgs e)
 		{
@@ -189,36 +188,6 @@ namespace iCantina.views
 			reservation.Menu = menu;
 			reservation.Client = (Client)cmbBoxClients.SelectedItem;
 
-			using (SaveFileDialog saveFileDialog = new SaveFileDialog())
-			{
-                saveFileDialog.Filter = "Txt files (.txt)|.txt";
-                if (saveFileDialog.ShowDialog()==DialogResult.OK)
-				{
-                    string reservationDetails = $"Reservation: {reservation.Client} - {reservation.Menu}";
-			reservation.Penalty = controller.CalculatePenaltyHours(reservation.Menu.Date);
-
-                    string fileName = $"{reservation.Client.Name}_{reservation.Date:yyyyMMdd_HHmmss}.txt";
-
-                    string filePath = Path.Combine(saveFileDialog.FileName);
-
-                    File.WriteAllText(filePath, reservationDetails);
-
-                }
-
-            };
-            
-
-
-            /*
-            foreach (Penalty penalty in controller.GetPenalties())
-            {
-                if (penalty.Hours < DateTime.Now.Hour - menu.Date.Hour)
-                {
-                    reservation.Penalty = penalty;
-                }
-            }
-            */
-
             Client client = (Client)cmbBoxClients.SelectedItem;
 			if (client.Balance < reservation.GetTotal())
 			{
@@ -231,7 +200,24 @@ namespace iCantina.views
 				if (controller.CreateReservation(reservation))
 				{
 					MessageBox.Show("Reservation created successfully.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
-					this.Close();
+                    using (SaveFileDialog saveFileDialog = new SaveFileDialog())
+                    {
+                        saveFileDialog.Filter = "Txt files (.txt)|.txt";
+                        if (saveFileDialog.ShowDialog() == DialogResult.OK)
+                        {
+                            string reservationDetails = $"Reservation: {reservation.Client} - {reservation.Menu}";
+                            reservation.Penalty = controller.CalculatePenaltyHours(reservation.Menu.Date);
+
+                            string fileName = $"{reservation.Client.Name}_{reservation.Date:yyyyMMdd_HHmmss}.txt";
+
+                            string filePath = Path.Combine(saveFileDialog.FileName);
+
+                            File.WriteAllText(filePath, reservationDetails);
+
+                        }
+
+                    };
+                    this.Close();
 				}
 				else
 				{
@@ -244,7 +230,9 @@ namespace iCantina.views
 				return;
 			}
 
+            
 
-		}
+
+        }
 	}
 }

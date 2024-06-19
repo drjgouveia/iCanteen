@@ -12,6 +12,7 @@ namespace iCantina.models
     [Key]
     public int Id { get; set; }
     public DateTime Date { get; set; }
+    public int DishId { get; set; }
     public Dish Dish { get; set; }
     public ICollection<Extra> Extras { get; set; }
     public int QuantityAvailable { get; set; }

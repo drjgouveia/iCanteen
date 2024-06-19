@@ -45,7 +45,7 @@
             this.listBoxReservations.Location = new System.Drawing.Point(11, 87);
             this.listBoxReservations.Margin = new System.Windows.Forms.Padding(2);
             this.listBoxReservations.Name = "listBoxReservations";
-            this.listBoxReservations.Size = new System.Drawing.Size(358, 147);
+            this.listBoxReservations.Size = new System.Drawing.Size(586, 147);
             this.listBoxReservations.TabIndex = 8;
             this.listBoxReservations.SelectedIndexChanged += new System.EventHandler(this.listBoxReservations_SelectedIndexChanged);
             // 
@@ -54,7 +54,7 @@
             this.comboBoxClients.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this.comboBoxClients.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.comboBoxClients.FormattingEnabled = true;
-            this.comboBoxClients.Location = new System.Drawing.Point(92, 50);
+            this.comboBoxClients.Location = new System.Drawing.Point(206, 51);
             this.comboBoxClients.Margin = new System.Windows.Forms.Padding(2);
             this.comboBoxClients.Name = "comboBoxClients";
             this.comboBoxClients.Size = new System.Drawing.Size(237, 21);
@@ -64,7 +64,7 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(52, 54);
+            this.label8.Location = new System.Drawing.Point(166, 54);
             this.label8.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(36, 13);
@@ -75,7 +75,7 @@
             // 
             this.lblReservations.AutoSize = true;
             this.lblReservations.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblReservations.Location = new System.Drawing.Point(144, 19);
+            this.lblReservations.Location = new System.Drawing.Point(261, 20);
             this.lblReservations.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblReservations.Name = "lblReservations";
             this.lblReservations.Size = new System.Drawing.Size(114, 20);
@@ -84,10 +84,10 @@
             // 
             // btnMark
             // 
-            this.btnMark.Location = new System.Drawing.Point(193, 238);
+            this.btnMark.Location = new System.Drawing.Point(319, 238);
             this.btnMark.Margin = new System.Windows.Forms.Padding(2);
             this.btnMark.Name = "btnMark";
-            this.btnMark.Size = new System.Drawing.Size(136, 25);
+            this.btnMark.Size = new System.Drawing.Size(278, 25);
             this.btnMark.TabIndex = 11;
             this.btnMark.Text = "Mark as served";
             this.btnMark.UseVisualStyleBackColor = true;
@@ -95,10 +95,10 @@
             // 
             // btnCreate
             // 
-            this.btnCreate.Location = new System.Drawing.Point(55, 238);
+            this.btnCreate.Location = new System.Drawing.Point(11, 238);
             this.btnCreate.Margin = new System.Windows.Forms.Padding(2);
             this.btnCreate.Name = "btnCreate";
-            this.btnCreate.Size = new System.Drawing.Size(136, 25);
+            this.btnCreate.Size = new System.Drawing.Size(304, 25);
             this.btnCreate.TabIndex = 12;
             this.btnCreate.Text = "Create reservation";
             this.btnCreate.UseVisualStyleBackColor = true;
@@ -112,14 +112,14 @@
             this.listBoxPastReservations.Location = new System.Drawing.Point(11, 267);
             this.listBoxPastReservations.Margin = new System.Windows.Forms.Padding(2);
             this.listBoxPastReservations.Name = "listBoxPastReservations";
-            this.listBoxPastReservations.Size = new System.Drawing.Size(358, 121);
+            this.listBoxPastReservations.Size = new System.Drawing.Size(586, 121);
             this.listBoxPastReservations.TabIndex = 13;
             // 
             // ListReservations
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(380, 399);
+            this.ClientSize = new System.Drawing.Size(608, 399);
             this.Controls.Add(this.listBoxPastReservations);
             this.Controls.Add(this.btnCreate);
             this.Controls.Add(this.btnMark);

@@ -1,7 +1,10 @@
 using iCantina.models;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
+using System.IO;
 using System.Linq;
+using System.Windows.Forms;
 
 namespace iCantina.controllers
 {
@@ -144,5 +147,39 @@ namespace iCantina.controllers
 		{
 			return context.Invoices.Where(i => i.Client.Id == client.Id).ToList();
 		}
+
+		public bool OpenInvoice()
+        {
+            try
+            {
+                OpenFileDialog openFileDialog = new OpenFileDialog
+                {
+                    Filter = "PDF files (*.pdf)|*.pdf", 
+                    Title = "Abrir fatura"
+                };
+
+                if (openFileDialog.ShowDialog() == DialogResult.OK)
+                {
+                    try
+                    {
+                        ProcessStartInfo processStartInfo = new ProcessStartInfo
+                        {
+                            FileName = openFileDialog.FileName,
+                            UseShellExecute = true 
+                        };
+                        Process.Start(processStartInfo);
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show($"Não foi possível abrir o arquivo PDF: {ex.Message}", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
+                return true;
+            }
+            catch (Exception)
+            {
+                return false;
+            }
+        }
 	}
 }

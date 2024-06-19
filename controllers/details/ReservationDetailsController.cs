@@ -100,7 +100,7 @@ namespace iCanteen.controllers
 
 		public bool IsClientStudent(Client client)
 		{
-			return context.Users.OfType<Student>().Any(s => s.NIF == client.NIF);
+            return context.Users.OfType<Student>().Any(s => s.NIF == client.NIF);
 		}
 
 		public List<Penalty> GetPenalties()
