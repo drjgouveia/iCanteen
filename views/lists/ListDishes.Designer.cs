@@ -40,20 +40,17 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.listBoxClients.DisplayMember = "w";
             this.listBoxClients.FormattingEnabled = true;
-            this.listBoxClients.ItemHeight = 16;
-            this.listBoxClients.Location = new System.Drawing.Point(24, 126);
-            this.listBoxClients.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.listBoxClients.Location = new System.Drawing.Point(18, 102);
             this.listBoxClients.Name = "listBoxClients";
-            this.listBoxClients.Size = new System.Drawing.Size(511, 292);
+            this.listBoxClients.Size = new System.Drawing.Size(384, 238);
             this.listBoxClients.TabIndex = 36;
             this.listBoxClients.ValueMember = "w";
             // 
             // btnCreate
             // 
-            this.btnCreate.Location = new System.Drawing.Point(436, 36);
-            this.btnCreate.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnCreate.Location = new System.Drawing.Point(327, 29);
             this.btnCreate.Name = "btnCreate";
-            this.btnCreate.Size = new System.Drawing.Size(100, 28);
+            this.btnCreate.Size = new System.Drawing.Size(75, 23);
             this.btnCreate.TabIndex = 35;
             this.btnCreate.Text = "Create";
             this.btnCreate.UseVisualStyleBackColor = true;
@@ -64,10 +61,9 @@
             this.txtBoxSearch.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtBoxSearch.Location = new System.Drawing.Point(24, 94);
-            this.txtBoxSearch.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtBoxSearch.Location = new System.Drawing.Point(18, 76);
             this.txtBoxSearch.Name = "txtBoxSearch";
-            this.txtBoxSearch.Size = new System.Drawing.Size(511, 22);
+            this.txtBoxSearch.Size = new System.Drawing.Size(384, 20);
             this.txtBoxSearch.TabIndex = 34;
             this.txtBoxSearch.TextChanged += new System.EventHandler(this.txtBoxSearch_TextChanged);
             // 
@@ -75,23 +71,24 @@
             // 
             this.title.AutoSize = true;
             this.title.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.title.Location = new System.Drawing.Point(17, 36);
+            this.title.Location = new System.Drawing.Point(13, 29);
+            this.title.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.title.Name = "title";
-            this.title.Size = new System.Drawing.Size(198, 32);
+            this.title.Size = new System.Drawing.Size(157, 26);
             this.title.TabIndex = 33;
             this.title.Text = "List of Dishes";
             this.title.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // ListDishes
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(553, 454);
+            this.ClientSize = new System.Drawing.Size(415, 369);
             this.Controls.Add(this.listBoxClients);
             this.Controls.Add(this.btnCreate);
             this.Controls.Add(this.txtBoxSearch);
             this.Controls.Add(this.title);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "ListDishes";
             this.Text = "ListDishes";
             this.Load += new System.EventHandler(this.ListDishes_Load);

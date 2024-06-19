@@ -69,6 +69,7 @@
             this.Controls.Add(this.buttonLogin);
             this.Controls.Add(this.txtBoxUsername);
             this.Controls.Add(this.label1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "Login";
             this.Text = "Login";
             this.ResumeLayout(false);

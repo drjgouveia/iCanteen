@@ -1,4 +1,4 @@
-﻿using iCantina.controllers;
+using iCantina.controllers;
 using iCantina.helpers;
 using iCantina.models;
 using System;
@@ -8,6 +8,8 @@ using System.Globalization;
 using System.Windows.Forms;
 using System.Reflection;
 using System.Runtime.CompilerServices;
+using System.Text;
+using System.IO; 
 
 namespace iCanteen.controllers
 {
@@ -92,8 +94,8 @@ namespace iCanteen.controllers
 
 			context.Reservations.Add(reservation);
 			context.SaveChanges();
-			return true;
 
+            return true;
         }
 
 		public bool IsClientStudent(Client client)
