@@ -90,9 +90,9 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.btnDishes.Font = new System.Drawing.Font("Microsoft Sans Serif", 18.25F);
-            this.btnDishes.Location = new System.Drawing.Point(400, 3);
+            this.btnDishes.Location = new System.Drawing.Point(195, 3);
             this.btnDishes.Name = "btnDishes";
-            this.btnDishes.Size = new System.Drawing.Size(206, 175);
+            this.btnDishes.Size = new System.Drawing.Size(199, 175);
             this.btnDishes.TabIndex = 2;
             this.btnDishes.Text = "Dishes";
             this.btnDishes.UseVisualStyleBackColor = true;
@@ -118,9 +118,9 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.btnExtras.Font = new System.Drawing.Font("Microsoft Sans Serif", 18.25F);
-            this.btnExtras.Location = new System.Drawing.Point(195, 3);
+            this.btnExtras.Location = new System.Drawing.Point(400, 3);
             this.btnExtras.Name = "btnExtras";
-            this.btnExtras.Size = new System.Drawing.Size(199, 175);
+            this.btnExtras.Size = new System.Drawing.Size(206, 175);
             this.btnExtras.TabIndex = 1;
             this.btnExtras.Text = "Extras";
             this.btnExtras.UseVisualStyleBackColor = true;
@@ -167,7 +167,7 @@
             // btnLogout
             // 
             this.btnLogout.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnLogout.Location = new System.Drawing.Point(732, 404);
+            this.btnLogout.Location = new System.Drawing.Point(730, 404);
             this.btnLogout.Name = "btnLogout";
             this.btnLogout.Size = new System.Drawing.Size(75, 23);
             this.btnLogout.TabIndex = 3;
@@ -185,11 +185,11 @@
             this.tableLayoutPanel2.Controls.Add(this.btnEmployees, 2, 1);
             this.tableLayoutPanel2.Controls.Add(this.btnProfessors, 1, 1);
             this.tableLayoutPanel2.Controls.Add(this.btnStudents, 0, 1);
+            this.tableLayoutPanel2.Controls.Add(this.btnExtras, 2, 0);
             this.tableLayoutPanel2.Controls.Add(this.btnReservations, 0, 0);
-            this.tableLayoutPanel2.Controls.Add(this.btnExtras, 1, 0);
-            this.tableLayoutPanel2.Controls.Add(this.btnDishes, 2, 0);
             this.tableLayoutPanel2.Controls.Add(this.btnMenu, 3, 0);
             this.tableLayoutPanel2.Controls.Add(this.btnFines, 3, 1);
+            this.tableLayoutPanel2.Controls.Add(this.btnDishes, 1, 0);
             this.tableLayoutPanel2.Location = new System.Drawing.Point(11, 21);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 2;
@@ -202,7 +202,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(822, 436);
+            this.ClientSize = new System.Drawing.Size(820, 436);
             this.Controls.Add(this.tableLayoutPanel2);
             this.Controls.Add(this.btnLogout);
             this.Controls.Add(this.lblUser);
