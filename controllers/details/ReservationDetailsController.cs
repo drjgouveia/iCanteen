@@ -8,6 +8,8 @@ using System.Globalization;
 using System.Windows.Forms;
 using System.Reflection;
 using System.Runtime.CompilerServices;
+using System.Text;
+using System.IO; 
 
 namespace iCanteen.controllers
 {
@@ -114,8 +116,8 @@ namespace iCanteen.controllers
             reservation.Dish = menu.Dish;
 			context.Reservations.Add(reservation);
 			context.SaveChanges();
-			return true;
 
+            return true;
         }
 
 		public bool IsClientStudent(Client client)
@@ -142,7 +144,8 @@ namespace iCanteen.controllers
 			{
 				return false;
 			}
-		}
+
+        }
 
 		public float CalculatePenaltyHours(DateTime date)
 		{

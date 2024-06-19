@@ -4,7 +4,11 @@ using iCantina.models;
 using System;
 using System.Collections.Generic;
 using System.Globalization;
+using System.IO;
+using System.Text;
 using System.Windows.Forms;
+using System.Windows;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace iCantina.views
 {
@@ -187,15 +191,34 @@ namespace iCantina.views
 			reservation.Dish = menu.Dish;
 			reservation.Menu = menu;
 			reservation.Client = (Client)cmbBoxClients.SelectedItem;
-            /*
-			foreach (Penalty penalty in controller.GetPenalties())
-			{
-				if (penalty.Hours < DateTime.Now.Hour - menu.Date.Hour)
+
+			using (SaveFileDialog saveFileDialog = new SaveFileDialog())
+			{ 
+				if(saveFileDialog.ShowDialog()==DialogResult.OK)
 				{
-					reservation.Penalty = penalty;
-				}
-			}
-			*/
+                    string reservationDetails = $"Reservation: {reservation.Client} - {reservation.Menu}";
+
+                    string fileName = $"{reservation.Client.Name}_{reservation.Date:yyyyMMdd_HHmmss}.txt";
+
+                    string filePath = Path.Combine(saveFileDialog.FileName);
+
+                    File.WriteAllText(filePath, reservationDetails);
+
+                }
+
+            };
+            
+
+
+            /*
+            foreach (Penalty penalty in controller.GetPenalties())
+            {
+                if (penalty.Hours < DateTime.Now.Hour - menu.Date.Hour)
+                {
+                    reservation.Penalty = penalty;
+                }
+            }
+            */
 
             Client client = (Client)cmbBoxClients.SelectedItem;
 			if (client.Balance < reservation.GetTotal())
@@ -221,6 +244,7 @@ namespace iCantina.views
 				MessageBox.Show("You can only reserve menus for today and next days.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
 				return;
 			}
+
 
 		}
 	}

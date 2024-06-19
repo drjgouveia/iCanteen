@@ -121,7 +121,6 @@
             this.btnGenerateInvoice.TabIndex = 41;
             this.btnGenerateInvoice.Text = "Generate Invoice";
             this.btnGenerateInvoice.UseVisualStyleBackColor = true;
-            this.btnGenerateInvoice.Click += new System.EventHandler(this.btnGenerateInvoice_Click);
             // 
             // listView1
             // 
